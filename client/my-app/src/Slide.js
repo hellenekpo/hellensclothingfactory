@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { mobile } from './responsive';
 import { Link } from 'react-router-dom'
 
+
+
 const Wrapper = styled.div``;
 const Slider = styled.div`
      display: flex;
