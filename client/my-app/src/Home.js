@@ -13,9 +13,10 @@ const PortFolio= styled.div`
     margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid black;
+    width: 50%;
+    height: 50%;
+	border-top: 10px solid hotpink;
+    border-bottom: 10px solid hotpink;
     ${desktop({display:"none"})}
     ${tablet({display:"none"})}
     ${mobile({display: "none",})}
@@ -137,7 +138,7 @@ const Home = () => {
   return (
     <Container>
         <PortFolio>
-          <Poster src="https://cdna.lystit.com/cms/ENG_header_desktop_bddf9b3474_884ff704d3.jpg" alt="poster"/>
+          <Poster src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="poster"/>
           <Poster1 src="https://cdna.lystit.com/cms/ENG_header_desktop_bddf9b3474_884ff704d3.jpg" alt="desktop-poster" />
           <Poster2 src="https://cdna.lystit.com/cms/ENG_header_tablet_test_40933dc911.jpg" alt="tablet-poster"/>
           <Poster3 src="https://cdna.lystit.com/cms/ENG_header_mobile_test_a391a0431f.jpg" alt="mobile-poster"/>
