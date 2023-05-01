@@ -1,4 +1,6 @@
 import React from 'react'
+import { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import { Link } from 'react-router-dom'
@@ -137,6 +139,26 @@ const BoxSpan= styled.span`
 
 
 const Home = () => {
+  const [information, setInformation] = useState(null);
+  function getInfo() {
+	  axios({
+		  method: 'GET',
+		  url: "http://127.0.0.1:5000/"
+	  })
+	  .then((response) => {
+		  console.log("This is something",response)
+		  const res = response.data
+		  setInformation(({
+			  userId: res.home_endpoint
+		  }))
+	  }).catch((error) => {
+		  if (error.response) {
+			  console.log(error.response)
+		  	  console.log(error.response.status)
+		      constoe.log(error.response.headers)
+		  }
+	  })
+  }
   return (
     <Container>
         <PortFolio>
@@ -145,6 +167,14 @@ const Home = () => {
           <Poster2 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="tablet-poster"/>
           <Poster3 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="mobile-poster"/>
         </PortFolio>
+	    <header>
+	  	<p>To get your profile details: </p>
+	  	<button onClick={getInfo}>Click me</button>
+	  	{information && <div>
+	  		<p>User name: {information.userId}</p>
+	  		</div>
+	  }
+	  	</header>
         <Slide />
         <InnerContainer>
            <Offers>
