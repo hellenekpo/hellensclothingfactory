@@ -15,7 +15,7 @@ const Slider = styled.div`
      &::-webkit-scrollbar{
        display: none;
      }
-     border-bottom: 1px solid black;
+     border-bottom: 5px solid hotpink;
      ${mobile({
         height: "190px",
      })}
@@ -24,7 +24,7 @@ const Item= styled.div`
     min-width: ${props=>props.type==="sec"?436:400}px ;
     height: 100%;
     display: flex;
-    border-left: 1px solid black;
+    border-left: 5px solid hotpink;
     position: ${props=>props.type==="sec"?"relative":"none"};
     ${mobile({minWidth:"228px"})}
 `;
@@ -86,7 +86,7 @@ const Slide = () => {
   return (
     <> 
     <Wrapper>
-       <Slider style={{borderTop:"1px solid black"}}>
+       <Slider style={{borderTop:"5px solid hotpink"}}>
           <Link to="#">
         <Item>
            <ItemTitle>
@@ -172,7 +172,7 @@ const Slide = () => {
     </Slider>
  </Wrapper>
  <Wrapper style={{marginTop:"10%"}}>
-     <Slider type="sec-slide" style={{borderTop: "1px solid black"}}>
+     <Slider type="sec-slide" style={{borderTop: "5px solid hotpink"}}>
         <Item type="sec" style={{backgroundColor:"#f5f4f2", cursor:"e-resize"}}>
            <Para>BREAKOUT BRANDS</Para>
         </Item>
