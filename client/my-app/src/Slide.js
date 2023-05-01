@@ -31,15 +31,17 @@ const Item= styled.div`
 const ItemTitle= styled.div`
    width: 100px;
    height: 100%;
-   position : relative ;
+   position : relative;
    overflow: hidden;
 `;
 const Title= styled.h3`
     position: absolute;
+  	top: 50%;
+  	width: 100%;
+  	text-align: center;
     transform: rotate(-90deg);
     transform-origin: bottom left;
     left: 100%;
-    bottom: 0px;
     padding: 5px;
     width: 300px;
     color: black;
@@ -90,9 +92,9 @@ const Slide = () => {
           <Link to="#">
         <Item>
            <ItemTitle>
-              <Title>CRISP MONOCHROME</Title>
+              <Title>Monica Sweetheart Top</Title>
            </ItemTitle>
-           <Image src="https://cdna.lystit.com/cms/Image_from_i_OS_570_8c4ba5ce61.png" alt='CRISP MONOCHROME'/>
+           <Image src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/Screenshot%202023-05-01%20at%2012.43.51%20AM.png" alt='CRISP MONOCHROME'/>
         </Item>
       </Link>
       <Link to="#">
@@ -100,7 +102,7 @@ const Slide = () => {
            <ItemTitle>
               <Title>ONE STEP AHEAD</Title>
            </ItemTitle>
-           <Image src="https://cdna.lystit.com/cms/OSA_24_03_22_09a1fa2732.jpeg" alt='ONE STEP AHEAD'/>
+           <Image src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/Screenshot%202023-05-01%20at%2012.44.02%20AM.png" alt='ONE STEP AHEAD'/>
         </Item>
       </Link>
       <Link to="#">
@@ -108,7 +110,7 @@ const Slide = () => {
            <ItemTitle>
               <Title>REFINED GLAMOUR</Title>
            </ItemTitle>
-           <Image src="https://cdna.lystit.com/cms/REFINED_GLAMOUR_c966d97813.jpeg" alt='REFINED GLAMOUR'/>
+           <Image src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/Screenshot%202023-05-01%20at%2012.44.12%20AM.png" alt='REFINED GLAMOUR'/>
         </Item>
       </Link>
       <Link to="#">
