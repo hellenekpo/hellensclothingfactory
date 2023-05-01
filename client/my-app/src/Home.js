@@ -141,9 +141,9 @@ const Home = () => {
     <Container>
         <PortFolio>
           <Poster src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="poster"/>
-          <Poster1 src="https://cdna.lystit.com/cms/ENG_header_desktop_bddf9b3474_884ff704d3.jpg" alt="desktop-poster" />
-          <Poster2 src="https://cdna.lystit.com/cms/ENG_header_tablet_test_40933dc911.jpg" alt="tablet-poster"/>
-          <Poster3 src="https://cdna.lystit.com/cms/ENG_header_mobile_test_a391a0431f.jpg" alt="mobile-poster"/>
+          <Poster1 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="desktop-poster" />
+          <Poster2 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="tablet-poster"/>
+          <Poster3 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="mobile-poster"/>
         </PortFolio>
         <Slide />
         <InnerContainer>
@@ -174,7 +174,7 @@ const Home = () => {
               <Link to="#">
                   <InnerBox>
                       <BoxPara>Sign Up For Smarter Shopping</BoxPara>
-                      <BoxSpan>Join &#8594;</BoxSpan>
+                      <BoxSpan>Join </BoxSpan>
                   </InnerBox>
               </Link>
            </SignupBox>
