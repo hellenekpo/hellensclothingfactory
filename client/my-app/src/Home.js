@@ -13,10 +13,12 @@ const PortFolio= styled.div`
     margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 	border-top: 10px solid hotpink;
     border-bottom: 10px solid hotpink;
+	border-left: 10px solid hotpink;
+	border-right: 10px solid hotpink;
     ${desktop({display:"none"})}
     ${tablet({display:"none"})}
     ${mobile({display: "none",})}
