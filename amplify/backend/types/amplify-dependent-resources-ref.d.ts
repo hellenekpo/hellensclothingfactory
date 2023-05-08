@@ -1,28 +1,18 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "hcfbackend": {
+    "hellenbackend": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
     }
   },
   "function": {
-    "hellensclothingfactory": {
+    "hellensclothinglamda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
-    }
-  },
-  "storage": {
-    "orders": {
-      "Arn": "string",
-      "Name": "string",
-      "PartitionKeyName": "string",
-      "PartitionKeyType": "string",
-      "Region": "string",
-      "StreamArn": "string"
     }
   }
 }

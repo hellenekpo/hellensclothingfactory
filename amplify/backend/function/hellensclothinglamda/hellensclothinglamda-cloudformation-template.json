@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "Lambda Function resource stack creation using Amplify CLI",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.1.1\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "hellensclothingfactory",
+            "hellensclothinglamda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "hellensclothingfactory",
+                  "hellensclothinglamda",
                   "-",
                   {
                     "Ref": "env"
@@ -78,7 +78,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "nodejs16.x",
         "Layers": [],
         "Timeout": 25
       }
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "hellensclothingfactoLambdaRolede7d9c51",
+            "hellensclothingfactoLambdaRole0497db6c",
             {
               "Fn::Join": [
                 "",
                 [
-                  "hellensclothingfactoLambdaRolede7d9c51",
+                  "hellensclothingfactoLambdaRole0497db6c",
                   "-",
                   {
                     "Ref": "env"

@@ -1,19 +1,25 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify8ea6d21c0f504-staging-44805-authRole",
-      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify8ea6d21c0f504-staging-44805-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify8ea6d21c0f504-staging-44805-authRole",
+      "AuthRoleName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify9ba3ea8d2f4b4-staging-21726-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify9ba3ea8d2f4b4-staging-21726-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplify8ea6d21c0f504-staging-44805-deployment",
-      "UnauthRoleName": "amplify-amplify8ea6d21c0f504-staging-44805-unauthRole",
-      "StackName": "amplify-amplify8ea6d21c0f504-staging-44805",
-      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-amplify8ea6d21c0f504-staging-44805/5cac1930-e7db-11ed-bfe3-12c3583b9edd",
+      "DeploymentBucketName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-deployment",
+      "UnauthRoleName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-unauthRole",
+      "StackName": "amplify-amplify9ba3ea8d2f4b4-staging-21726",
+      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-amplify9ba3ea8d2f4b4-staging-21726/79b0ffd0-ed46-11ed-947d-0a2e19fdc313",
       "AmplifyAppId": "d1ag7c8tbww37n"
     },
     "categories": {
       "function": {
-        "hellensclothingfactory": {}
+        "hellensclothinglamda": {
+          "deploymentBucketName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-deployment",
+          "s3Key": "amplify-builds/hellensclothinglamda-6a38746778434b765269-build.zip"
+        }
+      },
+      "api": {
+        "hellenbackend": {}
       }
     }
   }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/hcf": {
-      "name": "/hcf",
-      "lambdaFunction": "hellensclothingfactory",
+    "/backend": {
+      "name": "/backend",
+      "lambdaFunction": "hellensclothinglamda",
       "permissions": {
         "setting": "open"
       }

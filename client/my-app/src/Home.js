@@ -162,11 +162,13 @@ const BoxSpan= styled.span`
    font-size: 13px;
 `;
 const buttonColor = () => {
-	let randomNum = Math.floor(Math.random * 2);
+	let randomNum = Math.floor(Math.random() * 2);
 	let colors = {
-		0: "./photos/clickhereblue.png",
-		1: "./photos/clickherepink.png"
+		0: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/clickherepink.png",
+		1: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/clickhereblue.png"
 	}
+	console.log(randomNum)
+	console.log("This is the button color", colors[randomNum]);
 	return colors[randomNum];
 }
 const randomColor = () => {
@@ -180,13 +182,13 @@ const randomColor = () => {
   function getInfo() {
 	  axios({
 		  method: 'GET',
-		  url: "http://127.0.0.1:5000/"
+		  url: "https://0zcy0plu37.execute-api.us-east-1.amazonaws.com/staging/backend/homeButton"
 	  })
 	  .then((response) => {
 		  console.log("This is something",response)
 		  const res = response.data
 		  setInformation(({
-			  userId: res.home_endpoint
+			  success: res.success
 		  }))
 	  }).catch((error) => {
 		  if (error.response) {
@@ -210,10 +212,10 @@ const Home = () => {
         </PortFolio>
 	    <header>
 	  	<p>To get your profile details: </p>
-		<img src = {buttonColor()}/>
 	  	<button onClick={getInfo}>Click me</button>
-	  	{information && <div>
-	  		<p>User name: {information.userId}</p>
+	  	{information && 
+			<div>
+	  		<p>User name: {information.success}</p>
 	  		</div>
 	  }
 	  	</header>

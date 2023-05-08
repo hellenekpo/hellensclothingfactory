@@ -1,6 +1,6 @@
 {
   "api": {
-    "hcfbackend": {
+    "hellenbackend": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "hellensclothingfactory"
+          "resourceName": "hellensclothinglamda"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -16,16 +16,28 @@
     }
   },
   "function": {
-    "hellensclothingfactory": {
+    "hellensclothinglamda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
-  "storage": {
-    "orders": {
-      "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
+  "parameters": {
+    "AMPLIFY_function_hellensclothinglamda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hellensclothinglamda"
+        }
+      ]
+    },
+    "AMPLIFY_function_hellensclothinglamda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "hellensclothinglamda"
+        }
+      ]
     }
   }
 }
