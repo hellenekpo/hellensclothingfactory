@@ -15,7 +15,7 @@
       "function": {
         "hellensclothinglamda": {
           "deploymentBucketName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-deployment",
-          "s3Key": "amplify-builds/hellensclothinglamda-6a38746778434b765269-build.zip"
+          "s3Key": "amplify-builds/hellensclothinglamda-574267535a392f30354b-build.zip"
         }
       },
       "api": {

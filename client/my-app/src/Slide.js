@@ -15,7 +15,7 @@ const Slider = styled.div`
      &::-webkit-scrollbar{
        display: none;
      }
-     border-bottom: 5px solid hotpink;
+     border-bottom: 5px solid #fc20a5;
      ${mobile({
         height: "190px",
      })}
@@ -24,7 +24,7 @@ const Item= styled.div`
     min-width: ${props=>props.type==="sec"?436:400}px ;
     height: 100%;
     display: flex;
-    border-left: 5px solid hotpink;
+    border-left: 5px solid #fc20a5;
     position: ${props=>props.type==="sec"?"relative":"none"};
     ${mobile({minWidth:"228px"})}
 `;
