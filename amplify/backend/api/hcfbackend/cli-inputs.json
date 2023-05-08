@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/hcf": {
+      "name": "/hcf",
+      "lambdaFunction": "hellensclothingfactory",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

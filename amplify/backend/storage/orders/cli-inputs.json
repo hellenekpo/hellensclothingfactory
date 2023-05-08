@@ -1,0 +1,10 @@
+{
+  "resourceName": "orders",
+  "tableName": "shopping-cart-items",
+  "partitionKey": {
+    "fieldName": "orderId",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify8ea6d21c0f504-staging-44805-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify8ea6d21c0f504-staging-44805-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify8ea6d21c0f504-staging-44805-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplify8ea6d21c0f504-staging-44805-deployment",
+      "UnauthRoleName": "amplify-amplify8ea6d21c0f504-staging-44805-unauthRole",
+      "StackName": "amplify-amplify8ea6d21c0f504-staging-44805",
+      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-amplify8ea6d21c0f504-staging-44805/5cac1930-e7db-11ed-bfe3-12c3583b9edd",
+      "AmplifyAppId": "d1ag7c8tbww37n"
+    },
+    "categories": {
+      "function": {
+        "hellensclothingfactory": {}
+      }
+    }
+  }
+}

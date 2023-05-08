@@ -17,10 +17,10 @@ const PortFolio= styled.div`
 const Poster = styled.img`
     width: 40%;
     height: 40%;
-	border-top: 10px solid hotpink;
-    border-bottom: 10px solid hotpink;
-	border-left: 10px solid hotpink;
-	border-right: 10px solid hotpink;
+	border-top: 10px solid #fc20a5;
+    border-bottom: 10px solid #fc20a5;
+	border-left: 10px solid #fc20a5;
+	border-right: 10px solid #fc20a5;
     ${desktop({display:"none"})}
     ${tablet({display:"none"})}
     ${mobile({display: "none",})}
@@ -30,6 +30,11 @@ const Poster1 = styled.img`
     width: 100%;
     height: 100%;
     display: none;
+border-top: 10px solid #fc20a5;
+    border-bottom: 10px solid #fc20a5;
+	border-left: 10px solid #fc20a5;
+	border-right: 10px solid #fc20a5;
+    ${desktop({display:"none"})}
     ${desktop({display: "block",})}
     ${tablet({display:"none"})}
     ${mobile({display: "none",})}
@@ -39,6 +44,11 @@ const Poster2 = styled.img`
    width: 100%;
    height: 100%;
    display: none;
+border-top: 10px solid #fc20a5;
+    border-bottom: 10px solid #fc20a5;
+	border-left: 10px solid #fc20a5;
+	border-right: 10px solid #fc20a5;
+    ${desktop({display:"none"})}
    ${tablet({display:"block"})}
     ${mobile({display: "none",})}
 `;
@@ -46,6 +56,10 @@ const Poster3 = styled.img`
    width: 100%;
    height: 100%;
    display: none;
+	border-top: 10px solid #fc20a5;
+    border-bottom: 10px solid #fc20a5;
+	border-left: 10px solid #fc20a5;
+	border-right: 10px solid #fc20a5;
    ${mobile({display: "block",})}
 `;
 
@@ -136,10 +150,23 @@ const BoxSpan= styled.span`
    font-weight: 700;
    font-size: 13px;
 `;
-
-
-const Home = () => {
-  const [information, setInformation] = useState(null);
+const buttonColor = () => {
+	let randomNum = Math.floor(Math.random * 2);
+	let colors = {
+		0: "./photos/clickhereblue.png",
+		1: "./photos/clickherepink.png"
+	}
+	return colors[randomNum];
+}
+const randomColor = () => {
+	let randomNum = Math.floor(Math.random() * 2);
+	let colors = {
+		0: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/hellensclothingblue.png",
+		1: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png"
+	}
+	console.log("This is the value in the dictionary", colors[randomNum]);
+	return colors[randomNum];
+}
   function getInfo() {
 	  axios({
 		  method: 'GET',
@@ -159,16 +186,21 @@ const Home = () => {
 		  }
 	  })
   }
+
+const Home = () => {
+	const [information, setInformation] = useState(false);
+	let color = randomColor();
   return (
     <Container>
         <PortFolio>
-          <Poster src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="poster"/>
-          <Poster1 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="desktop-poster" />
-          <Poster2 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="tablet-poster"/>
-          <Poster3 src="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png" alt="mobile-poster"/>
+          <Poster src={color} alt="poster"/>
+          <Poster1 src={color} alt="desktop-poster" />
+          <Poster2 src={color} alt="tablet-poster"/>
+          <Poster3 src={color} alt="mobile-poster"/>
         </PortFolio>
 	    <header>
 	  	<p>To get your profile details: </p>
+		<img src = {buttonColor()}/>
 	  	<button onClick={getInfo}>Click me</button>
 	  	{information && <div>
 	  		<p>User name: {information.userId}</p>
