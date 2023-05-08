@@ -8,15 +8,17 @@ import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import BrandSlider from './BrandSlider';
 
-const Container = styled.div``;
+const Container = styled.div`
+	background-color: #fcecf8
+`;
 const PortFolio= styled.div`
     width: 100%;
     margin-bottom: 6%;
     margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 100%;
 	border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
 	border-left: 10px solid #fc20a5;
@@ -27,7 +29,10 @@ const Poster = styled.img`
 `;
 
 const Poster1 = styled.img`
-    width: 100%;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+   width: 50%;
     height: 100%;
     display: none;
 border-top: 10px solid #fc20a5;
@@ -41,7 +46,10 @@ border-top: 10px solid #fc20a5;
 `;
 
 const Poster2 = styled.img`
-   width: 100%;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+   width: 50%;
    height: 100%;
    display: none;
 border-top: 10px solid #fc20a5;
@@ -53,7 +61,10 @@ border-top: 10px solid #fc20a5;
     ${mobile({display: "none",})}
 `;
 const Poster3 = styled.img`
-   width: 100%;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
    height: 100%;
    display: none;
 	border-top: 10px solid #fc20a5;
@@ -159,10 +170,9 @@ const buttonColor = () => {
 	return colors[randomNum];
 }
 const randomColor = () => {
-	let randomNum = Math.floor(Math.random() * 2);
+	let randomNum = Math.floor(Math.random() * 1);
 	let colors = {
-		0: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/photos/hellensclothingblue.png",
-		1: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png"
+		0: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png"
 	}
 	console.log("This is the value in the dictionary", colors[randomNum]);
 	return colors[randomNum];
