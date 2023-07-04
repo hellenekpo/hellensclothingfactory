@@ -220,41 +220,7 @@ const Home = () => {
 	  }
 	  	</header>
         <Slide />
-        <InnerContainer>
-           <Offers>
-              <List>
-                 
-                 <ListItem>
-                    <Num>1</Num>
-                    <ListTitle>THE BIGGEST SELECTION</ListTitle>
-                    <ListPara>Shop over 12,000 brands and stores in one place.</ListPara>
-                    <ListPara>Find exactly what you want with powerful searchh and personal recommendations.</ListPara>
-                 </ListItem>
-                 <ListItem>
-                    <Num>2</Num>
-                    <ListTitle>THE HOTTEST PRODUCTS</ListTitle>
-                    <ListPara>See what's new and what's trending.</ListPara>
-                    <ListPara>Hit the heart to receive alerts on the latest drops from your favourite brands.</ListPara>
-                 </ListItem>
-                 <ListItem>
-                    <Num>3</Num>
-                    <ListTitle>THE BEST PRICES</ListTitle>
-                    <ListPara>Compare prices and shipping options across thousands of stores.</ListPara>
-                    <ListPara>Lyst members are notified when an item goes on sale.</ListPara>
-                 </ListItem>
-              </List>
-           </Offers>
-           <SignupBox>
-              <Link to="#">
-                  <InnerBox>
-                      <BoxPara>Sign Up For Smarter Shopping</BoxPara>
-                      <BoxSpan>Join </BoxSpan>
-                  </InnerBox>
-              </Link>
-           </SignupBox>
-        </InnerContainer>
-         <BrandSlider />
-         <HomeNav />
+
     </Container>
   )
 }
