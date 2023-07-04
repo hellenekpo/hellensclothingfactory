@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as AWS from 'aws-sdk'
+import { ConfigurationOptions } from 'aws-sdk'
+
+
+const configuration: ConfigurationOptions = {
+    region: 'us-east-1',
+    secretAccessKey: 'DDIFWlb51TUM8jSsyFXHngW/xpw7JoGXFQDf/bGj',
+    accessKeyId: 'AKIAYTCAYPPA34S2R6TM'
+}
+AWS.config.update(configuration)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
