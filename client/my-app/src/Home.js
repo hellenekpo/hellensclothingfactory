@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import BrandSlider from './BrandSlider';
-import * as AWS from 'aws-sdk'
+import * as AWS from 'aws-sdk';
 
 
 const docClient = new AWS.DynamoDB.DocumentClient()
