@@ -22,9 +22,9 @@ app.get('/backend/homeButton', function(req, res) {
   });
 });
 
-app.get('/backend/*', function(req, res) {
+app.get('/backend/helena', function(req, res) {
   // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
+  res.json({success: 'helena', url: req.url});
 });
 
 /****************************
