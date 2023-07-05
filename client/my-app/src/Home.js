@@ -9,13 +9,13 @@ import Slide from './Slide.js';
 import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
+import welcomeimage from './images/welcomeimage.png'
 import config from './config.json' 
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 const Container = styled.div`
-	background-color: #fce000
-	margin: 0px;
+
 `;
 const PortFolio= styled.div`
     width: 100%;
@@ -23,8 +23,8 @@ const PortFolio= styled.div`
     margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 50%;
-    height: 100%;
+    width: 30%;
+    height: 30%;
 	border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
 	border-left: 10px solid #fc20a5;
@@ -35,11 +35,11 @@ const Poster = styled.img`
 `;
 
 const Poster1 = styled.img`
+width: 30%;
+    height: 30%;
 display: block;
   margin-left: auto;
   margin-right: auto;
-   width: 50%;
-    height: 100%;
     display: none;
 border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
@@ -52,11 +52,11 @@ border-top: 10px solid #fc20a5;
 `;
 
 const Poster2 = styled.img`
+width: 30%;
+    height: 30%;
 display: block;
   margin-left: auto;
   margin-right: auto;
-   width: 50%;
-   height: 100%;
    display: none;
 border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
@@ -67,11 +67,11 @@ border-top: 10px solid #fc20a5;
     ${mobile({display: "none",})}
 `;
 const Poster3 = styled.img`
+width: 30%;
+    height: 30%;
 display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-   height: 100%;
    display: none;
 	border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
@@ -80,10 +80,23 @@ display: block;
    ${mobile({display: "block",})}
 `;
 
+const WelcomeImage = styled.img`
+	width: 70%;
+    height: 70%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+
+    ${desktop({display: "block",})}
+    ${tablet({display:"block"})}
+    ${mobile({display: "block",})}
+`;
+
 
 
 
 const Home = () => {
+	console.log("print", welcomeimage);
 	const [information, setInformation] = useState("heyyyy");
 	const [purchases, setPurchases] = useState(-1);
 	const fetchData = (tableName) => {
@@ -150,6 +163,7 @@ const Home = () => {
         </PortFolio>
 	    <header>
 	  	<p>{information}</p>
+	  	<WelcomeImage src={welcomeimage} alt="poster"/>
 	  	<button onClick={() => {
 	  axios({
 		  method: 'GET',

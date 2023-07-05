@@ -225,7 +225,7 @@ const Slide = () => {
              <SecTitle>SIMONE ROCHA EARRINGS</SecTitle>
              <SecImage src="https://cdna.lystit.com/cms/simone_rocha_earrings_d997cb6315.jpeg" alt="Simone Rocha Earrings"/>
         </Item>
-        <Item type="sec" style={{backgroundColor:"#f5f4f2", cursor:"e-resize"}}>
+        <Item type="sec" style={{backgroundColor:"#f5f000", cursor:"e-resize"}}>
            <Para >TRENDING NOW</Para>
         </Item>
         <Item type="sec" >
