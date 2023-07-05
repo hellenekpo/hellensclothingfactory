@@ -14,7 +14,8 @@ AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 const Container = styled.div`
-	background-color: #fcecf8
+	background-color: #fce000
+	margin: 0px;
 `;
 const PortFolio= styled.div`
     width: 100%;
@@ -79,14 +80,6 @@ display: block;
    ${mobile({display: "block",})}
 `;
 
-const randomColor = () => {
-	let randomNum = Math.floor(Math.random() * 1);
-	let colors = {
-		0: "https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/main/client/my-app/public/newlogo.png"
-	}
-	console.log("This is the value in the dictionary", colors[randomNum]);
-	return colors[randomNum];
-}
 
 
 
@@ -139,8 +132,10 @@ const Home = () => {
 				":np": purchases,
     		},
 		}
+		setPurchases(newnew);
 		docClient.update(params, function (err, data) {
 			if (!err) {
+				return "Successfully purchased";
 			}
 			console.log(err);
 		})

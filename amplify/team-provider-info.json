@@ -19,7 +19,11 @@
         }
       },
       "api": {
-        "hellenbackend": {}
+        "hellenbackend": {},
+        "hellenclothingapi": {}
+      },
+      "auth": {
+        "hellensclothingfacto5e3a5b05": {}
       }
     }
   }

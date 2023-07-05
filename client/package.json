@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-amplify": "^5.3.3",
+    "aws-sdk": "^2.1410.0",
     "styled-components": "^5.3.8"
   }
 }
