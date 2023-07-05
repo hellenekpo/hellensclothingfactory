@@ -8,9 +8,11 @@ import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
+import newlogo from './images/newlogo.png'
+import config from './config.json' 
+AWS.config.update(config);
+const docClient = new AWS.DynamoDB.DocumentClient();
 
-
-const docClient = new AWS.DynamoDB.DocumentClient()
 const Container = styled.div`
 	background-color: #fcecf8
 `;
@@ -86,28 +88,70 @@ const randomColor = () => {
 	return colors[randomNum];
 }
 
-const fetchData = (tableName) => {
-    var params = {
-        TableName: tableName
-    }
 
-    docClient.scan(params, function (err, data) {
-        if (!err) {
-            console.log(data)
-        }
-    })
-}
 
 const Home = () => {
 	const [information, setInformation] = useState("heyyyy");
-	let color = randomColor();
+	const [purchases, setPurchases] = useState(-1);
+	const fetchData = (tableName) => {
+    var params = {
+        TableName: tableName
+    }
+	console.log("in here")
+    docClient.scan(params, function (err, data) {
+        if (!err) {
+            console.log(data);
+			for (let i = 0; i < data.Count; ++i) {
+				if (data.Items[i].id = "1") {
+					setPurchases(data.Items[i].num_of_purchases)
+				}
+			}
+			console.log("This is purchases", purchases);
+        }
+		console.log(err);
+    })
+	}
+	
+	const fetchItem = () => {
+		docClient.get({
+    		TableName: "clothingitems",
+    		Key: {
+      			id: "1", // id is the Partition Key, '123' is the value of it
+				name: "bubblegumblush"
+    		},
+  		})
+  		.promise()
+  		.then(data => console.log(data.Item))
+  		.catch(console.error)
+	}	
+	
+	const updatePurchases = (tableName, id, productName) => {
+		let newnew = purchases + 1
+		var params = {
+			TableName: tableName,
+			Key: {
+				id: id,
+				name: productName
+			},
+			UpdateExpression: `set num_of_purchases = :np + :value`,
+			ExpressionAttributeValues: {
+				":value": 1,
+				":np": purchases,
+    		},
+		}
+		docClient.update(params, function (err, data) {
+			if (!err) {
+			}
+			console.log(err);
+		})
+	}
   return (
     <Container>
         <PortFolio>
-          <Poster src={color} alt="poster"/>
-          <Poster1 src={color} alt="desktop-poster" />
-          <Poster2 src={color} alt="tablet-poster"/>
-          <Poster3 src={color} alt="mobile-poster"/>
+          <Poster src={newlogo} alt="poster"/>
+          <Poster1 src={newlogo} alt="desktop-poster" />
+          <Poster2 src={newlogo} alt="tablet-poster"/>
+          <Poster3 src={newlogo} alt="mobile-poster"/>
         </PortFolio>
 	    <header>
 	  	<p>{information}</p>
@@ -134,6 +178,11 @@ const Home = () => {
 					 fetchData('clothingitems')
 					}}>
 		Fetch data from tables!
+		</button>
+<button onClick={() => {
+					 updatePurchases("clothingitems", "1", "bubblegumblush")
+					}}>
+		Buy this item!
 		</button>
 	  	</header>
         <Slide />
