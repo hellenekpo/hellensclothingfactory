@@ -15,75 +15,29 @@ import welcomeimage from './images/welcomeimage.png'
 import aboutimage from './images/aboutusimage.png'
 import shopimage from './images/shopimage.png'
 import contactimage from './images/contactimage.png'
+import aboutimagegradient from './images/aboutusimagegradient.png'
+import shopimagegradient from './images/shopimagegradient.png'
+import contactimagegradient from './images/contactimagegradient.png'
 import config from './config.json' 
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 const Container = styled.div`
-
 `;
 const PortFolio= styled.div`
-    width: 100%;
-    margin-bottom: 6%;
-    margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 50%;
-    height: 50%;
+width: 30%;
+display: block;
+margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
 	border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
 	border-left: 10px solid #fc20a5;
 	border-right: 10px solid #fc20a5;
-    ${desktop({display:"none"})}
-    ${tablet({display:"none"})}
-    ${mobile({display: "none",})}
 `;
 
-const Poster1 = styled.img`
-width: 50%;
-    height: 50%;
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-    display: none;
-border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
-    ${desktop({display:"none"})}
-    ${desktop({display: "block",})}
-    ${tablet({display:"none"})}
-    ${mobile({display: "none",})}
-`;
-
-const Poster2 = styled.img`
-width: 50%;
-    height: 50%;
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-   display: none;
-border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
-    ${desktop({display:"none"})}
-   ${tablet({display:"block"})}
-    ${mobile({display: "none",})}
-`;
-const Poster3 = styled.img`
-width: 50%;
-    height: 50%;
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-   display: none;
-	border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
-   ${mobile({display: "block",})}
-`;
 
 const WelcomeImage = styled.img`
 	width: 70%;
@@ -101,9 +55,21 @@ const WelcomeImage = styled.img`
 
 
 const Home = () => {
-	console.log("print", welcomeimage);
 	const [information, setInformation] = useState("heyyyy");
 	const [purchases, setPurchases] = useState(-1);
+	const [contactImageState, setContantImageState] = useState(false);
+	const changeImage = () => {
+		if (contactImageState == false) {
+			document.getElementById("contactButton").src = contactimagegradient;
+			setContantImageState(true);
+		}
+		else {
+			document.getElementById("contactButton").src = contactimage;
+			setContantImageState(false);
+
+		}
+		
+	}
 	const fetchData = (tableName) => {
     var params = {
         TableName: tableName
@@ -160,11 +126,37 @@ const Home = () => {
 	}
   return (
     <Container>
+	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage()}}
+		style={{
+		width: '13%',
+		"borderTop": '10px solid #fc20a5',
+    	"borderBottom": '10px solid #fc20a5',
+		"borderLeft": '10px solid #fc20a5',
+		"borderRight": '10px solid #fc20a5',
+      	}}/>
+	  	<img src={contactimage}id="contactButton" alt="contact image" onClick={() => {changeImage()}}
+		style={{
+		width: '20%',
+		"marginTop": '0px',
+		"borderTop": '10px solid #fc20a5',
+    	"borderBottom": '10px solid #fc20a5',
+		"borderLeft": '10px solid #fc20a5',
+		"borderRight": '10px solid #fc20a5',
+      	}}
+		align="right"/>
+		<img src={aboutimage}id="aboutButton" alt="about image" onClick={() => {changeImage()}}
+		style={{
+		width: '23%',
+		"marginTop": '0px',
+		"borderTop": '10px solid #fc20a5',
+    	"borderBottom": '10px solid #fc20a5',
+		"borderLeft": '10px solid #fc20a5',
+		"borderRight": '10px solid #fc20a5',
+      	}}
+		align="left"/>
+		
         <PortFolio>
           <Poster src={newlogo} alt="poster"/>
-          <Poster1 src={newlogo} alt="desktop-poster" />
-          <Poster2 src={newlogo} alt="tablet-poster"/>
-          <Poster3 src={newlogo} alt="mobile-poster"/>
         </PortFolio>
 	    <header>
 	  	<p>{information}</p>
@@ -198,18 +190,7 @@ const Home = () => {
 					}}>
 		Buy this item!
 		</button>
-	  	</header>
-		<img src={contactimage}id="contactButton" alt="my image"
-		style={{
-		width: '100%',						   
-      	}}/>
-		<img src={aboutimage}id="aboutUsButton"alt="my image" style={{
-		width: '100%',						   
-      	}}/>
-		<img src={shopimage}id="shopButton"alt="my image"
-		style={{
-		width: '75%',						   
-      	}}/>	
+	  	</header>	
 
         <Slide />
 
