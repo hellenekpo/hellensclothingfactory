@@ -6,6 +6,13 @@ import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import { Link } from 'react-router-dom'
+import welcomeimage from './images/welcomeimage.png'
+import aboutusfolderopened from './images/aboutusfolderopened.png'
+import homefolderclosed from './images/homefolderclosed.png'
+import contactfolderopen from './images/contactfolderopen.png'
+import aboutusfolderclosed from './images/aboutusfolderclosed.png'
+import homefolderopened from './images/homefolderopened.png'
+import contactfolderclosed from './images/contactfolderclosed.png'
 import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
@@ -13,8 +20,8 @@ import { IconButton } from "rsuite";
 import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
-import welcomeimage from './images/welcomeimage.png'
 import config from './config.json'
+import {Routes, Route, useNavigate} from 'react-router-dom';
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
@@ -51,37 +58,38 @@ const Shop = () => {
 	const [purchases, setPurchases] = useState(-1);
 	const [contactImageState, setContantImageState] = useState(false);
 	const [aboutUsImageState, setAboutUsImageState] = useState(false);
-	const [shopImageState, setShopImageState] = useState(false);
+	const [homeImageState, setHomeImageState] = useState(false);
+	const navigate = useNavigate();
 	const changeImage = (imageName) => {
 		if (imageName == "contactButton") {
 			if (contactImageState == false) {
-			document.getElementById("contactButton").src = contactimagegradient;
+			document.getElementById("contactButton").src = contactfolderopen;
 			setContantImageState(true);
 			}
 		else {
-			document.getElementById("contactButton").src = contactimage;
+			document.getElementById("contactButton").src = contactfolderclosed;
 			setContantImageState(false);
 
 			}
 		}
-		else if (imageName == "shopButton") {
-			if (shopImageState == false) {
-			document.getElementById("shopButton").src = shopimagegradient;
-			setShopImageState(true);
+		else if (imageName == "homeButton") {
+			if (homeImageState == false) {
+			document.getElementById("homeButton").src = homefolderopened;
+			setHomeImageState(true);
 			}
 		else {
-			document.getElementById("shopButton").src = shopimage;
-			setShopImageState(false);
+			document.getElementById("homeButton").src = homefolderclosed;
+			setHomeImageState(false);
 
 			}
 		}
 		else if  (imageName == "aboutUsButton") {
 			if (aboutUsImageState == false) {
-			document.getElementById("aboutUsButton").src = aboutimagegradient;
+			document.getElementById("aboutUsButton").src = aboutusfolderopened;
 			setAboutUsImageState(true);
 			}
 		else {
-			document.getElementById("aboutUsButton").src = aboutimage;
+			document.getElementById("aboutUsButton").src = aboutusfolderclosed;
 			setAboutUsImageState(false);
 
 			}
@@ -145,6 +153,31 @@ const Shop = () => {
 	
   return (
     <Container>
+	  <img src={homefolderclosed}id="homeButton" alt="home image" onClick={() => {
+	  changeImage("homeButton");
+	  setTimeout(function(){
+		  navigate('/');
+
+	  }, 700); 
+  }}
+		style={{
+		width: '13%',
+			   "marginLeft": '-20px',
+			   "marginTop": '5px',
+      	}}/>
+	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton")}}
+		style={{
+		width: '22%',
+		"marginTop": '2px',
+      	}}
+		align="right"/>
+		<img src={aboutusfolderclosed}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton")}}
+		style={{
+		width: '23%',
+		"marginTop": '5px',
+
+      	}}
+		align="left"/>
 	    <header>
 	  	<p>{information}</p>
 	  	<WelcomeImage src={welcomeimage} alt="poster"/>

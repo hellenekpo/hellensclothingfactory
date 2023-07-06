@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 import './Home.css';
 import { useState } from 'react';
-import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
@@ -14,13 +13,14 @@ import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
 import welcomeimage from './images/welcomeimage.png'
-import aboutimage from './images/aboutusimage.png'
-import shopimage from './images/shopimage.png'
-import contactimage from './images/contactimage.png'
-import aboutimagegradient from './images/aboutusimagegradient.png'
-import shopimagegradient from './images/shopimagegradient.png'
-import contactimagegradient from './images/contactimagegradient.png'
+import aboutusfolderopened from './images/aboutusfolderopened.png'
+import shopfolderclosed from './images/shopfolderclosed.png'
+import contactfolderopen from './images/contactfolderopen.png'
+import aboutusfolderclosed from './images/aboutusfolderclosed.png'
+import shopfolderopened from './images/shopfolderopened.png'
+import contactfolderclosed from './images/contactfolderclosed.png'
 import config from './config.json'
+import {Routes, Route, useNavigate} from 'react-router-dom';
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
@@ -32,12 +32,7 @@ const Poster = styled.img`
 width: 30%;
 display: block;
 margin-top: 70px;
-  margin-left: auto;
-  margin-right: auto;
-	border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
+  margin-right: 50%;
 `;
 
 
@@ -62,36 +57,37 @@ const Home = () => {
 	const [contactImageState, setContantImageState] = useState(false);
 	const [aboutUsImageState, setAboutUsImageState] = useState(false);
 	const [shopImageState, setShopImageState] = useState(false);
+	const navigate = useNavigate();
 	const changeImage = (imageName) => {
 		if (imageName == "contactButton") {
 			if (contactImageState == false) {
-			document.getElementById("contactButton").src = contactimagegradient;
+			document.getElementById("contactButton").src = contactfolderopen;
 			setContantImageState(true);
 			}
 		else {
-			document.getElementById("contactButton").src = contactimage;
+			document.getElementById("contactButton").src = contactfolderclosed;
 			setContantImageState(false);
 
 			}
 		}
 		else if (imageName == "shopButton") {
 			if (shopImageState == false) {
-			document.getElementById("shopButton").src = shopimagegradient;
+			document.getElementById("shopButton").src = shopfolderopened;
 			setShopImageState(true);
 			}
 		else {
-			document.getElementById("shopButton").src = shopimage;
+			document.getElementById("shopButton").src = shopfolderclosed;
 			setShopImageState(false);
 
 			}
 		}
 		else if  (imageName == "aboutUsButton") {
 			if (aboutUsImageState == false) {
-			document.getElementById("aboutUsButton").src = aboutimagegradient;
+			document.getElementById("aboutUsButton").src = aboutusfolderopened;
 			setAboutUsImageState(true);
 			}
 		else {
-			document.getElementById("aboutUsButton").src = aboutimage;
+			document.getElementById("aboutUsButton").src = aboutusfolderclosed;
 			setAboutUsImageState(false);
 
 			}
@@ -155,21 +151,39 @@ const Home = () => {
 	
   return (
     <Container>
-	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage("shopButton")}}
+	  <img src={shopfolderclosed}id="shopButton" alt="shop image" onClick={() => {
+	  changeImage("shopButton");
+	  setTimeout(function(){
+		  navigate('/shop');
+
+	  }, 700); 
+  }}
 		style={{
 		width: '13%',
 			   "marginLeft": '-20px',
+			   "marginTop": '5px',
       	}}/>
-	  	<img src={contactimage}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton")}}
+	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton");
+		setTimeout(function(){
+		  navigate('/contact');
+
+	  }, 700); 
+	}}
 		style={{
-		width: '20%',
-		"marginTop": '0px',
+		width: '22%',
+		"marginTop": '2px',
       	}}
 		align="right"/>
-		<img src={aboutimage}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton")}}
+		<img src={aboutusfolderclosed}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton");
+		setTimeout(function(){
+		  navigate('/aboutus');
+
+	  }, 700);
+																	
+	}}
 		style={{
 		width: '23%',
-		"marginTop": '0px',
+		"marginTop": '5px',
 
       	}}
 		align="left"/>
