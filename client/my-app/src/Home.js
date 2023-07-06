@@ -6,10 +6,15 @@ import { desktop, tablet, mobile } from './responsive';
 import { Link } from 'react-router-dom'
 import HomeNav from './HomeNav';
 import Slide from './Slide.js';
+import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
+import { IconButton } from "rsuite";
 import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
 import welcomeimage from './images/welcomeimage.png'
+import aboutimage from './images/aboutusimage.png'
+import shopimage from './images/shopimage.png'
+import contactimage from './images/contactimage.png'
 import config from './config.json' 
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
@@ -23,8 +28,8 @@ const PortFolio= styled.div`
     margin-top: 80px;
 `;
 const Poster = styled.img`
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
 	border-top: 10px solid #fc20a5;
     border-bottom: 10px solid #fc20a5;
 	border-left: 10px solid #fc20a5;
@@ -35,8 +40,8 @@ const Poster = styled.img`
 `;
 
 const Poster1 = styled.img`
-width: 30%;
-    height: 30%;
+width: 50%;
+    height: 50%;
 display: block;
   margin-left: auto;
   margin-right: auto;
@@ -52,8 +57,8 @@ border-top: 10px solid #fc20a5;
 `;
 
 const Poster2 = styled.img`
-width: 30%;
-    height: 30%;
+width: 50%;
+    height: 50%;
 display: block;
   margin-left: auto;
   margin-right: auto;
@@ -67,8 +72,8 @@ border-top: 10px solid #fc20a5;
     ${mobile({display: "none",})}
 `;
 const Poster3 = styled.img`
-width: 30%;
-    height: 30%;
+width: 50%;
+    height: 50%;
 display: block;
   margin-left: auto;
   margin-right: auto;
@@ -194,6 +199,18 @@ const Home = () => {
 		Buy this item!
 		</button>
 	  	</header>
+		<img src={contactimage}id="contactButton" alt="my image"
+		style={{
+		width: '100%',						   
+      	}}/>
+		<img src={aboutimage}id="aboutUsButton"alt="my image" style={{
+		width: '100%',						   
+      	}}/>
+		<img src={shopimage}id="shopButton"alt="my image"
+		style={{
+		width: '75%',						   
+      	}}/>	
+
         <Slide />
 
     </Container>
