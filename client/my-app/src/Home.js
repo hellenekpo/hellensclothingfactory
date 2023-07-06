@@ -29,7 +29,7 @@ const PortFolio= styled.div`
 const Poster = styled.img`
 width: 30%;
 display: block;
-margin-top: 200px;
+margin-top: 70px;
   margin-left: auto;
   margin-right: auto;
 	border-top: 10px solid #fc20a5;
