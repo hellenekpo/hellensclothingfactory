@@ -58,15 +58,41 @@ const Home = () => {
 	const [information, setInformation] = useState("heyyyy");
 	const [purchases, setPurchases] = useState(-1);
 	const [contactImageState, setContantImageState] = useState(false);
-	const changeImage = () => {
-		if (contactImageState == false) {
+	const [aboutUsImageState, setAboutUsImageState] = useState(false);
+	const [shopImageState, setShopImageState] = useState(false);
+	const changeImage = (imageName) => {
+		if (imageName == "contactButton") {
+			if (contactImageState == false) {
 			document.getElementById("contactButton").src = contactimagegradient;
 			setContantImageState(true);
-		}
+			}
 		else {
 			document.getElementById("contactButton").src = contactimage;
 			setContantImageState(false);
 
+			}
+		}
+		else if (imageName == "shopButton") {
+			if (shopImageState == false) {
+			document.getElementById("shopButton").src = shopimagegradient;
+			setShopImageState(true);
+			}
+		else {
+			document.getElementById("shopButton").src = shopimage;
+			setShopImageState(false);
+
+			}
+		}
+		else if  (imageName == "aboutUsButton") {
+			if (aboutUsImageState == false) {
+			document.getElementById("aboutUsButton").src = aboutimagegradient;
+			setAboutUsImageState(true);
+			}
+		else {
+			document.getElementById("aboutUsButton").src = aboutimage;
+			setAboutUsImageState(false);
+
+			}
 		}
 		
 	}
@@ -126,7 +152,7 @@ const Home = () => {
 	}
   return (
     <Container>
-	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage()}}
+	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage("shopButton")}}
 		style={{
 		width: '13%',
 		"borderTop": '10px solid #fc20a5',
@@ -134,7 +160,7 @@ const Home = () => {
 		"borderLeft": '10px solid #fc20a5',
 		"borderRight": '10px solid #fc20a5',
       	}}/>
-	  	<img src={contactimage}id="contactButton" alt="contact image" onClick={() => {changeImage()}}
+	  	<img src={contactimage}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton")}}
 		style={{
 		width: '20%',
 		"marginTop": '0px',
@@ -144,7 +170,7 @@ const Home = () => {
 		"borderRight": '10px solid #fc20a5',
       	}}
 		align="right"/>
-		<img src={aboutimage}id="aboutButton" alt="about image" onClick={() => {changeImage()}}
+		<img src={aboutimage}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton")}}
 		style={{
 		width: '23%',
 		"marginTop": '0px',
