@@ -55,7 +55,7 @@ const WelcomeImage = styled.img`
 
 
 const Home = () => {
-	const [information, setInformation] = useState("heyyyy");
+	const [information, setInformation] = useState("");
 	const [purchases, setPurchases] = useState(-1);
 	const [contactImageState, setContantImageState] = useState(false);
 	const [aboutUsImageState, setAboutUsImageState] = useState(false);
