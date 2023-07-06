@@ -14,12 +14,6 @@ import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
 import welcomeimage from './images/welcomeimage.png'
-import aboutimage from './images/aboutusimage.png'
-import shopimage from './images/shopimage.png'
-import contactimage from './images/contactimage.png'
-import aboutimagegradient from './images/aboutusimagegradient.png'
-import shopimagegradient from './images/shopimagegradient.png'
-import contactimagegradient from './images/contactimagegradient.png'
 import config from './config.json'
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
@@ -52,11 +46,7 @@ const WelcomeImage = styled.img`
     ${tablet({display:"block"})}
     ${mobile({display: "block",})}
 `;
-
-
-
-
-const Home = () => {
+const Shop = () => {
 	const [information, setInformation] = useState("");
 	const [purchases, setPurchases] = useState(-1);
 	const [contactImageState, setContantImageState] = useState(false);
@@ -155,28 +145,6 @@ const Home = () => {
 	
   return (
     <Container>
-	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage("shopButton")}}
-		style={{
-		width: '13%',
-			   "marginLeft": '-20px',
-      	}}/>
-	  	<img src={contactimage}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton")}}
-		style={{
-		width: '20%',
-		"marginTop": '0px',
-      	}}
-		align="right"/>
-		<img src={aboutimage}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton")}}
-		style={{
-		width: '23%',
-		"marginTop": '0px',
-
-      	}}
-		align="left"/>
-		
-        <PortFolio>
-          <Poster src={newlogo} alt="poster"/>
-        </PortFolio>
 	    <header>
 	  	<p>{information}</p>
 	  	<WelcomeImage src={welcomeimage} alt="poster"/>
@@ -211,10 +179,8 @@ const Home = () => {
 		</button>
 	  	</header>	
 
-        <Slide />
-
     </Container>
   )
 }
 
-export default Home
+export default Shop
