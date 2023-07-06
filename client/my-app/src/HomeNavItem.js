@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 
 const NavItem = styled.div`
+cursor: none;
    height: 450px;
    margin-top: 20px;
    display: flex;
@@ -15,6 +16,7 @@ const NavItem = styled.div`
    } 
 `;
 const NavSpan= styled.span`
+cursor: none;
    display: none;
    font-weight: 300;
    font-size: 35px;
@@ -26,6 +28,7 @@ const NavSpan= styled.span`
    } 
 `;
 const NavTitle = styled.div`
+cursor: none;
    height: 60px;
    //border: 1px solid;
    display: flex;
@@ -48,6 +51,7 @@ const NavTitle = styled.div`
    } 
 `;
 const NavSubBox = styled.div`
+cursor: none;
    width: 195px;
    margin-left: 70px;
    margin-top: auto;
@@ -58,12 +62,14 @@ const NavSubBox = styled.div`
    }
 `;
 const NavList = styled.ul`
+cursor: none;
    list-style: none;
    /* @media only screen and (min-width: 575px){
        display: ${props=>props.show?"block":"none"};
    } */
 `;
 const NavListItem = styled.li`
+cursor: none;
    font-size: 14px;
    font-weight: bold;
    line-height: 26px;

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import HomeNavItem from './HomeNavItem'
 
 const HomeNavBar=styled.div`
-   cursor: e-resize;
+   cursor: none;
    padding-bottom: 20px;
    border: none;
    display: flex;

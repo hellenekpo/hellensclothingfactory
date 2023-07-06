@@ -13,7 +13,9 @@
     "@rsuite/icons": "^1.0.2",
     "aws-amplify": "^5.3.3",
     "aws-sdk": "^2.1410.0",
+    "framer-motion": "^10.12.18",
     "rsuite": "^5.36.0",
-    "styled-components": "^5.3.8"
+    "styled-components": "^5.3.8",
+    "yarn": "^1.22.19"
   }
 }

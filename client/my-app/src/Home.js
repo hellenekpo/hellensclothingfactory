@@ -1,5 +1,7 @@
 import React from 'react'
+import './Home.css';
 import { useState } from 'react';
+import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
@@ -15,10 +17,12 @@ import welcomeimage from './images/welcomeimage.png'
 import aboutimage from './images/aboutusimage.png'
 import shopimage from './images/shopimage.png'
 import contactimage from './images/contactimage.png'
+import cursor from './images/cursor.png'
 import aboutimagegradient from './images/aboutusimagegradient.png'
 import shopimagegradient from './images/shopimagegradient.png'
 import contactimagegradient from './images/contactimagegradient.png'
-import config from './config.json' 
+import config from './config.json'
+import useMousePosition from "./useMousePosition";
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 
@@ -57,6 +61,7 @@ const WelcomeImage = styled.img`
 const Home = () => {
 	const [information, setInformation] = useState("");
 	const [purchases, setPurchases] = useState(-1);
+	const {clientX, clientY} = useMousePosition();
 	const [contactImageState, setContantImageState] = useState(false);
 	const [aboutUsImageState, setAboutUsImageState] = useState(false);
 	const [shopImageState, setShopImageState] = useState(false);
@@ -150,8 +155,33 @@ const Home = () => {
 			console.log(err);
 		})
 	}
+	
   return (
     <Container>
+	  <div 
+      style={{ 
+        position: "fixed",
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 9999,
+        pointerEvents: "none"
+      }}
+    >
+      <img
+        width={50}
+        height={75}
+	  	src = {cursor}
+        viewBox="0 0 50 50"
+        style={{
+          position: "absolute",
+          left: clientX,
+          top: clientY,
+          transform: "translate(-25%, -20%)",
+        }}
+      />
+    </div>
 	  <img src={shopimage}id="shopButton" alt="shop image" onClick={() => {changeImage("shopButton")}}
 		style={{
 		width: '13%',
