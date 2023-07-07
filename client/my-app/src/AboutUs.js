@@ -14,6 +14,12 @@ import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
 import welcomeimage from './images/welcomeimage.png'
+import aboutusfolderopened from './images/aboutusfolderopened.png'
+import shopfolderclosed from './images/shopfolderclosed.png'
+import contactfolderopen from './images/contactfolderopen.png'
+import aboutusfolderclosed from './images/aboutusfolderclosed.png'
+import shopfolderopened from './images/shopfolderopened.png'
+import contactfolderclosed from './images/contactfolderclosed.png'
 import config from './config.json'
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();

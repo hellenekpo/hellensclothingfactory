@@ -13,6 +13,8 @@ import contactfolderopen from './images/contactfolderopen.png'
 import aboutusfolderclosed from './images/aboutusfolderclosed.png'
 import homefolderopened from './images/homefolderopened.png'
 import contactfolderclosed from './images/contactfolderclosed.png'
+import placeholder1 from './images/placeholder1.png'
+import placeholder2 from './images/placeholder2.png'
 import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
@@ -28,17 +30,14 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 const Container = styled.div`
 `;
 const PortFolio= styled.div`
+display: flex;
+  justify-content: space-between;
 `;
 const Poster = styled.img`
 width: 30%;
 display: block;
-margin-top: 70px;
-  margin-left: auto;
   margin-right: auto;
-	border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
+  margin-left: auto;
 `;
 
 
@@ -60,6 +59,12 @@ const Shop = () => {
 	const [aboutUsImageState, setAboutUsImageState] = useState(false);
 	const [homeImageState, setHomeImageState] = useState(false);
 	const navigate = useNavigate();
+	const changeToPlaceHolder2 = (placeHolder) => {
+		document.getElementById(placeHolder).src = placeholder2;
+	}
+	const changeToPlaceHolder1 = (placeHolder) => {
+		document.getElementById(placeHolder).src = placeholder1;
+	}
 	const changeImage = (imageName) => {
 		if (imageName == "contactButton") {
 			if (contactImageState == false) {
@@ -161,17 +166,27 @@ const Shop = () => {
 	  }, 700); 
   }}
 		style={{
-		width: '13%',
+		width: '14.5%',
 			   "marginLeft": '-20px',
 			   "marginTop": '5px',
-      	}}/>
-	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton")}}
+      	}}
+		align="middle"/>
+	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton");
+		setTimeout(function(){
+		  navigate('/shop');
+	  }, 700); 
+		}}
 		style={{
 		width: '22%',
 		"marginTop": '2px',
       	}}
 		align="right"/>
-		<img src={aboutusfolderclosed}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton")}}
+		<img src={aboutusfolderclosed}id="aboutUsButton" alt="about image" onClick={() => {
+			changeImage("aboutUsButton");
+			setTimeout(function(){
+		  	navigate('/aboutus');
+	  		}, 700); 
+		}}
 		style={{
 		width: '23%',
 		"marginTop": '5px',
@@ -180,38 +195,45 @@ const Shop = () => {
 		align="left"/>
 	    <header>
 	  	<p>{information}</p>
-	  	<WelcomeImage src={welcomeimage} alt="poster"/>
-	  	<button onClick={() => {
-	  axios({
-		  method: 'GET',
-		  url: "https://0zcy0plu37.execute-api.us-east-1.amazonaws.com/staging/backend/homeButton"
-	  })
-	  .then((response) => {
-		  console.log("This is something",response);
-		  setInformation(response.data.success);
-		  
-	  }).catch((error) => {
-		  if (error.response) {
-			  console.log(error.response)
-		  	  console.log(error.response.status)
-		      constoe.log(error.response.headers)
-		  }
-	  })
-  }}>
-      		Click me!
-    	</button>
-	<button onClick={() => {
-					 fetchData('clothingitems')
-					}}>
-		Fetch data from tables!
-		</button>
-<button onClick={() => {
-					 updatePurchases("clothingitems", "1", "bubblegumblush")
-					}}>
-		Buy this item!
-		</button>
-	  	</header>	
+	  
+	  	</header>
+<PortFolio>
+          <Poster src={placeholder1} id="placeFirstImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeFirstImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeFirstImage");
+								   }}/>
+		  <Poster src={placeholder1} id="placeSecondImage" alt="poster"
+			onClick={() => {navigate('/shop/2');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeSecondImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeSecondImage");
+								   }}/>
+		<Poster src={placeholder1} id="placeThirdImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeThirdImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeThirdImage");
+								   }}/>
+        </PortFolio>
+<PortFolio>
+          <Poster src={placeholder1} id="placeFourthImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeFourthImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeFourthImage");
+								   }}/>
 
+</PortFolio>
     </Container>
   )
 }

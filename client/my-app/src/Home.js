@@ -32,7 +32,7 @@ const Poster = styled.img`
 width: 30%;
 display: block;
 margin-top: 70px;
-  margin-right: 50%;
+margin-right: 50%;
 `;
 
 
@@ -178,8 +178,7 @@ const Home = () => {
 		setTimeout(function(){
 		  navigate('/aboutus');
 
-	  }, 700);
-																	
+	  }, 700);	
 	}}
 		style={{
 		width: '23%',
@@ -191,9 +190,9 @@ const Home = () => {
         <PortFolio>
           <Poster src={newlogo} alt="poster"/>
         </PortFolio>
+		
 	    <header>
 	  	<p>{information}</p>
-	  	<WelcomeImage src={welcomeimage} alt="poster"/>
 	  	<button onClick={() => {
 	  axios({
 		  method: 'GET',
