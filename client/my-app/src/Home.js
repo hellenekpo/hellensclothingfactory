@@ -192,6 +192,7 @@ const Home = () => {
         </PortFolio>
 		
 	    <header>
+			  <WelcomeImage src={welcomeimage} alt="poster"/>
 	  	<p>{information}</p>
 	  	<button onClick={() => {
 	  axios({
