@@ -296,6 +296,7 @@ const Shop = () => {
 									changeToPlaceHolder1("placeNinthImage");
 								   }}/>
 
+
 </PortFolio>
     </Container>
   )
