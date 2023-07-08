@@ -16,7 +16,7 @@ function App() {
     <div className="App">
 	  <Routes>
 	  	<Route path='/' element={<Home/>} />
-	    <Route path= '/shop' element = {<Shop/>} />
+	    <Route exact path= '/shop' element = {<Shop/>} />
 		<Route path= '/aboutus' element = {<AboutUs/>} />
 	  	<Route path= '/contact' element = {<Contact/>} />
 	  	<Route path="/shop/1" element = {<ShopDisplay name = "bubblegumblush" id="1" src = {bubblegumblush}/>} />

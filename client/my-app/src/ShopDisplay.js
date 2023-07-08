@@ -47,7 +47,10 @@ const ShopDisplay = (information) => {
 	  <div className="hellen"
 	  style={{
 	  minHeight: '100vh',
-        backgroundColor: (information.name == "cedarchampagne") ? '#EADDCA' : '#ffd5ef',
+        backgroundColor: (information.name == "cedarchampagne" ||
+  						  information.name == "shamrockspring" ||
+                          information.name == "hickoryharvest" ||
+                          information.name == "brunettebrunch") ? '#afe1af' : '#ffd5ef',
       }}> 
 	  Hellen is here!
 	  {information.name}
