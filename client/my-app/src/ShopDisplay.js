@@ -39,11 +39,16 @@ margin-top: 70px;
 
 const ShopDisplay = (information) => {
 	console.log("We are in here");
+	console.log(information)
 	console.log(information.name, "The name of the item");
 	console.log(information.id, "The id of the item");
 	console.log(information.src, "This the src");
   return (
-	  <div className="hellen">
+	  <div className="hellen"
+	  style={{
+	  minHeight: '100vh',
+        backgroundColor: (information.name == "cedarchampagne") ? '#EADDCA' : '#ffd5ef',
+      }}> 
 	  Hellen is here!
 	  {information.name}
 	  <PortFolio>
