@@ -29,10 +29,14 @@ const Container = styled.div`
 const PortFolio= styled.div`
 `;
 const Poster = styled.img`
-width: 30%;
-display: block;
-margin-top: 70px;
-margin-right: 50%;
+width: 40%;
+    height: 40%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+${desktop({display: "block",})}
+    ${tablet({display:"block"})}
+    ${mobile({display: "block",})}
 `;
 
 
@@ -162,7 +166,8 @@ const Home = () => {
 		width: '13%',
 			   "marginLeft": '-20px',
 			   "marginTop": '5px',
-      	}}/>
+      	}}
+		align="middle"/>
 	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton");
 		setTimeout(function(){
 		  navigate('/contact');
@@ -186,14 +191,12 @@ const Home = () => {
 
       	}}
 		align="left"/>
-		
-        <PortFolio>
-          <Poster src={newlogo} alt="poster"/>
-        </PortFolio>
-		
 	    <header>
+			<p>{""}</p>
+		</header>
+          <Poster src={newlogo} alt="poster"/>
 			  <WelcomeImage src={welcomeimage} alt="poster"/>
-	  	<p>{information}</p>
+				  <WelcomeImage src={welcomeimage} alt="poster"/>
 	  	<button onClick={() => {
 	  axios({
 		  method: 'GET',
@@ -223,9 +226,6 @@ const Home = () => {
 					}}>
 		Buy this item!
 		</button>
-	  	</header>	
-
-        <Slide />
 
     </Container>
   )

@@ -232,6 +232,49 @@ const Shop = () => {
 						onMouseOut={() => {
 									changeToPlaceHolder1("placeFourthImage");
 								   }}/>
+<Poster src={placeholder1} id="placeFifthImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeFifthImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeFifthImage");
+								   }}/>
+<Poster src={placeholder1} id="placeSixthImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeSixthImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeSixthImage");
+								   }}/>
+
+</PortFolio>
+<PortFolio>
+          <Poster src={placeholder1} id="placeSeventhImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeSeventhImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeSeventhImage");
+								   }}/>
+<Poster src={placeholder1} id="placeEighthImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeEighthImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeEighthImage");
+								   }}/>
+<Poster src={placeholder1} id="placeNinthImage" alt="poster"
+			onClick={() => {navigate('/shop/1');
+					}} onMouseOver={() => {
+									changeToPlaceHolder2("placeNinthImage");
+								   }}
+						onMouseOut={() => {
+									changeToPlaceHolder1("placeNinthImage");
+								   }}/>
 
 </PortFolio>
     </Container>
