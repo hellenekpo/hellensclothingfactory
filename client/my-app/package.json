@@ -13,7 +13,12 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@rsuite/icons": "^1.0.2",
+    "framer-motion": "^10.12.18",
+    "rsuite": "^5.36.0",
+    "styled-components": "^5.3.8",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
