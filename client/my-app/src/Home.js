@@ -168,80 +168,10 @@ const Home = () => {
 	
   return (
     <Container>
-	  <img src={shopfolderclosed}id="shopButton" alt="shop image" onClick={() => {
-	  changeImage("shopButton");
-	  setTimeout(function(){
-		  navigate('/shop');
-
-	  }, 700); 
-  }}
-		style={{
-		width: '13%',
-			   "marginLeft": '-20px',
-			   "marginTop": '5px',
-      	}}
-		align="middle"/>
-	  	<img src={contactfolderclosed}id="contactButton" alt="contact image" onClick={() => {changeImage("contactButton");
-		setTimeout(function(){
-		  navigate('/contact');
-
-	  }, 700); 
-	}}
-		style={{
-		width: '22%',
-		"marginTop": '2px',
-      	}}
-		align="right"/>
-		<img src={aboutusfolderclosed}id="aboutUsButton" alt="about image" onClick={() => {changeImage("aboutUsButton");
-		setTimeout(function(){
-		  navigate('/aboutus');
-
-	  }, 700);	
-	}}
-		style={{
-		width: '23%',
-		"marginTop": '5px',
-
-      	}}
-		align="left"/>
 	    <header>
-			<p>{""}</p>
 		</header>
 		<ComingSoon src={newlogo1} alt="comingsoon"/>
 		<ComingSoon src={signup} alt="comingsoon2"/>
-          <Poster src={newlogo} alt="poster"/>
-			  <WelcomeImage src={welcomeimage} alt="poster"/>
-				  <WelcomeImage src={welcomeimage} alt="poster"/>
-	  	<button onClick={() => {
-	  axios({
-		  method: 'GET',
-		  url: "https://0zcy0plu37.execute-api.us-east-1.amazonaws.com/staging/backend/homeButton"
-	  })
-	  .then((response) => {
-		  console.log("This is something",response);
-		  setInformation(response.data.success);
-		  
-	  }).catch((error) => {
-		  if (error.response) {
-			  console.log(error.response)
-		  	  console.log(error.response.status)
-		      constoe.log(error.response.headers)
-		  }
-	  })
-  }}>
-      		Click me!
-    	</button>
-	<button onClick={() => {
-					 fetchData('clothingitems')
-					}}>
-		Fetch data from tables!
-		</button>
-<button onClick={() => {
-					 updatePurchases("clothingitems", "1", "bubblegumblush")
-					}}>
-		Buy this item!
-		</button>
-
     </Container>
   )
 }
