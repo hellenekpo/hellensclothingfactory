@@ -16,6 +16,8 @@ import welcomeimage from './images/welcomeimage.png'
 import aboutusfolderopened from './images/aboutusfolderopened.png'
 import shopfolderclosed from './images/shopfolderclosed.png'
 import contactfolderopen from './images/contactfolderopen.png'
+import newlogo1 from './images/newlogo1.png'
+import signup from './images/signup.png'
 import aboutusfolderclosed from './images/aboutusfolderclosed.png'
 import shopfolderopened from './images/shopfolderopened.png'
 import contactfolderclosed from './images/contactfolderclosed.png'
@@ -39,6 +41,17 @@ ${desktop({display: "block",})}
     ${mobile({display: "block",})}
 `;
 
+    const ComingSoon = styled.img`
+	width: 70%;
+    height: 70%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+
+    ${desktop({display: "block",})}
+    ${tablet({display:"block"})}
+    ${mobile({display: "block",})}
+`;
 
 const WelcomeImage = styled.img`
 	width: 70%;
@@ -194,6 +207,8 @@ const Home = () => {
 	    <header>
 			<p>{""}</p>
 		</header>
+		<ComingSoon src={newlogo1} alt="comingsoon"/>
+		<ComingSoon src={signup} alt="comingsoon2"/>
           <Poster src={newlogo} alt="poster"/>
 			  <WelcomeImage src={welcomeimage} alt="poster"/>
 				  <WelcomeImage src={welcomeimage} alt="poster"/>
