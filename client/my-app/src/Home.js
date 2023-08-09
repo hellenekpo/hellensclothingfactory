@@ -54,7 +54,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             )}
             <SignUpForUpdates src={signupfor} alt="comingsoon" style={{
                 width: "100%",
-                transform: "translate(-50%,-175%)",
+                transform: "translate(-45%,-175%)",
                 display: "inline-block",
                 position: "absolute",
             }}/>
@@ -81,7 +81,8 @@ const CustomForm = ({ status, message, onValidated }) => {
                 Email Address</p>
             <input
                 id="inputID"
-                style={{ fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ borderWidth: 5,
+                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (email = node)}
                 type="email"
                 placeholder="janedoe@example.com"
@@ -93,7 +94,8 @@ const CustomForm = ({ status, message, onValidated }) => {
             >Birthday</p>
             <input
                 id="inputID"
-                style={{ fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ borderWidth: 5,
+                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (birthday = node)}
                 type="text"
                 placeholder="01/10"
