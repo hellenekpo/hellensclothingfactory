@@ -54,11 +54,10 @@ const CustomForm = ({ status, message, onValidated }) => {
             )}
             <SignUpForUpdates src={signupfor} alt="comingsoon" style={{
                 width: "100%",
-                transform: "translate(-45%,-175%)",
+                transform: "translate(-45%,-215%)",
                 display: "inline-block",
                 position: "absolute",
             }}/>
-            <br /><br /><br /><br />
             <br /><br /><br /><br />
             <p
                 style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
