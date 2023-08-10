@@ -54,11 +54,11 @@ const CustomForm = ({ status, message, onValidated }) => {
             )}
             <SignUpForUpdates src={signupfor} alt="comingsoon" style={{
                 width: "100%",
-                transform: "translate(-45%,-215%)",
+                transform: "translate(-45%,-245%)",
                 display: "inline-block",
                 position: "absolute",
             }}/>
-            <br /><br /><br /><br />
+            <br /><br />
             <p
                 style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
@@ -123,7 +123,7 @@ const ComingSoon = styled.img`
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-150%);
+  transform:translate(-50%,-170%);
 
     ${desktop({display: "block",})}
     ${tablet({display:"block"})}
