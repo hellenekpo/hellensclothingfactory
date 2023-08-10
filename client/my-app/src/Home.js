@@ -3,15 +3,17 @@ import './Home.css';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import * as AWS from 'aws-sdk';
-import newlogo1 from './images/newlogo1.png'
-import signup from './images/signup.png'
 import helene from './images/helene.png'
+import submitlogo from './images/submitlogo.png'
+import submitlogohover from './images/submitlogohover.png'
 import signupfor from './images/signupfor.png'
 import config from './config.json'
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
 import { render } from "react-dom";
 import MailchimpSubscribe from "./MailchimpSubscribe";
+import placeholder2 from "./images/placeholder2.png";
+import placeholder4 from "./images/placeholder4.png";
 
 const CustomForm = ({ status, message, onValidated }) => {
     let email, name, birthday;
@@ -54,11 +56,10 @@ const CustomForm = ({ status, message, onValidated }) => {
             )}
             <SignUpForUpdates src={signupfor} alt="comingsoon" style={{
                 width: "100%",
-                transform: "translate(-45%,-245%)",
+                transform: "translate(-50%,-300%)",
                 display: "inline-block",
                 position: "absolute",
             }}/>
-            <br /><br />
             <p
                 style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
@@ -67,6 +68,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             <input
                 id="inputID"
                 style={{
+                    transform: "translate(-3%,-0%)",
                     borderWidth: 5,
                     borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (name = node)}
@@ -80,7 +82,9 @@ const CustomForm = ({ status, message, onValidated }) => {
                 Email Address</p>
             <input
                 id="inputID"
-                style={{ borderWidth: 5,
+                style={{
+                    transform: "translate(-3%,-0%)",
+                    borderWidth: 5,
                     borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (email = node)}
                 type="email"
@@ -90,10 +94,27 @@ const CustomForm = ({ status, message, onValidated }) => {
             <p
                 style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
+            >Phone Number</p>
+            <input
+                id="inputID"
+                style={{
+                    transform: "translate(-3%,-0%)",
+                    borderWidth: 5,
+                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                ref={node => (birthday = node)}
+                type="text"
+                placeholder="(+1) 832-000-0000"
+            />
+            <br />
+            <p
+                style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
+
             >Birthday</p>
             <input
                 id="inputID"
-                style={{ borderWidth: 5,
+                style={{
+                    transform: "translate(-3%,-0%)",
+                    borderWidth: 5,
                     borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (birthday = node)}
                 type="text"
@@ -102,10 +123,20 @@ const CustomForm = ({ status, message, onValidated }) => {
             <br />
             <br />
             <br />
-            <button style={{ transform: "translate(0%,-50%)", background: "#e62490", fontSize: "20px", padding: 5, fontFamily: "Lucida Console, Courier New, monospace, bold" }}
-                    onClick={submit}>
-                Submit
-            </button>
+            <SubmitLogo src={submitlogo} id="submitlogo" style={{
+                width: "50%",
+                transform: "translate(-48%,270%)",
+                display: "inline-block",
+                position: "absolute",
+                }}
+                        onMouseOut={() => {
+                            changeSubmitOnHover("submitlogo");
+                        }}
+                        onMouseOver={() => {
+                            changeSubmitOnHover("submitlogo");
+                        }}
+                onClick={submit}
+                />
         </Container2>
     );
 };
@@ -123,7 +154,7 @@ const ComingSoon = styled.img`
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-170%);
+  transform:translate(-50%,-210%);
 
     ${desktop({display: "block",})}
     ${tablet({display:"block"})}
@@ -135,14 +166,14 @@ const SignUpForUpdates = styled.img`
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-0%);
+  transform:translate(-50%,-50%);
 
     ${desktop({display: "block",})}
     ${tablet({display:"block", width: "20%",})}
-    ${mobile({display: "block", width: "20%",})}
+    ${mobile({display: "block", maxWidth: "80%", })}
 `;
 
-const SignUpFor = styled.img`
+const SubmitLogo = styled.img`
   max-width:100%;
   max-height:40%;
   position:absolute;
@@ -150,12 +181,23 @@ const SignUpFor = styled.img`
   left:50%;
   transform:translate(-50%,-0%);
 
-    ${desktop({display: "block",})}
-    ${tablet({display:"block"})}
-    ${mobile({display: "block", width: "30%"})}
+  ${desktop({display: "block",})}
+  ${tablet({display:"block", width: "20%",})}
+  ${mobile({display: "block", width: "20%",})}
 `;
-
-
+let hover = false;
+const changeSubmitOnHover= (submit) => {
+    if (submit === "submitlogo") {
+        if (!hover) {
+            document.getElementById(submit).src = submitlogohover;
+            hover = true;
+        }
+        else {
+            document.getElementById(submit).src = submitlogo;
+            hover = false;
+        }
+    }
+}
 
 const Home = () => {
     const url =
