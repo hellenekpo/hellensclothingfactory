@@ -80,7 +80,7 @@ const CustomForm = ({ status, message, onValidated }) => {
                 position: "absolute",
             }}/>
             <p
-                style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:'#fd5392',  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
             >
                 Name</p>
@@ -89,14 +89,14 @@ const CustomForm = ({ status, message, onValidated }) => {
                 style={{
                     transform: "translate(-3%,-0%)",
                     borderWidth: 5,
-                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                    borderColor: '#fd5392', fontWeight: "bold", color:'#fd5392', padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (name = node)}
                 type="text"
                 placeholder="Jane Doe"
             />
             <br />
             <p
-                style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:'#fd5392',  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
             >
                 Email Address</p>
             <input
@@ -104,14 +104,14 @@ const CustomForm = ({ status, message, onValidated }) => {
                 style={{
                     transform: "translate(-3%,-0%)",
                     borderWidth: 5,
-                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                    borderColor: '#fd5392', fontWeight: "bold", color:'#fd5392', padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (email = node)}
                 type="email"
                 placeholder="janedoe@example.com"
             />
             <br />
             <p
-                style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:'#fd5392',  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
             >Phone Number</p>
             <input
@@ -122,14 +122,14 @@ const CustomForm = ({ status, message, onValidated }) => {
                 style={{
                     transform: "translate(-3%,-0%)",
                     borderWidth: 5,
-                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                    borderColor: '#fd5392', fontWeight: "bold", color:'#fd5392', padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (phoneNumber = node)}
                 type="tel"
                 placeholder="(832)000-0000"
             />
             <br />
             <p
-                style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:"#e62490",  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                style={{ transform: "translate(-5%, 0%)", fontWeight: "bold", color:'#fd5392',  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
             >Birthday</p>
             <input
@@ -138,7 +138,7 @@ const CustomForm = ({ status, message, onValidated }) => {
                 style={{
                     transform: "translate(-3%,-0%)",
                     borderWidth: 5,
-                    borderColor: 'hotpink', fontWeight: "bold", color:"#e62490", padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
+                    borderColor: '#fd5392', fontWeight: "bold", color:'#fd5392', padding: 5, height: "20px", width: "100%", fontSize: "15px", fontFamily: "Lucida Console, Courier New, monospace" }}
                 ref={node => (birthday = node)}
                 type="text"
                 placeholder="01/10"
