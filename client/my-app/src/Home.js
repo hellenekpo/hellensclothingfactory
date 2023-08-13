@@ -74,11 +74,6 @@ const CustomForm = ({ status, message, onValidated }) => {
                 />,
                 navigate('/aboutus')
             )}
-            <SignUpForUpdates src={signupfor} alt="comingsoon" style={{
-                width: "100%",
-                display: "inline-block",
-                position: "absolute",
-            }}/>
             <p
                 style={{ transform: "translate(-5%,0%)", fontWeight: "bold", color:'#fd5392',  height: "20px", width: "390px", fontSize: "20px", fontFamily: "Lucida Console, Courier New, monospace" }}
 
@@ -185,18 +180,16 @@ const ComingSoon = styled.img`
     ${mobile({display: "block",})}
 `;
 const SignUpForUpdates = styled.img`
-  max-width:100%;
-  max-height:40%;
+  max-width:50%;
+  max-height:20%;
   position:absolute;
   top:50%;
   left:50%;
-  transform: translate(-50%,-300%);
+  transform:translate(-50%,-95%);
 
-
-
-    ${desktop({display: "block", transform: "translate(-50%,-390%);"})}
-    ${tablet({display:"block", width: "20%", transform: "translate(-50%,-390%);"})}
-    ${mobile({display: "block", maxWidth: "80%", })}
+  ${desktop({display: "block",})}
+  ${tablet({display:"block"})}
+  ${mobile({display: "block",})}
 `;
 
 const SubmitLogo = styled.img`
@@ -231,6 +224,7 @@ const Home = () => {
   return (
     <Container>
 		<ComingSoon src={helene} alt="comingsoon"/>
+        <SignUpForUpdates src={signupfor} alt="signup"/>
         <MailchimpSubscribe
             url={url}
             render={({ subscribe, status, message }) => (
