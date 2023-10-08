@@ -18,16 +18,17 @@ const Container = styled.div`
 `;
 
 const ComingSoon = styled.img`
-  max-width:60%;
-  max-height:40%;
+  max-width:40%;
+  max-height:50%;
   position:fixed;
 
-
-
+${tablet({maxWidth: "20%"})}
+${desktop({maxWidth: "20%",})}
+${mobile({maxWidth: "35%"})}
 
 `;
 const SignUpForUpdates = styled.img`
-  max-width:50%;
+  max-width:40%;
   max-height:20%;
   position:absolute;
   top:50%;
