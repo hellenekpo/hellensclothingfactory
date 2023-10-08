@@ -18,13 +18,10 @@ const Container = styled.div`
 `;
 
 const ComingSoon = styled.img`
-  max-width:40%;
+  max-width:30%;
   max-height:50%;
   position:fixed;
 
-${tablet({maxWidth: "20%"})}
-${desktop({maxWidth: "20%",})}
-${mobile({maxWidth: "35%"})}
 
 `;
 const SignUpForUpdates = styled.img`
