@@ -25,7 +25,7 @@ const Helene = styled.img`
   max-width:23%;
   max-height:50%;
   position:fixed;
-  ${tablet({maxWidth:"40%",})}
+  ${tablet({maxWidth:"60%",})}
   ${mobile({maxWidth:"60%",})}
 
 
