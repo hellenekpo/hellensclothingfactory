@@ -6,7 +6,11 @@ import * as AWS from 'aws-sdk';
 import helene from './images/helene.png'
 import submitlogo from './images/submitlogo.png'
 import submitlogohover from './images/submitlogohover.png'
-import signupfor from './images/signupfor.png'
+import signupfor from './images/signupfor.png';
+import shop1 from './images/shop1.png';
+import catalog1 from './images/catalog1.png';
+import about1 from './images/about1.png';
+import contact1 from './images/contact1.png';
 import {useNavigate} from 'react-router-dom';
 import config from './config.json'
 AWS.config.update(config);
@@ -17,32 +21,61 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const ComingSoon = styled.img`
-  max-width:30%;
+const Helene = styled.img`
+  max-width:23%;
   max-height:50%;
   position:fixed;
+  ${tablet({maxWidth:"40%",})}
+  ${mobile({maxWidth:"60%",})}
 
 
 `;
-const SignUpForUpdates = styled.img`
-  max-width:40%;
+const Shop = styled.img`
+  max-width:12%;
   max-height:20%;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-95%);
+  position:fixed;
+  ${mobile({maxWidth:"40%",})}
+  ${tablet({maxWidth:"40%",})}
+  bottom: -1%;
+  left:0%;
 
-  ${desktop({display: "block",})}
-  ${tablet({display:"block"})}
-  ${mobile({display: "block",})}
 `;
-
+const AboutUs = styled.img`
+  max-width:22%;
+  max-height:20%;
+  position:fixed;
+  bottom: 0%;
+  ${mobile({maxWidth:"70%", left:"0%", bottom:"10%"})}
+  ${tablet({maxWidth:"70%", left:"0%", bottom:"10%"})}
+  left:22%;
+`;
+const Contact = styled.img`
+  max-width:18%;
+  max-height:20%;
+  position:fixed;
+  bottom: 0%;
+  ${mobile({maxWidth:"70%", left:"0%", bottom:"19%"})}
+  ${tablet({maxWidth:"70%", left:"0%", bottom:"19%"})}
+  right:26%;
+`;
+const Catalog = styled.img`
+  max-width:18%;
+  max-height:20%;
+  position:fixed;
+  ${mobile({maxWidth:"70%", left:"0%", bottom:"27%"})}
+  ${tablet({maxWidth:"70%", left:"0%", bottom:"27%"})}
+  bottom: -1.2%;
+  right:0%;
+`;
 
 const Home = () => {
   return (
     <Container>
-		<ComingSoon src={helene} alt="comingsoon"/>
-        <SignUpForUpdates src={signupfor} alt="signup"/>
+		<Helene src={helene} alt="logo"/>
+        <Shop src={shop1} alt="signup"/>
+        <AboutUs src={about1} alt="aboutus1"/>
+        <Contact src={contact1} alt="contact"/>
+        <Catalog src={catalog1} alt="catalog"/>
 
     </Container>
 
