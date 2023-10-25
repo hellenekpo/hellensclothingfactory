@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import * as AWS from 'aws-sdk';
 import helene from './images/helene.png'
+import dropgif3 from './images/dropgif3.gif'
 import submitlogo from './images/submitlogo.png'
 import submitlogohover from './images/submitlogohover.png'
 import signupfor from './images/signupfor.png';
@@ -68,10 +69,24 @@ const Catalog = styled.img`
   right:0%;
 `;
 
+const Drop = styled.img`
+  max-width:0%;
+  max-height:100%;
+  position:fixed;
+  ${desktop({maxWidth:"0",  top: "22%"})}
+  ${mobile({maxWidth:"80`%",  top: "12%"})}
+  ${tablet({maxWidth:"70%", top: "12%"})}
+ top: 30%;
+
+
+
+`;
+
 const Home = () => {
   return (
     <Container>
 		<Helene src={helene} alt="logo"/>
+		<Drop src={dropgif3} alt="drop"/>
         <Shop src={shop1} alt="signup"/>
         <AboutUs src={about1} alt="aboutus1"/>
         <Contact src={contact1} alt="contact"/>
