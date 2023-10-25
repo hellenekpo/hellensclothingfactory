@@ -74,8 +74,8 @@ const Drop = styled.img`
   max-height:100%;
   position:fixed;
   ${desktop({maxWidth:"0",  top: "22%"})}
-  ${mobile({maxWidth:"80%",  top: "12%"})}
-  ${tablet({maxWidth:"70%", top: "12%"})}
+  ${mobile({maxWidth:"85%",  top: "12%"})}
+  ${tablet({maxWidth:"65%", top: "12%"})}
  top: 30%;
 
 
