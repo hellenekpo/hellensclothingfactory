@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Helene = styled.img`
-  max-width:23%;
+  max-width:35%;
   max-height:50%;
   position:fixed;
   ${tablet({maxWidth:"60%",})}
