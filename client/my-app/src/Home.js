@@ -5,6 +5,7 @@ import { desktop, tablet, mobile } from './responsive';
 import * as AWS from 'aws-sdk';
 import helene from './images/helene.png'
 import drop3 from './images/drop3.gif'
+import dropdesktop from './images/dropdesktop.gif'
 import submitlogo from './images/submitlogo.png'
 import submitlogohover from './images/submitlogohover.png'
 import signupfor from './images/signupfor.png';
@@ -85,6 +86,14 @@ const Drop = styled.img`
 
 
 `;
+const DropDesktop = styled.img`
+  max-width:100%;
+  position:fixed;
+  ${desktop({maxWidth:"100%"})}
+  ${mobile({maxWidth:"0%"})}
+  ${tablet({maxWidth:"0%"})}
+  top:7%;
+`;
 
 const changeOnHover = (image) => {
     if (image == "shop") {
@@ -120,6 +129,7 @@ const Home = () => {
     <Container>
 		<Helene src={helene} alt="logo"/>
 		<Drop src={drop3} alt="drop"/>
+        <DropDesktop src={dropdesktop} alt="dropdesktop"/>
         <Shop src={shop1} onMouseOver={() => {
                           					changeOnHover("shop");
                           				    }}
