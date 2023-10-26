@@ -9,9 +9,13 @@ import submitlogo from './images/submitlogo.png'
 import submitlogohover from './images/submitlogohover.png'
 import signupfor from './images/signupfor.png';
 import shop1 from './images/shop1.png';
+import shop2 from './images/shop2.png';
 import catalog1 from './images/catalog1.png';
+import catalog2 from './images/catalog2.png';
 import about1 from './images/about1.png';
+import about2 from './images/about2.png';
 import contact1 from './images/contact1.png';
+import contact2 from './images/contact2.png';
 import {useNavigate} from 'react-router-dom';
 import config from './config.json'
 AWS.config.update(config);
@@ -82,15 +86,66 @@ const Drop = styled.img`
 
 `;
 
+const changeOnHover = (image) => {
+    if (image == "shop") {
+        document.getElementById(image).src = shop2;
+        }
+    if (image == "aboutUs") {
+        document.getElementById(image).src = about2;
+        }
+    if (image == "contact") {
+            document.getElementById(image).src = contact2;
+            }
+    if (image == "catalog") {
+            document.getElementById(image).src = catalog2;
+            }
+    }
+
+const changeOnMouseOut = (image) => {
+    if (image == "shop") {
+       document.getElementById(image).src = shop1;
+       }
+    if (image == "aboutUs") {
+       document.getElementById(image).src = about1;
+       }
+    if (image == "contact") {
+        document.getElementById(image).src = contact1;
+        }
+    if (image == "catalog") {
+        document.getElementById(image).src = catalog1;
+        }
+}
 const Home = () => {
   return (
     <Container>
 		<Helene src={helene} alt="logo"/>
 		<Drop src={drop3} alt="drop"/>
-        <Shop src={shop1} alt="signup"/>
-        <AboutUs src={about1} alt="aboutus1"/>
-        <Contact src={contact1} alt="contact"/>
-        <Catalog src={catalog1} alt="catalog"/>
+        <Shop src={shop1} onMouseOver={() => {
+                          					changeOnHover("shop");
+                          				    }}
+                          				    onMouseOut={() => {
+                          					changeOnMouseOut("shop");
+                          			        }}
+                          			        alt="shopping" id="shop"/>
+        <AboutUs src={about1} alt="aboutus"
+         onMouseOver={() => {
+                                   					changeOnHover("aboutUs");
+                                   				    }}
+                                   				    onMouseOut={() => {
+                                   					changeOnMouseOut("aboutUs");
+                                   			        }} id="aboutUs"/>
+        <Contact src={contact1} onMouseOver={() => {
+                                                          					changeOnHover("contact");
+                                                          				    }}
+                                                          				    onMouseOut={() => {
+                                                          					changeOnMouseOut("contact");
+                                                          			        }} alt="contacting" id="contact"/>
+        <Catalog src={catalog1} onMouseOver={() => {
+                                                          					changeOnHover("catalog");
+                                                          				    }}
+                                                          				    onMouseOut={() => {
+                                                          					changeOnMouseOut("catalog");
+                                                          			        }} alt="catalogging" id="catalog"/>
 
     </Container>
 
