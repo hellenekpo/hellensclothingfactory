@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import { Link } from 'react-router-dom'
 import helene1 from './images/helene.png';
+import summer2024 from './images/summer2024.png';
+import summer2024click from './images/summer2024click.png';
 import helene2 from './images/heleneclick.png';
 import shop1 from './images/shop1.png';
 import shop2 from './images/shop2.png';
@@ -40,6 +42,16 @@ const Helene = styled.img`
 
 `;
 
+const Summer24 = styled.img`
+  max-width:70%;
+  top: 40%;
+  max-height:20%;
+  position:fixed;
+  ${mobile({maxWidth:"100%",})}
+  ${tablet({maxWidth:"40%",})}
+
+`;
+
 const Shop = styled.img`
   max-width:12%;
   max-height:20%;
@@ -57,7 +69,6 @@ const AboutUs = styled.img`
   bottom: 0%;
   ${mobile({maxWidth:"70%", left:"0%", bottom:"10%"})}
   ${tablet({maxWidth:"70%", left:"0%", bottom:"10%"})}
-  left:22%;
 `;
 const Contact = styled.img`
   max-width:18%;
@@ -65,7 +76,7 @@ const Contact = styled.img`
      position:fixed;
      ${mobile({maxWidth:"70%", left:"0%", bottom:"20%"})}
      ${tablet({maxWidth:"70%", left:"0%", bottom:"20%"})}
-     bottom: -0.9%;
+     bottom: 0%;
      right:0%;
 `;
 const PortFolio= styled.div`
@@ -111,7 +122,11 @@ const changeOnHover = (image) => {
             if (image == "helene") {
                             document.getElementById(image).src = helene2;
                             }
-                    }
+    if (image == "summer24") {
+                                            document.getElementById(image).src = summer2024click;
+                                            }
+    }
+
 const changeOnMouseOut = (image) => {
     if (image == "aboutUs") {
        document.getElementById(image).src = about1;
@@ -125,6 +140,9 @@ const changeOnMouseOut = (image) => {
              if (image == "helene") {
                                     document.getElementById(image).src = helene1;
                                     }
+    if (image == "summer24") {
+                                        document.getElementById(image).src = summer2024;
+                                        }
 }
 	const fetchData = (tableName) => {
     var params = {
@@ -183,6 +201,14 @@ const changeOnMouseOut = (image) => {
 
   return (
     <Container>
+
+    <Summer24 src={summer2024}
+                                                       onMouseOver={() => {
+                                                       changeOnHover("summer24");
+                                                       }}
+                                                       onMouseOut={() => {
+                                                       changeOnMouseOut("summer24");
+                                                       }} alt="logo" id="summer24"/>
     <Helene src={helene1} onClick={() => {navigate('/');
                                                   }}
                                                    onMouseOver={() => {

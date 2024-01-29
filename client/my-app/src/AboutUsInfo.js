@@ -10,6 +10,7 @@ import catalog2 from './images/catalog2.png';
 import contact1 from './images/contact1.png';
 import contact2 from './images/contact2.png';
 import aboutusinfo from "./images/aboutusinfo.png";
+import aboutusdesktop from "./images/aboutusdesktop.png";
 import {desktop, mobile, tablet} from "./responsive";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 const Container = styled.div`
@@ -25,12 +26,22 @@ const Helene = styled.img`
 
 
 `;
-const AboutUsInformation = styled.img`
+
+const AboutUsInformationDesk = styled.img`
   max-width:60%;
   max-height:100%;
   position:absolute;
   top:15%;
   ${desktop({ maxWidth: "70%",})}
+  ${tablet({maxWidth: "0%",})}
+  ${mobile({maxWidth: "0%",})}
+`;
+const AboutUsInformation = styled.img`
+  max-width:0%;
+  max-height:100%;
+  position:absolute;
+  top:15%;
+  ${desktop({ maxWidth: "0%",})}
   ${tablet({maxWidth: "100%",})}
   ${mobile({maxWidth: "100%",})}
 `;
@@ -140,7 +151,7 @@ const navigate = useNavigate();
                                                                                                            }} alt="catalogging" id="catalog"/>
             <AboutUsInformation src={aboutusinfo}
                       alt="aboutUsInfo"/>
-
+            <AboutUsInformationDesk src={aboutusdesktop} alt="aboutUsInfoDesk"/>
         </Container>
     )
 }

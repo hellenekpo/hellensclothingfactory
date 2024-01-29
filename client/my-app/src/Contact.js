@@ -53,7 +53,7 @@ const AboutUs = styled.img`
   bottom: 0%;
   ${mobile({maxWidth:"70%", left:"0%", bottom:"10%"})}
   ${tablet({maxWidth:"70%", left:"0%", bottom:"10%"})}
-  left:22%;
+
 `;
 
 const Catalog = styled.img`
