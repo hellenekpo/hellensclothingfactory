@@ -173,7 +173,8 @@ const navigate = useNavigate();
                                             onMouseOut={() => {
                                             changeOnMouseOut("contact");
                                             }} alt="contacting" id="contact"/>
-        <Catalog src={catalog1} onMouseOver={() => {
+        <Catalog src={catalog1} onClick={() => {navigate('/catalog');
+                                        }} onMouseOver={() => {
                                             changeOnHover("catalog");
                                             }}
                                             onMouseOut={() => {

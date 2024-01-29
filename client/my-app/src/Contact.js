@@ -1,191 +1,149 @@
-import React from 'react'
+import React, {Component, useState} from 'react';
 import './Home.css';
-import { useState } from 'react';
-import { motion } from 'framer-motion'
-import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
-import { Link } from 'react-router-dom'
-import HomeNav from './HomeNav';
-import Slide from './Slide.js';
-import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
-import { IconButton } from "rsuite";
-import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
-import newlogo from './images/newlogo.png'
-import welcomeimage from './images/welcomeimage.png'
-import aboutusfolderopened from './images/aboutusfolderopened.png'
-import shopfolderclosed from './images/shopfolderclosed.png'
-import contactfolderopen from './images/contactfolderopen.png'
-import aboutusfolderclosed from './images/aboutusfolderclosed.png'
-import shopfolderopened from './images/shopfolderopened.png'
-import contactfolderclosed from './images/contactfolderclosed.png'
+import helene1 from './images/helene.png';
+import helene2 from './images/heleneclick.png';
+import drop3 from './images/drop3.gif';
+import dropdesktop from './images/dropdesktop.gif';
+import submitlogo from './images/submitlogo.png';
+import submitlogohover from './images/submitlogohover.png'
+import signupfor from './images/signupfor.png';
+import shop1 from './images/shop1.png';
+import shop2 from './images/shop2.png';
+import catalog1 from './images/catalog1.png';
+import catalog2 from './images/catalog2.png';
+import about1 from './images/about1.png';
+import about2 from './images/about2.png';
+import contact1 from './images/contact1.png';
+import contact2 from './images/contact2.png';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import config from './config.json'
 AWS.config.update(config);
-const docClient = new AWS.DynamoDB.DocumentClient();
+import MailchimpSubscribe from "./MailchimpSubscribe";
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
 `;
-const PortFolio= styled.div`
+const Helene = styled.img`
+  max-width:29%;
+  max-height:100%;
+  position:fixed;
+  ${tablet({maxWidth:"60%",})}
+  ${mobile({maxWidth:"60%",})}
+
+
 `;
-const Poster = styled.img`
-width: 30%;
-display: block;
-margin-top: 70px;
-  margin-left: auto;
-  margin-right: auto;
-	border-top: 10px solid #fc20a5;
-    border-bottom: 10px solid #fc20a5;
-	border-left: 10px solid #fc20a5;
-	border-right: 10px solid #fc20a5;
+const Shop = styled.img`
+  max-width:12%;
+  max-height:20%;
+  position:fixed;
+  ${mobile({maxWidth:"40%",})}
+  ${tablet({maxWidth:"40%",})}
+  bottom: -0.9%;
+  left:0%;
+
+`;
+const AboutUs = styled.img`
+  max-width:22%;
+  max-height:20%;
+  position:fixed;
+  bottom: 0%;
+  ${mobile({maxWidth:"70%", left:"0%", bottom:"10%"})}
+  ${tablet({maxWidth:"70%", left:"0%", bottom:"10%"})}
+  left:22%;
+`;
+
+const Catalog = styled.img`
+   max-width:18%;
+   max-height:20%;
+   position:fixed;
+   ${mobile({maxWidth:"70%", left:"0%", bottom:"18%"})}
+   ${tablet({maxWidth:"70%", left:"0%", bottom:"18%"})}
+   bottom: -0.9%;
+   right:0%;
 `;
 
 
-const WelcomeImage = styled.img`
-	width: 70%;
-    height: 70%;
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
 
-    ${desktop({display: "block",})}
-    ${tablet({display:"block"})}
-    ${mobile({display: "block",})}
-`;
-const Contact = () => {
-	const [information, setInformation] = useState("");
-	const [purchases, setPurchases] = useState(-1);
-	const [contactImageState, setContantImageState] = useState(false);
-	const [aboutUsImageState, setAboutUsImageState] = useState(false);
-	const [shopImageState, setShopImageState] = useState(false);
-	const changeImage = (imageName) => {
-		if (imageName == "contactButton") {
-			if (contactImageState == false) {
-			document.getElementById("contactButton").src = contactimagegradient;
-			setContantImageState(true);
-			}
-		else {
-			document.getElementById("contactButton").src = contactimage;
-			setContantImageState(false);
-
-			}
-		}
-		else if (imageName == "shopButton") {
-			if (shopImageState == false) {
-			document.getElementById("shopButton").src = shopimagegradient;
-			setShopImageState(true);
-			}
-		else {
-			document.getElementById("shopButton").src = shopimage;
-			setShopImageState(false);
-
-			}
-		}
-		else if  (imageName == "aboutUsButton") {
-			if (aboutUsImageState == false) {
-			document.getElementById("aboutUsButton").src = aboutimagegradient;
-			setAboutUsImageState(true);
-			}
-		else {
-			document.getElementById("aboutUsButton").src = aboutimage;
-			setAboutUsImageState(false);
-
-			}
-		}
-		
-	}
-	const fetchData = (tableName) => {
-    var params = {
-        TableName: tableName
-    }
-	console.log("in here")
-    docClient.scan(params, function (err, data) {
-        if (!err) {
-            console.log(data);
-			for (let i = 0; i < data.Count; ++i) {
-				if (data.Items[i].id = "1") {
-					setPurchases(data.Items[i].num_of_purchases)
-				}
-			}
-			console.log("This is purchases", purchases);
+const changeOnHover = (image) => {
+    if (image == "shop") {
+        document.getElementById(image).src = shop2;
         }
-		console.log(err);
-    })
-	}
-	
-	const fetchItem = () => {
-		docClient.get({
-    		TableName: "clothingitems",
-    		Key: {
-      			id: "1", // id is the Partition Key, '123' is the value of it
-				name: "bubblegumblush"
-    		},
-  		})
-  		.promise()
-  		.then(data => console.log(data.Item))
-  		.catch(console.error)
-	}	
-	
-	const updatePurchases = (tableName, id, productName) => {
-		let newnew = purchases + 1
-		var params = {
-			TableName: tableName,
-			Key: {
-				id: id,
-				name: productName
-			},
-			UpdateExpression: `set num_of_purchases = :np + :value`,
-			ExpressionAttributeValues: {
-				":value": 1,
-				":np": purchases,
-    		},
-		}
-		setPurchases(newnew);
-		docClient.update(params, function (err, data) {
-			if (!err) {
-				return "Successfully purchased";
-			}
-			console.log(err);
-		})
-	}
-	
+    if (image == "aboutUs") {
+        document.getElementById(image).src = about2;
+        }
+    if (image == "contact") {
+            document.getElementById(image).src = contact2;
+            }
+    if (image == "catalog") {
+            document.getElementById(image).src = catalog2;
+            }
+            if (image == "helene") {
+                            document.getElementById(image).src = helene2;
+                            }
+                    }
+
+
+const changeOnMouseOut = (image) => {
+    if (image == "shop") {
+       document.getElementById(image).src = shop1;
+       }
+    if (image == "aboutUs") {
+       document.getElementById(image).src = about1;
+       }
+    if (image == "contact") {
+        document.getElementById(image).src = contact1;
+        }
+    if (image == "catalog") {
+        document.getElementById(image).src = catalog1;
+        }
+             if (image == "helene") {
+                                    document.getElementById(image).src = helene1;
+                                    }
+}
+const Contact = () => {
+const navigate = useNavigate();
   return (
     <Container>
-	    <header>
-	  	<p>{information}</p>
-	  	<WelcomeImage src={welcomeimage} alt="poster"/>
-	  	<button onClick={() => {
-	  axios({
-		  method: 'GET',
-		  url: "https://0zcy0plu37.execute-api.us-east-1.amazonaws.com/staging/backend/homeButton"
-	  })
-	  .then((response) => {
-		  console.log("This is something",response);
-		  setInformation(response.data.success);
-		  
-	  }).catch((error) => {
-		  if (error.response) {
-			  console.log(error.response)
-		  	  console.log(error.response.status)
-		      constoe.log(error.response.headers)
-		  }
-	  })
-  }}>
-      		Click me!
-    	</button>
-	<button onClick={() => {
-					 fetchData('clothingitems')
-					}}>
-		Fetch data from tables!
-		</button>
-<button onClick={() => {
-					 updatePurchases("clothingitems", "1", "bubblegumblush")
-					}}>
-		Buy this item!
-		</button>
-	  	</header>	
+		<Helene src={helene1} onClick={() => {navigate('/');
+                                              }}
+                                               onMouseOver={() => {
+                                               changeOnHover("helene");
+                                               }}
+                                               onMouseOut={() => {
+                                               changeOnMouseOut("helene");
+                                               }} alt="logo" id="helene"/>
+        <Shop src={shop1} onClick={() => {navigate('/shop');
+                          					}}
+                          					onMouseOver={() => {
+                          					changeOnHover("shop");
+                          				    }}
+                          				    onMouseOut={() => {
+                          					changeOnMouseOut("shop");
+                          			        }}
+                          			        alt="shopping" id="shop"/>
+        <AboutUs src={about1} onClick={() => {navigate('/aboutUsInfo');
+                              			    }}
+                              			    alt="aboutus"
+                                            onMouseOver={() => {
+                                   			changeOnHover("aboutUs");
+                                   		    }}
+                                   		    onMouseOut={() => {
+                                   			changeOnMouseOut("aboutUs");
+                                   			}} id="aboutUs"/>
+        <Catalog src={catalog1} onClick={() => {navigate('/catalog');
+                                        }} onMouseOver={() => {
+                                            changeOnHover("catalog");
+                                            }}
+                                            onMouseOut={() => {
+                                            changeOnMouseOut("catalog");
+                                            }} alt="catalogging" id="catalog"/>
 
     </Container>
+
   )
 }
 
