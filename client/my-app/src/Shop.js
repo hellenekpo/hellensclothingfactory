@@ -210,7 +210,8 @@ const changeOnMouseOut = (image) => {
                                                 onMouseOut={() => {
                                                 changeOnMouseOut("contact");
                                                 }} alt="contacting" id="contact"/>
-            <Catalog src={catalog1} onMouseOver={() => {
+            <Catalog src={catalog1} onClick={() => {navigate('/catalog');
+                                                                        }}  onMouseOver={() => {
                                                 changeOnHover("catalog");
                                                 }}
                                                 onMouseOut={() => {

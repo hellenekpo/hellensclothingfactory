@@ -28,11 +28,11 @@ const Helene = styled.img`
 `;
 
 const AboutUsInformationDesk = styled.img`
-  max-width:60%;
+  max-width:62%;
   max-height:100%;
   position:absolute;
   top:15%;
-  ${desktop({ maxWidth: "70%",})}
+  ${desktop({ maxWidth: "100%",})}
   ${tablet({maxWidth: "0%",})}
   ${mobile({maxWidth: "0%",})}
 `;
