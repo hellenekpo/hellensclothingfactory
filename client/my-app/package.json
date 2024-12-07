@@ -14,7 +14,6 @@
     "framer-motion": "^10.12.18",
     "jsonp": "^0.2.1",
     "prop-types": "^15.8.1",
-    "radium": "^0.26.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
