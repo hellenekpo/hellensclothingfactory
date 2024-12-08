@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import './Home.css';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
@@ -136,52 +136,57 @@ const changeOnMouseOut = (image) => {
 const Home = () => {
 const navigate = useNavigate();
   return (
-    <Container>
-		<Helene src={helene1} onClick={() => {navigate('/');
-                                              }}
-                                               onMouseOver={() => {
-                                               changeOnHover("helene");
-                                               }}
-                                               onMouseOut={() => {
-                                               changeOnMouseOut("helene");
-                                               }} alt="logo" id="helene"/>
-		<Drop src={drop3} alt="drop"/>
-        <DropDesktop src={dropdesktop} alt="dropdesktop"/>
-        <Shop src={shop1} onClick={() => {navigate('/shop');
-                          					}}
-                          					onMouseOver={() => {
-                          					changeOnHover("shop");
-                          				    }}
-                          				    onMouseOut={() => {
-                          					changeOnMouseOut("shop");
-                          			        }}
-                          			        alt="shopping" id="shop"/>
-        <AboutUs src={about1} onClick={() => {navigate('/aboutUsInfo');
-                              			    }}
-                              			    alt="aboutus"
-                                            onMouseOver={() => {
-                                   			changeOnHover("aboutUs");
-                                   		    }}
-                                   		    onMouseOut={() => {
-                                   			changeOnMouseOut("aboutUs");
-                                   			}} id="aboutUs"/>
-        <Contact src={contact1} onClick={() => {navigate('/contact');
-        }}
-                                            onMouseOver={() => {
-                                            changeOnHover("contact");
-                                            }}
-                                            onMouseOut={() => {
-                                            changeOnMouseOut("contact");
-                                            }} alt="contacting" id="contact"/>
-        <Catalog src={catalog1} onClick={() => {navigate('/catalog');
-                                        }} onMouseOver={() => {
-                                            changeOnHover("catalog");
-                                            }}
-                                            onMouseOut={() => {
-                                            changeOnMouseOut("catalog");
-                                            }} alt="catalogging" id="catalog"/>
+      <Container>
+          <Helene src={helene1} onClick={() => {
+              navigate('/');
+          }}
+                  onMouseOver={() => {
+                      changeOnHover("helene");
+                  }}
+                  onMouseOut={() => {
+                      changeOnMouseOut("helene");
+                  }} alt="logo" id="helene"/>
+          <Drop src={drop3} alt="drop"/>
+          <DropDesktop src={dropdesktop} alt="dropdesktop"/>
+          <Shop src={shop1} onClick={() => {
+              navigate('/shop');
+          }}
+                onMouseOver={() => {
+                    changeOnHover("shop");
+                }}
+                onMouseOut={() => {
+                    changeOnMouseOut("shop");
+                }}
+                alt="shopping" id="shop"/>
+          <AboutUs src={about1} onClick={() => {
+              navigate('/aboutUsInfo');
+          }}
+                   alt="aboutus"
+                   onMouseOver={() => {
+                       changeOnHover("aboutUs");
+                   }}
+                   onMouseOut={() => {
+                       changeOnMouseOut("aboutUs");
+                   }} id="aboutUs"/>
+          <Contact src={contact1} onClick={() => {
+              navigate('/contact');
+          }}
+                   onMouseOver={() => {
+                       changeOnHover("contact");
+                   }}
+                   onMouseOut={() => {
+                       changeOnMouseOut("contact");
+                   }} alt="contacting" id="contact"/>
+          <Catalog src={catalog1} onClick={() => {
+              navigate('/catalog');
+          }} onMouseOver={() => {
+              changeOnHover("catalog");
+          }}
+                   onMouseOut={() => {
+                       changeOnMouseOut("catalog");
+                   }} alt="catalogging" id="catalog"/>
 
-    </Container>
+      </Container>
 
   )
 }
