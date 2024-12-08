@@ -135,12 +135,6 @@ const changeOnMouseOut = (image) => {
 }
 const Home = () => {
 const navigate = useNavigate();
-    const [message, setMessage] = useState('');
-    useEffect(() => {
-        fetch('/api/hello')
-            .then(res => res.json())
-            .then(data => setMessage(data.message));
-    }, []);
   return (
       <Container>
           <Helene src={helene1} onClick={() => {
@@ -153,7 +147,6 @@ const navigate = useNavigate();
                       changeOnMouseOut("helene");
                   }} alt="logo" id="helene"/>
           <Drop src={drop3} alt="drop"/>
-          <h1>{message}</h1>
           <DropDesktop src={dropdesktop} alt="dropdesktop"/>
           <Shop src={shop1} onClick={() => {
               navigate('/shop');

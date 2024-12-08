@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css';
 import { useState } from 'react';
 import styled from 'styled-components'
-import { tablet, mobile } from './responsive';
+import { tablet, mobile, desktop } from './responsive';
 import helene1 from './images/helene.png';
 import helene2 from './images/heleneclick.png';
 import catalog1 from './images/catalog1.png';
@@ -63,12 +63,17 @@ const Catalog = styled.img`
   right:0%;
 `;
 const PortFolio= styled.div`
-    margin-top:25%;
+    ${tablet({paddingTop: "18%", display: "grid", height:"50%", width:"50%"})}
+    ${mobile({paddingTop: "25%", display: "grid", height:"50%", width:"70%", justifyContent:"spaces"})}
+    padding-top: 20%;
     display: flex;
     justify-content: space-between;
 `;
 const Poster = styled.img`
     width: 30%;
+    height: 100%;
+    ${tablet({width: "90%", height: "90%", marginLeft:"0%",})}
+    ${mobile({width: "90%", height: "90%", marginLeft:"20%",})}
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -192,17 +197,21 @@ const changeOnMouseOut = (image) => {
     <PortFolio>
         <Poster src={placeholder1} id="placeFirstImage" alt="poster"
                 onClick={() => {navigate('/shop/1');}}
-                onMouseOver={() => {changeToPlaceHolder2("placeFirstImage");}}
-                onMouseOut={() => {changeToPlaceHolder1("placeFirstImage");}}/>
-        <Poster src={placeholder3} id="placeSecondImage" alt="poster"
-                onClick={() => {navigate('/shop/2');}}
-                onMouseOver={() => {changeToPlaceHolder2("placeSecondImage");}}
-                onMouseOut={() => {changeToPlaceHolder1("placeSecondImage");}}/>
+                // onMouseOver={() => {changeToPlaceHolder2("placeFirstImage");}}
+                // onMouseOut={() => {changeToPlaceHolder1("placeFirstImage");}}
+        />
         <Poster src={placeholder1} id="placeThirdImage" alt="poster"
                 onClick={() => {navigate('/shop/3');}}
-                onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
-                onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}/>
+                // onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
+                // onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
+        />
+        <Poster src={placeholder1} id="placeThirdImage" alt="poster"
+                onClick={() => {navigate('/shop/3');}}
+            // onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
+            // onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
+        />
     </PortFolio>
+
     <AboutUs src={about1}
              onClick={() => {navigate('/aboutUsInfo');}}
              alt="aboutus"
