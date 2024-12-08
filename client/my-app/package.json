@@ -11,6 +11,9 @@
     "aws-amplify": "^5.3.3",
     "aws-sdk": "^2.1410.0",
     "axios": "^1.4.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "framer-motion": "^10.12.18",
     "jsonp": "^0.2.1",
     "prop-types": "^15.8.1",
@@ -42,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
