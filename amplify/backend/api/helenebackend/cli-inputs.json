@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/helene": {
+      "name": "/helene",
+      "lambdaFunction": "helenelambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

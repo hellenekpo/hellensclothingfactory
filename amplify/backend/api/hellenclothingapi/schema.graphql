@@ -1,5 +1,0 @@
-type ClothingItem @model {
-  id: ID!
-  name: String!
-  num_of_purchases: Int!
-}

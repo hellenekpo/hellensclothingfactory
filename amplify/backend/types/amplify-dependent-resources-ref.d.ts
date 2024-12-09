@@ -1,28 +1,13 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "hellenbackend": {
+    "helenebackend": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
-    },
-    "hellenclothingapi": {
-      "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string"
-    }
-  },
-  "auth": {
-    "hellensclothingfacto5e3a5b05": {
-      "AppClientID": "string",
-      "AppClientIDWeb": "string",
-      "IdentityPoolId": "string",
-      "IdentityPoolName": "string",
-      "UserPoolArn": "string",
-      "UserPoolId": "string",
-      "UserPoolName": "string"
     }
   },
   "function": {
-    "hellensclothinglamda": {
+    "helenelambda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
