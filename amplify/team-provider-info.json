@@ -30,7 +30,8 @@
         "heleneClothingItems": {}
       },
       "api": {
-        "helene": {}
+        "helene": {},
+        "helenedev": {}
       }
     }
   }

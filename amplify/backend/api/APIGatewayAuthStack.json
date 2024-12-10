@@ -13,6 +13,9 @@
     },
     "helene": {
       "Type": "String"
+    },
+    "helenedev": {
+      "Type": "String"
     }
   },
   "Conditions": {
