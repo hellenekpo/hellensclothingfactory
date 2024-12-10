@@ -1,0 +1,16 @@
+{
+  "resourceName": "heleneClothingItems",
+  "tableName": "heleneClothingItems",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "number"
+  },
+  "sortKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "heleneClothingItemsTrigger6bcffcbd"
+  ]
+}

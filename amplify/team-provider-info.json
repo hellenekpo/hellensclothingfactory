@@ -1,29 +1,36 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-authRole",
-      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify9ba3ea8d2f4b4-staging-21726-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-amplify9ba3ea8d2f4b4-staging-21726-authRole",
+      "AuthRoleName": "amplify-helene-dev-5fa36-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-helene-dev-5fa36-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-helene-dev-5fa36-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-deployment",
-      "UnauthRoleName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-unauthRole",
-      "StackName": "amplify-amplify9ba3ea8d2f4b4-staging-21726",
-      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-amplify9ba3ea8d2f4b4-staging-21726/79b0ffd0-ed46-11ed-947d-0a2e19fdc313",
-      "AmplifyAppId": "d1ag7c8tbww37n"
+      "DeploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+      "UnauthRoleName": "amplify-helene-dev-5fa36-unauthRole",
+      "StackName": "amplify-helene-dev-5fa36",
+      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-helene-dev-5fa36/c8936230-b691-11ef-a168-0affc7a49dab",
+      "AmplifyAppId": "d26hjl2mesfntz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
-        "hellensclothinglamda": {
-          "deploymentBucketName": "amplify-amplify9ba3ea8d2f4b4-staging-21726-deployment",
-          "s3Key": "amplify-builds/hellensclothinglamda-6b5052305a4849767644-build.zip"
+        "heleneLambda": {
+          "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+          "s3Key": "amplify-builds/heleneLambda-582f4435702b76376932-build.zip"
+        },
+        "heleneClothingItemsTrigger6bcffcbd": {
+          "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+          "s3Key": "amplify-builds/heleneClothingItemsTrigger6bcffcbd-2b6a2f394b7a30797775-build.zip"
         }
       },
-      "api": {
-        "hellenbackend": {},
-        "hellenclothingapi": {}
-      },
       "auth": {
-        "hellensclothingfacto5e3a5b05": {}
+        "helene": {}
+      },
+      "storage": {
+        "heleneClothingItems": {}
+      },
+      "api": {
+        "helene": {}
       }
     }
   }

@@ -11,19 +11,14 @@ import about1 from './images/about1.png';
 import about2 from './images/about2.png';
 import contact1 from './images/contact1.png';
 import contact2 from './images/contact2.png';
-import * as AWS from 'aws-sdk';
 import placeholder1 from './images/placeholder1.png'
 import placeholder2 from './images/placeholder2.png'
-import placeholder3 from './images/placeholder3.png'
-import placeholder4 from './images/placeholder4.png'
-import config from './config.json'
 import { useNavigate} from 'react-router-dom';
-AWS.config.update(config);
-const docClient = new AWS.DynamoDB.DocumentClient();
-
-
+import { API } from 'aws-amplify';
+import aws from './aws';
+API.configure(aws);
 const Container = styled.div`
-  display: flex;
+  display: flex; 
   justify-content: center;
 `;
 const Helene = styled.img`
@@ -83,6 +78,21 @@ const Poster = styled.img`
 const Shop = () => {
 	const [purchases, setPurchases] = useState(-1);
 	const navigate = useNavigate();
+    async function getItems() {
+        try {
+            API.get('helene', '/helene', {})
+                .then(result => {
+                    console.log(result);
+                    console.log("here");
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+        catch (e) {
+            console.log('GET call failed: ', JSON.parse(e.response.body));
+        }
+    }
 const changeOnHover = (image) => {
     if (image === "aboutUs") {
         document.getElementById(image).src = about2;
@@ -112,82 +122,11 @@ const changeOnMouseOut = (image) => {
      }
 }
     const changeToPlaceHolder1 = (placeHolder) => {
-        if (placeHolder === "placeFirstImage" ||
-            placeHolder === "placeThirdImage" ||
-            placeHolder === "placeFifthImage" ||
-            placeHolder === "placeSeventhImage" ||
-            placeHolder === "placeNinthImage") {
-            document.getElementById(placeHolder).src = placeholder1;
-        }
-        else {
-            document.getElementById(placeHolder).src = placeholder3;
-        }
+        document.getElementById(placeHolder).src = placeholder1;
     }
     const changeToPlaceHolder2 = (placeHolder) => {
-        if (placeHolder === "placeFirstImage" ||
-            placeHolder === "placeThirdImage" ||
-            placeHolder === "placeFifthImage" ||
-            placeHolder === "placeSeventhImage" ||
-            placeHolder === "placeNinthImage") {
-            document.getElementById(placeHolder).src = placeholder2;
-        }
-        else {
-            document.getElementById(placeHolder).src = placeholder4;
-        }
+        document.getElementById(placeHolder).src = placeholder2;
     }
-	const fetchData = (tableName) => {
-    var params = {
-        TableName: tableName
-    }
-	console.log("in here")
-    docClient.scan(params, function (err, data) {
-        if (!err) {
-            console.log(data);
-			for (let i = 0; i < data.Count; ++i) {
-				if (data.Items[i].id = "1") {
-					setPurchases(data.Items[i].num_of_purchases)
-				}
-			}
-			console.log("This is purchases", purchases);
-        }
-		console.log(err);
-    })
-	}
-	
-	const fetchItem = () => {
-		docClient.get({
-    		TableName: "clothingitems",
-    		Key: {
-      			id: "1", // id is the Partition Key, '123' is the value of it
-				name: "bubblegumblush"
-    		},
-  		})
-  		.promise()
-  		.then(data => console.log(data.Item))
-  		.catch(console.error)
-	}
-	const updatePurchases = (tableName, id, productName) => {
-		let newnew = purchases + 1
-		var params = {
-			TableName: tableName,
-			Key: {
-				id: id,
-				name: productName
-			},
-			UpdateExpression: `set num_of_purchases = :np + :value`,
-			ExpressionAttributeValues: {
-				":value": 1,
-				":np": purchases,
-    		},
-		}
-		setPurchases(newnew);
-		docClient.update(params, function (err, data) {
-			if (!err) {
-				return "Successfully purchased";
-			}
-			console.log(err);
-		})
-	}
   return (
     <Container>
     <Helene src={helene1} onClick={() => {navigate('/');}}
@@ -197,18 +136,21 @@ const changeOnMouseOut = (image) => {
     <PortFolio>
         <Poster src={placeholder1} id="placeFirstImage" alt="poster"
                 onClick={() => {navigate('/shop/1');}}
-                // onMouseOver={() => {changeToPlaceHolder2("placeFirstImage");}}
-                // onMouseOut={() => {changeToPlaceHolder1("placeFirstImage");}}
+                onMouseOver={() => {changeToPlaceHolder2("placeFirstImage");}}
+                onMouseOut={() => {changeToPlaceHolder1("placeFirstImage");}}
+        />
+        <Poster src={placeholder1} id="placeSecondImage" alt="poster"
+                onClick={async () => {
+                    await getItems();
+                    //navigate('/shop/3');
+                }}
+                onMouseOver={() => {changeToPlaceHolder2("placeSecondImage");}}
+                onMouseOut={() => {changeToPlaceHolder1("placeSecondImage");}}
         />
         <Poster src={placeholder1} id="placeThirdImage" alt="poster"
                 onClick={() => {navigate('/shop/3');}}
-                // onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
-                // onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
-        />
-        <Poster src={placeholder1} id="placeThirdImage" alt="poster"
-                onClick={() => {navigate('/shop/3');}}
-            // onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
-            // onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
+            onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
+            onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
         />
     </PortFolio>
 
