@@ -11,7 +11,9 @@ import about1 from './images/about1.png';
 import about2 from './images/about2.png';
 import contact1 from './images/contact1.png';
 import contact2 from './images/contact2.png';
+import { get } from '@aws-amplify/api';
 import * as AWS from 'aws-sdk';
+
 import placeholder1 from './images/placeholder1.png'
 import placeholder2 from './images/placeholder2.png'
 import placeholder3 from './images/placeholder3.png'
@@ -83,6 +85,18 @@ const Poster = styled.img`
 const Shop = () => {
 	const [purchases, setPurchases] = useState(-1);
 	const navigate = useNavigate();
+    async function getTodo() {
+        try {
+            const restOperation = get({
+                apiName: 'helene',
+                path: '/helene'
+            });
+            const response = await restOperation.response;
+            console.log('GET call succeeded: ', response);
+        } catch (e) {
+            console.log('GET call failed: ', JSON.parse(e.response.body));
+        }
+    }
 const changeOnHover = (image) => {
     if (image === "aboutUs") {
         document.getElementById(image).src = about2;
@@ -201,7 +215,10 @@ const changeOnMouseOut = (image) => {
                 // onMouseOut={() => {changeToPlaceHolder1("placeFirstImage");}}
         />
         <Poster src={placeholder1} id="placeThirdImage" alt="poster"
-                onClick={() => {navigate('/shop/3');}}
+                onClick={async () => {
+                    await getTodo();
+                    //navigate('/shop/3');
+                }}
                 // onMouseOver={() => {changeToPlaceHolder2("placeThirdImage");}}
                 // onMouseOut={() => {changeToPlaceHolder1("placeThirdImage");}}
         />
