@@ -20,6 +20,7 @@ const Container = styled.div`
 display: flex;
   justify-content: center;
 
+    
 `;
 const ComingSoon = styled.img`
   max-width:29%;

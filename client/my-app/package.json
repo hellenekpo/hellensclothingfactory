@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000/",
+  "proxy": "https://dpkilzaau2.execute-api.us-east-1.amazonaws.com/dev",
   "dependencies": {
     "@aws-amplify/api": "^6.1.7",
     "@rsuite/icons": "^1.0.2",

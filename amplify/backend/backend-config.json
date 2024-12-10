@@ -1,0 +1,121 @@
+{
+  "api": {
+    "helene": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "heleneLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "helene": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "heleneClothingItemsTrigger6bcffcbd": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "heleneClothingItems"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "heleneLambda": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "heleneClothingItems"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_heleneClothingItemsTrigger6bcffcbd_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heleneClothingItemsTrigger6bcffcbd"
+        }
+      ]
+    },
+    "AMPLIFY_function_heleneClothingItemsTrigger6bcffcbd_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heleneClothingItemsTrigger6bcffcbd"
+        }
+      ]
+    },
+    "AMPLIFY_function_heleneLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heleneLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_heleneLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heleneLambda"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "heleneClothingItems": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
