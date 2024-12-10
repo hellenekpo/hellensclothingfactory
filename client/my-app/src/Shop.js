@@ -16,7 +16,7 @@ import placeholder2 from './images/placeholder2.png'
 import { useNavigate} from 'react-router-dom';
 import { API } from 'aws-amplify';
 import aws from './aws';
-API.configure(awsconfig);
+API.configure(aws);
 const Container = styled.div`
   display: flex; 
   justify-content: center;
