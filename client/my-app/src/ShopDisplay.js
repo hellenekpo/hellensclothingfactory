@@ -6,88 +6,80 @@ import axios from 'axios';
 import styled from 'styled-components'
 import { desktop, tablet, mobile } from './responsive';
 import { Link } from 'react-router-dom'
-import welcomeimage from './images/welcomeimage.png'
-import aboutusfolderopened from './images/aboutusfolderopened.png'
-import homefolderclosed from './images/homefolderclosed.png'
-import contactfolderopen from './images/contactfolderopen.png'
-import aboutusfolderclosed from './images/aboutusfolderclosed.png'
-import homefolderopened from './images/homefolderopened.png'
-import contactfolderclosed from './images/contactfolderclosed.png'
 import HomeNav from './HomeNav';
 import Slide from './Slide.js';
 import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
 import { IconButton } from "rsuite";
 import BrandSlider from './BrandSlider';
 import * as AWS from 'aws-sdk';
-import newlogo from './images/newlogo.png'
 import config from './config.json'
 import {Routes, Route, useNavigate} from 'react-router-dom';
 AWS.config.update(config);
-const docClient = new AWS.DynamoDB.DocumentClient();
-
-const Container = styled.div`
-`;
+import { changeOnHover, changeOnMouseOut } from './Utils/Utils.js';
+import { API } from 'aws-amplify';
+import aws from './aws';
+import helene1 from "./images/helene.png";
+API.configure(aws);
 const PortFolio = styled.div`
 `;
+const Helene = styled.img`
+  max-width:29%;
+	max-height:100%;
+  position:fixed;
+  ${tablet({maxWidth:"60%",})}
+  ${mobile({maxWidth:"60%",})}
+`;
+const Container = styled.div`
+  display: flex; 
+  justify-content: center;
+`;
 const Poster = styled.img`
-width: 40%;
-display: block;
-margin-top: 70px;
-  margin-right: auto;
-  margin-left: auto;
+	${tablet({width: "90%", height: "90%", marginLeft:"0%",})}
+	${mobile({width: "90%", height: "90%", marginLeft:"20%",})}
+	width: 40%;
+	display: block;
+	margin-top: 150px;
+	margin-right: auto;
+	margin-left: auto;
 `;
 
 const ShopDisplay = (information) => {
+	const navigate = useNavigate();
 	console.log("We are in here");
 	console.log(information)
 	console.log(information.name, "The name of the item");
 	console.log(information.id, "The id of the item");
 	console.log(information.src, "This the src");
+	async function getItems() {
+		try {
+			API.get('helene', '/helene', {})
+				.then(result => {
+					console.log(result);
+					console.log("here");
+				})
+				.catch(err => {
+					console.log(err);
+				})
+		}
+		catch (e) {
+			console.log('GET call failed: ', JSON.parse(e.response.body));
+		}
+	}
   return (
-	  <div className="hellen"
-	  style={{
-	  minHeight: '100vh',
-        backgroundColor: (information.name == "cedarchampagne" ||
-  						  information.name == "shamrockspring" ||
-                          information.name == "hickoryharvest" ||
-                          information.name == "brunettebrunch") ? '#afe1af' : '#ffd5ef',
-      }}> 
-	  Hellen is here!
-	  {information.name}
-	  <PortFolio>
-          <Poster src={information.src} alt="poster"/>
-        </PortFolio>
-	  {information.id}
-	  <button onClick={() => {
-	  axios({
-		  method: 'GET',
-		  url: "https://0zcy0plu37.execute-api.us-east-1.amazonaws.com/staging/backend/homeButton"
-	  })
-	  .then((response) => {
-		  console.log("This is something",response);
-		  setInformation(response.data.success);
-		  
-	  }).catch((error) => {
-		  if (error.response) {
-			  console.log(error.response)
-		  	  console.log(error.response.status)
-		      constoe.log(error.response.headers)
-		  }
-	  })
-  }}>
-      		Click me!
-    	</button>
-	<button onClick={() => {
-					 fetchData('clothingitems')
-					}}>
-		Fetch data from tables!
-		</button>
-<button onClick={() => {
-					 updatePurchases("clothingitems", "1", "bubblegumblush")
-					}}>
-		Buy this item!
-		</button>
-	  </div>
+	  <Container>
+		  <Helene src={helene1} onClick={() => {navigate('/');}}
+				  onMouseOver={() => {changeOnHover("helene");}}
+				  onMouseOut={() => {changeOnMouseOut("helene");}}
+				  alt="logo" id="helene"/>
+		  <PortFolio>
+			  <Poster src={information.src} alt="poster"/>
+		  </PortFolio>
+		  <button onClick={async () => {
+			  await getItems();
+		  }}>
+			  Click me!
+		  </button>
+	  </Container>
 	  
     );
 }
