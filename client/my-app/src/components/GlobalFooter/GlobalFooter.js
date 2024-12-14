@@ -124,34 +124,39 @@ const FooterItemContainer = styled.div`
 `;
 
 const FooterItem = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    position: relative;
-    top: -3px;
-
+    position: fixed;
+    max-height: 20%;
     &#shop {
-        width: 55%;
-        height: 55%;
-        top: 5px;
+        max-width: 12%;
+        bottom: -0.9%;
+        left: 0;
+        ${mobile({maxWidth: "40%",})}
+        ${tablet({maxWidth: "40%",})}
     }
 
     &#about {
-        width: 95%;
-        height: 95%;
-        top: -7px;
+        max-width: 22%;
+        bottom: 0;
+        left: 22%;
+        ${mobile({maxWidth: "70%", left: "0%", bottom: "10%"})}
+        ${tablet({maxWidth: "70%", left: "0%", bottom: "10%"})}
     }
 
     &#contact {
-        width: 80%;
-        height: 80%;
-        top: -7px;
+        max-width: 18%;
+        bottom: 0;
+        right: 26%;
+        ${mobile({maxWidth: "70%", left: "0%", bottom: "18%"})}
+        ${tablet({maxWidth: "70%", left: "0%", bottom: "19%"})}
     }
 
     &#catalog {
-        width: 80%;
-        height: 80%;
-        top: 5px;
+        max-width: 18%;
+        bottom: -0.9%;
+        right: 0;
+        ${mobile({maxWidth: "70%", left: "0%", bottom: "26%"})}
+        ${tablet({maxWidth: "70%", left: "0%", bottom: "27%"})}
+    }
 `;
 
 export default GlobalFooter;

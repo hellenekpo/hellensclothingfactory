@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
-import signupForUpdates from "../../images/signupforupdates.png";
+import signupForUpdates from "../../images/signupfor.png";
 
 const TIME_TO_SHOW_POPUP_IN_MS = 5000; // 5 seconds
 const TIME_TO_HIDE_POPUP_IN_MS = 15000; // 15 seconds
@@ -92,6 +92,7 @@ const PopupContainer = styled.div`
 
 const SignUp = styled.img`
     width: 50%;
+    padding: -20px;
 `;
 
 export default TimedPopup;
