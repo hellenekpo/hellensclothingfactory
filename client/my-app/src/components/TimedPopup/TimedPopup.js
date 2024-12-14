@@ -41,7 +41,12 @@ const TimedPopup = () => {
   return (
     <div>
       {showPopup && (
-        <PopupContainer fadeOut={fadeOut} onMouseMove={handleActivity} onKeyDown={handleActivity} onClick={handleActivity}>
+        <PopupContainer
+          fadeOut={fadeOut}
+          onMouseMove={handleActivity}
+          onKeyDown={handleActivity}
+          onClick={handleActivity}
+        >
           <TimedPopupForm />
         </PopupContainer>
       )}

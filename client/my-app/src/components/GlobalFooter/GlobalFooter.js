@@ -108,7 +108,7 @@ const GlobalFooter = () => {
 const FooterContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -127,11 +127,31 @@ const FooterItem = styled.img`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    position: relative;
+    top: -3px;
 
-    &.shop {
-        width: 90%; /* Make the shop item a little smaller */
-        height: 90%;
+    &#shop {
+        width: 55%;
+        height: 55%;
+        top: 5px;
     }
+
+    &#about {
+        width: 95%;
+        height: 95%;
+        top: -7px;
+    }
+
+    &#contact {
+        width: 80%;
+        height: 80%;
+        top: -7px;
+    }
+
+    &#catalog {
+        width: 80%;
+        height: 80%;
+        top: 5px;
 `;
 
 export default GlobalFooter;
