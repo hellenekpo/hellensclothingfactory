@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
 
-const TIME_TO_SHOW_POPUP_IN_MS = 10000; // 10 seconds
-const TIME_TO_HIDE_POPUP_IN_MS = 20000; // 20 seconds
+const TIME_TO_SHOW_POPUP_IN_MS = 5000; // 5 seconds
+const TIME_TO_HIDE_POPUP_IN_MS = 15000; // 15 seconds
 
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
