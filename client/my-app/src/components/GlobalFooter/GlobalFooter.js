@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import shop1 from '../../images/shop1.png';
 import shop2 from '../../images/shop2.png';
 import about1 from '../../images/about1.png';
@@ -13,6 +13,50 @@ import { mobile, tablet } from "../../utils/responsive";
 
 const GlobalFooter = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split('/').pop();
+    if (path === 'shop') {
+      document.getElementById('shop').src = shop2;
+    } else if (path === 'about') {
+      document.getElementById('about').src = about2;
+    } else if (path === 'contact') {
+      document.getElementById('contact').src = contact2;
+    } else if (path === 'catalog') {
+      document.getElementById('catalog').src = catalog2;
+    }
+  }, [location]);
+
+  const changeOnHover = (image) => {
+    const path = location.pathname.split('/').pop();
+    if (path !== image) {
+      if (image === 'shop') {
+        document.getElementById(image).src = shop2;
+      } else if (image === 'about') {
+        document.getElementById(image).src = about2;
+      } else if (image === 'contact') {
+        document.getElementById(image).src = contact2;
+      } else if (image === 'catalog') {
+        document.getElementById(image).src = catalog2;
+      }
+    }
+  };
+
+  const changeOnMouseOut = (image) => {
+    const path = location.pathname.split('/').pop();
+    if (path !== image) {
+      if (image === 'shop') {
+        document.getElementById(image).src = shop1;
+      } else if (image === 'about') {
+        document.getElementById(image).src = about1;
+      } else if (image === 'contact') {
+        document.getElementById(image).src = contact1;
+      } else if (image === 'catalog') {
+        document.getElementById(image).src = catalog1;
+      }
+    }
+  };
 
   return (
     <FooterContainer>
@@ -30,11 +74,11 @@ const GlobalFooter = () => {
       <FooterItemContainer>
         <FooterItem
           src={about1}
-          onClick={() => navigate('/aboutUsInfo')}
-          onMouseOver={() => changeOnHover('aboutUs')}
-          onMouseOut={() => changeOnMouseOut('aboutUs')}
-          alt="aboutus"
-          id="aboutUs"
+          onClick={() => navigate('/about')}
+          onMouseOver={() => changeOnHover('about')}
+          onMouseOut={() => changeOnMouseOut('about')}
+          alt="about us"
+          id="about"
         />
       </FooterItemContainer>
       <FooterItemContainer>
@@ -89,29 +133,5 @@ const FooterItem = styled.img`
         height: 90%;
     }
 `;
-
-const changeOnHover = (image) => {
-  if (image === 'shop') {
-    document.getElementById(image).src = shop2;
-  } else if (image === 'aboutUs') {
-    document.getElementById(image).src = about2;
-  } else if (image === 'contact') {
-    document.getElementById(image).src = contact2;
-  } else if (image === 'catalog') {
-    document.getElementById(image).src = catalog2;
-  }
-};
-
-const changeOnMouseOut = (image) => {
-  if (image === 'shop') {
-    document.getElementById(image).src = shop1;
-  } else if (image === 'aboutUs') {
-    document.getElementById(image).src = about1;
-  } else if (image === 'contact') {
-    document.getElementById(image).src = contact1;
-  } else if (image === 'catalog') {
-    document.getElementById(image).src = catalog1;
-  }
-};
 
 export default GlobalFooter;

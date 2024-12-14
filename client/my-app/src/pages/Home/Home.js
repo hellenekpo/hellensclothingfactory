@@ -7,24 +7,19 @@ import dropdesktop from '../../images/dropdesktop.gif';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import TimedPopup from '../../components/TimedPopup/TimedPopup';
+import { PageContainer } from "../../utils/Utils";
 
 const Home = () => {
   return (
-    <Container>
+    <PageContainer>
       <GlobalHeader />
       <TimedPopup />
       <Drop src={drop3} alt="drop" />
       <DropDesktop src={dropdesktop} alt="dropdesktop" />
       <GlobalFooter />
-    </Container>
+    </PageContainer>
   );
 };
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
 
 const Drop = styled.img`
     max-width: 0%;

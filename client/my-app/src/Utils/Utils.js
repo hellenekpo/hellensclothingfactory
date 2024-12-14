@@ -14,6 +14,12 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
+export const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Helene = styled.img`
   max-width:29%;
   max-height:100%;
@@ -70,7 +76,7 @@ export const Poster = styled.img`
 `;
 
 export const changeOnHover = (image) => {
-    if (image === "aboutUs") {
+    if (image === "about") {
         document.getElementById(image).src = about2;
     }
     if (image === "contact") {
@@ -85,7 +91,7 @@ export const changeOnHover = (image) => {
 }
 
 export const changeOnMouseOut = (image) => {
-    if (image === "aboutUs") {
+    if (image === "about") {
         document.getElementById(image).src = about1;
     }
     if (image === "contact") {
