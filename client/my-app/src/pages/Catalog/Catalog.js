@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PageContainer, changeOnHover, changeOnMouseOut } from '../../utils/Utils';
+import { PageContainer, changeOnHover, changeOnMouseOut } from '../../Utils/Utils';
 import summer2024 from '../../images/summer2024.png';
-import { mobile, tablet } from "../../utils/responsive";
+import { mobile, tablet } from "../../Utils/responsive";
 
 const Catalog = () => {
   return (

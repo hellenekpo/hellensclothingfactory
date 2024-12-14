@@ -9,7 +9,7 @@ import contact1 from '../../images/contact1.png';
 import contact2 from '../../images/contact2.png';
 import catalog1 from '../../images/catalog1.png';
 import catalog2 from '../../images/catalog2.png';
-import { mobile, tablet } from "../../utils/responsive";
+import { mobile, tablet } from "../../Utils/responsive";
 
 const GlobalFooter = () => {
   const navigate = useNavigate();

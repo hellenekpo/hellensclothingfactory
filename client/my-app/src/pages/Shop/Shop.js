@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PortFolio, Poster,  PageContainer } from '../../utils/Utils';
+import { PortFolio, Poster,  PageContainer } from '../../Utils/Utils';
 import placeholder1 from '../../images/placeholder1.png';
 import placeholder2 from '../../images/placeholder2.png';
 

@@ -8,12 +8,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
-import { desktop, tablet, mobile } from '../../utils/responsive';
+import { desktop, tablet, mobile } from '../../Utils/responsive';
 import { Link } from 'react-router-dom'
 import HomeNav from '../HomeNav/HomeNav';
 import Slide from '../Slide/Slide.js';
 import BrandSlider from '../BrandSlider/BrandSlider';
-import { changeOnHover, changeOnMouseOut } from '../../utils/Utils.js';
+import { changeOnHover, changeOnMouseOut } from '../../Utils/Utils.js';
 import config from '../../config.json'
 import { API } from 'aws-amplify';
 import aws from '../../aws';

@@ -2,7 +2,7 @@ import MailchimpSubscribe from "../MailchimpSubscribe/MailchimpSubscribe";
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import { desktop, mobile, tablet } from "../../utils/responsive";
+import { desktop, mobile, tablet } from "../../Utils/responsive";
 import submitlogo from "../../images/submitlogo.png";
 import submitlogohover from '../../images/submitlogohover.png'
 

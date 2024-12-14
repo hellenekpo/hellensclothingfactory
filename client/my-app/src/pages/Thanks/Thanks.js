@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PageContainer } from '../../utils/Utils';
+import { PageContainer } from '../../Utils/Utils';
 import thankyouwanna from '../../images/thankyouwanna.png';
 import aboutuslogo from '../../images/aboutuslogo.png';
 import aboutushover from '../../images/aboutushover.png';

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { mobile } from '../../utils/responsive';
+import { mobile } from '../../Utils/responsive';
 import { Link } from 'react-router-dom'
 
 

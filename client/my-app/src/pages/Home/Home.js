@@ -1,13 +1,13 @@
 import React from 'react';
 import './Home.css';
 import styled from 'styled-components';
-import { desktop, tablet, mobile } from '../../utils/responsive';
+import { desktop, tablet, mobile } from '../../Utils/responsive';
 import drop3 from '../../images/drop3.gif';
 import dropdesktop from '../../images/dropdesktop.gif';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import TimedPopup from '../../components/TimedPopup/TimedPopup';
-import { PageContainer } from "../../utils/Utils";
+import { PageContainer } from "../../Utils/Utils";
 
 const Home = () => {
   return (

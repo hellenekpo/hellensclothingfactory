@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PageContainer } from '../../utils/Utils';
+import { PageContainer } from '../../Utils/Utils';
 
 const Contact = () => {
   return (
