@@ -21,6 +21,7 @@ import contact2 from '../../images/contact2.png';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import config from '../../config.json'
 import MailchimpSubscribe from "../../components/MailchimpSubscribe/MailchimpSubscribe";
+import TimedPopup from "../../components/TimedPopup/TimedPopup";
 
 AWS.config.update(config);
 
@@ -138,6 +139,7 @@ const Home = () => {
 const navigate = useNavigate();
   return (
       <Container>
+        <TimedPopup />
           <Helene src={helene1} onClick={() => {
               navigate('/');
           }}
