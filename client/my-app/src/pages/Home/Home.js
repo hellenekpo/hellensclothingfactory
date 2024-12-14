@@ -22,6 +22,7 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import config from '../../config.json'
 import MailchimpSubscribe from "../../components/MailchimpSubscribe/MailchimpSubscribe";
 import TimedPopup from "../../components/TimedPopup/TimedPopup";
+import TimedPopupForm from "../../components/TimedPopupForm/TimedPopupForm";
 
 AWS.config.update(config);
 

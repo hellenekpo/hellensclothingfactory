@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -6,7 +7,7 @@ const TimedPopup = () => {
   useEffect(() => {
     const showTimer = setTimeout(() => {
       setShowPopup(true); // Show the popup after 10 seconds
-    }, 10000);
+    }, 1000);
 
     const hideTimer = setTimeout(() => {
       setShowPopup(false); // Dismiss the popup 20 seconds after it shows
@@ -23,7 +24,7 @@ const TimedPopup = () => {
     <div>
       {showPopup && (
         <div className="popup" style={popupStyle}>
-          This popup appears after 10 seconds and disappears after 20 seconds!
+          <TimedPopupForm />
         </div>
       )}
     </div>
@@ -32,11 +33,14 @@ const TimedPopup = () => {
 
 const popupStyle = {
   position: 'fixed',
-  top: '20%',
+  top: '45%',
   left: '50%',
+  width: "550px",
+  height: 500,
   transform: 'translate(-50%, -50%)',
-  backgroundColor: 'white',
-  border: '1px solid #ccc',
+  backgroundColor: 'rgba(255, 189, 210, 0.95)',
+  borderRadius: '20px',
+  border: '1px solid #ffbdd2',
   padding: '20px',
   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
   zIndex: 1000,
