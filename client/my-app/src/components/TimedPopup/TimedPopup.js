@@ -1,38 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
 
 const TIME_TO_SHOW_POPUP_IN_MS = 10000; // 10 seconds
-const TIME_TO_HIDE_POPUP_IN_MS = TIME_TO_SHOW_POPUP_IN_MS + 20000; // 20 seconds
+const TIME_TO_HIDE_POPUP_IN_MS = 20000; // 20 seconds
 
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const timeoutRef = useRef(null);
 
-  useEffect(() => {
-    const showTimer = setTimeout(() => {
-      setShowPopup(true); // Show the popup after 10 seconds
-    }, TIME_TO_SHOW_POPUP_IN_MS);
-
-    const hideTimer = setTimeout(() => {
+  const resetTimeout = () => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
       setFadeOut(true); // Start fade-out animation
       setTimeout(() => {
         setShowPopup(false); // Dismiss the popup after fade-out
         setFadeOut(false); // Reset fade-out state
       }, 1000); // Duration of fade-out animation
-    }, TIME_TO_HIDE_POPUP_IN_MS); // 10s delay + 20s display time = 30s total
+    }, TIME_TO_HIDE_POPUP_IN_MS);
+  };
+
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      setShowPopup(true); // Show the popup after 10 seconds
+      resetTimeout(); // Start the fade-out timer
+    }, TIME_TO_SHOW_POPUP_IN_MS);
 
     // Cleanup the timers if the component unmounts
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(hideTimer);
+      clearTimeout(timeoutRef.current);
     };
   }, []); // Empty dependency array ensures it runs only once on mount
+
+  const handleActivity = () => {
+    resetTimeout(); // Reset the fade-out timer on user activity
+  };
 
   return (
     <div>
       {showPopup && (
-        <PopupContainer fadeOut={fadeOut}>
+        <PopupContainer fadeOut={fadeOut} onMouseMove={handleActivity} onKeyDown={handleActivity} onClick={handleActivity}>
           <TimedPopupForm />
         </PopupContainer>
       )}
