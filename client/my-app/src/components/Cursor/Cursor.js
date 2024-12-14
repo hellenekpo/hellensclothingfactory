@@ -1,6 +1,6 @@
 import React from "react";
-import useMousePosition from "./useMousePosition";
-import cursor from './images/cursor.png'
+import useMousePosition from "../../hooks/useMousePosition";
+import cursor from '../../images/cursor.png'
 const Cursor = () => {
   const { clientX, clientY } = useMousePosition();
   

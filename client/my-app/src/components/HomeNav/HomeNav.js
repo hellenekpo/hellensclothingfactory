@@ -1,5 +1,5 @@
 import React from 'react'
-import items from './list.json'
+import items from '../../list.json'
 import styled from 'styled-components'
 import HomeNavItem from './HomeNavItem'
 

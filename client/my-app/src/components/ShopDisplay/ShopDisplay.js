@@ -1,25 +1,27 @@
 import React from 'react'
-import './Home.css';
+import * as AWS from 'aws-sdk';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
+import { IconButton } from "rsuite";
+import '../../pages/Home/Home.css';
 import { useState } from 'react';
 import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
-import { desktop, tablet, mobile } from './responsive';
+import { desktop, tablet, mobile } from '../../utils/responsive';
 import { Link } from 'react-router-dom'
-import HomeNav from './HomeNav';
-import Slide from './Slide.js';
-import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
-import { IconButton } from "rsuite";
-import BrandSlider from './BrandSlider';
-import * as AWS from 'aws-sdk';
-import config from './config.json'
-import {Routes, Route, useNavigate} from 'react-router-dom';
-AWS.config.update(config);
-import { changeOnHover, changeOnMouseOut } from './Utils/Utils.js';
+import HomeNav from '../HomeNav/HomeNav';
+import Slide from '../Slide/Slide.js';
+import BrandSlider from '../BrandSlider/BrandSlider';
+import { changeOnHover, changeOnMouseOut } from '../../utils/utils.js';
+import config from '../../config.json'
 import { API } from 'aws-amplify';
-import aws from './aws';
-import helene1 from "./images/helene.png";
+import aws from '../../aws';
+import helene1 from "../../images/helene.png";
+
+AWS.config.update(config);
 API.configure(aws);
+
 const PortFolio = styled.div`
 `;
 const Helene = styled.img`
