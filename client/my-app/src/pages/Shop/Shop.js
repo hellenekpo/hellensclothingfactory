@@ -2,7 +2,7 @@ import React from 'react'
 import '../Home/Home.css';
 import { useState } from 'react';
 import { Container, Helene, AboutUs,
-    Contact, Catalog, PortFolio, Poster,changeOnHover, changeOnMouseOut } from '../../utils/Utils.js';
+    Contact, Catalog, PortFolio, Poster,changeOnHover, changeOnMouseOut } from '../../utils/Utils';
 import helene1 from '../../images/helene.png';
 import catalog1 from '../../images/catalog1.png';
 import about1 from '../../images/about1.png';
