@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import jsonp from "jsonp";
 import toQueryString from "to-querystring";
-import SimpleForm from "./SimpleForm";
+import SimpleForm from "../SimpleForm/SimpleForm";
 
 const getAjaxUrl = url => url.replace("/post?", "/post-json?");
 

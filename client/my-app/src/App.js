@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Home from "./Home";
-import AboutUs from "./AboutUs";
-import AboutUsInfo from "./AboutUsInfo";
-import Shop from "./Shop";
-import Contact from "./Contact";
-import Catalog from "./Catalog";
+import Home from "./pages/Home/Home";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import AboutUsInfo from "./pages/AboutUsInfo/AboutUsInfo";
+import Shop from "./pages/Shop/Shop";
+import Contact from "./pages/Contact/Contact";
+import Catalog from "./pages/Catalog/Catalog";
+import Cursor from "./components/Cursor/Cursor";
 import './App.css';
-import Cursor from "./Cursor";
 
 
 function App() {

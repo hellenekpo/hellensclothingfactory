@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
-import { desktop, tablet, mobile } from './responsive';
+import { desktop, tablet, mobile } from '../../utils/responsive';
 import { Link } from 'react-router-dom'
 import welcomeimage from './images/welcomeimage.png'
 import aboutusfolderopened from './images/aboutusfolderopened.png'
@@ -13,16 +13,18 @@ import contactfolderopen from './images/contactfolderopen.png'
 import aboutusfolderclosed from './images/aboutusfolderclosed.png'
 import homefolderopened from './images/homefolderopened.png'
 import contactfolderclosed from './images/contactfolderclosed.png'
-import HomeNav from './HomeNav';
-import Slide from './Slide.js';
+import HomeNav from '../HomeNav/HomeNav';
+import Slide from '../Slide/Slide.js';
 import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
 import { IconButton } from "rsuite";
-import BrandSlider from './BrandSlider';
+import BrandSlider from '../BrandSlider/BrandSlider';
 import * as AWS from 'aws-sdk';
 import newlogo from './images/newlogo.png'
-import config from './config.json'
+import config from '../../config.json'
 import {Routes, Route, useNavigate} from 'react-router-dom';
+
 AWS.config.update(config);
+
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 const Container = styled.div`

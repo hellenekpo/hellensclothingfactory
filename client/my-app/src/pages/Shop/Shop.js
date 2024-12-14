@@ -1,22 +1,24 @@
 import React from 'react'
-import './Home.css';
+import '../Home/Home.css';
 import { useState } from 'react';
 import styled from 'styled-components'
-import { tablet, mobile, desktop } from './responsive';
-import helene1 from './images/helene.png';
-import helene2 from './images/heleneclick.png';
-import catalog1 from './images/catalog1.png';
-import catalog2 from './images/catalog2.png';
-import about1 from './images/about1.png';
-import about2 from './images/about2.png';
-import contact1 from './images/contact1.png';
-import contact2 from './images/contact2.png';
-import placeholder1 from './images/placeholder1.png'
-import placeholder2 from './images/placeholder2.png'
+import { tablet, mobile, desktop } from '../../utils/responsive';
+import helene1 from '../../images/helene.png';
+import helene2 from '../../images/heleneclick.png';
+import catalog1 from '../../images/catalog1.png';
+import catalog2 from '../../images/catalog2.png';
+import about1 from '../../images/about1.png';
+import about2 from '../../images/about2.png';
+import contact1 from '../../images/contact1.png';
+import contact2 from '../../images/contact2.png';
+import placeholder1 from '../../images/placeholder1.png'
+import placeholder2 from '../../images/placeholder2.png'
 import { useNavigate} from 'react-router-dom';
 import { API } from 'aws-amplify';
-import aws from './aws';
+import aws from '../../aws';
+
 API.configure(aws);
+
 const Container = styled.div`
   display: flex; 
   justify-content: center;

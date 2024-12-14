@@ -1,27 +1,28 @@
 import React, {Component, useState, useEffect} from 'react';
 import './Home.css';
 import styled from 'styled-components'
-import { desktop, tablet, mobile } from './responsive';
+import { desktop, tablet, mobile } from '../../utils/responsive';
 import * as AWS from 'aws-sdk';
-import helene1 from './images/helene.png';
-import helene2 from './images/heleneclick.png';
-import drop3 from './images/drop3.gif';
-import dropdesktop from './images/dropdesktop.gif';
-import submitlogo from './images/submitlogo.png';
-import submitlogohover from './images/submitlogohover.png'
-import signupfor from './images/signupfor.png';
-import shop1 from './images/shop1.png';
-import shop2 from './images/shop2.png';
-import catalog1 from './images/catalog1.png';
-import catalog2 from './images/catalog2.png';
-import about1 from './images/about1.png';
-import about2 from './images/about2.png';
-import contact1 from './images/contact1.png';
-import contact2 from './images/contact2.png';
+import helene1 from '../../images/helene.png';
+import helene2 from '../../images/heleneclick.png';
+import drop3 from '../../images/drop3.gif';
+import dropdesktop from '../../images/dropdesktop.gif';
+import submitlogo from '../../images/submitlogo.png';
+import submitlogohover from '../../images/submitlogohover.png'
+import signupfor from '../../images/signupfor.png';
+import shop1 from '../../images/shop1.png';
+import shop2 from '../../images/shop2.png';
+import catalog1 from '../../images/catalog1.png';
+import catalog2 from '../../images/catalog2.png';
+import about1 from '../../images/about1.png';
+import about2 from '../../images/about2.png';
+import contact1 from '../../images/contact1.png';
+import contact2 from '../../images/contact2.png';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import config from './config.json'
+import config from '../../config.json'
+import MailchimpSubscribe from "../../components/MailchimpSubscribe/MailchimpSubscribe";
+
 AWS.config.update(config);
-import MailchimpSubscribe from "./MailchimpSubscribe";
 
 const Container = styled.div`
   display: flex;

@@ -1,17 +1,17 @@
 import React from 'react'
-import './Home.css';
+import '../Home/Home.css';
 import styled from 'styled-components'
-import helene1 from "./images/helene.png";
-import helene2 from './images/heleneclick.png';
-import shop1 from './images/shop1.png';
-import shop2 from './images/shop2.png';
-import catalog1 from './images/catalog1.png';
-import catalog2 from './images/catalog2.png';
-import contact1 from './images/contact1.png';
-import contact2 from './images/contact2.png';
-import aboutusinfo from "./images/aboutusinfo.png";
-import aboutusdesktop from "./images/aboutusdesktop.png";
-import {desktop, mobile, tablet} from "./responsive";
+import helene1 from "../../images/helene.png";
+import helene2 from '../../images/heleneclick.png';
+import shop1 from '../../images/shop1.png';
+import shop2 from '../../images/shop2.png';
+import catalog1 from '../../images/catalog1.png';
+import catalog2 from '../../images/catalog2.png';
+import contact1 from '../../images/contact1.png';
+import contact2 from '../../images/contact2.png';
+import aboutusinfo from "../../images/aboutusinfo.png";
+import aboutusdesktop from "../../images/aboutusdesktop.png";
+import {desktop, mobile, tablet} from "../../utils/responsive";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 const Container = styled.div`
    display: flex;

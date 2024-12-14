@@ -3,26 +3,26 @@ import { useState } from 'react';
 import { motion } from 'framer-motion'
 import axios from 'axios';
 import styled from 'styled-components'
-import { desktop, tablet, mobile } from './responsive';
+import { desktop, tablet, mobile } from '../../utils/responsive';
 import { Link } from 'react-router-dom'
-import helene1 from './images/helene.png';
-import summer2024 from './images/summer2024.png';
-import summer2024click from './images/summer2024click.png';
-import helene2 from './images/heleneclick.png';
-import shop1 from './images/shop1.png';
-import shop2 from './images/shop2.png';
-import about1 from './images/about1.png';
-import about2 from './images/about2.png';
-import contact1 from './images/contact1.png';
-import contact2 from './images/contact2.png';
-import HomeNav from './HomeNav';
-import Slide from './Slide.js';
+import helene1 from '../../images/helene.png';
+import summer2024 from '../../images/summer2024.png';
+import summer2024click from '../../images/summer2024click.png';
+import helene2 from '../../images/heleneclick.png';
+import shop1 from '../../images/shop1.png';
+import shop2 from '../../images/shop2.png';
+import about1 from '../../images/about1.png';
+import about2 from '../../images/about2.png';
+import contact1 from '../../images/contact1.png';
+import contact2 from '../../images/contact2.png';
+import HomeNav from '../../components/HomeNav/HomeNav';
+import Slide from '../../components/Slide/Slide';
 import { Admin, Menu, Reload, Resize, Search } from '@rsuite/icons';
 import { IconButton } from "rsuite";
-import BrandSlider from './BrandSlider';
+import BrandSlider from '../../components/BrandSlider/BrandSlider';
 import * as AWS from 'aws-sdk';
-import newlogo from './images/newlogo.png'
-import config from './config.json'
+import newlogo from '../../images/newlogo.png'
+import config from '../../config.json'
 import {Routes, Route, useNavigate} from 'react-router-dom';
 AWS.config.update(config);
 const docClient = new AWS.DynamoDB.DocumentClient();
