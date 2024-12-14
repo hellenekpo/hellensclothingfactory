@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
@@ -21,16 +22,28 @@ const Shop = () => {
 
   return (
     <PageContainer>
-      <GlobalHeader />
-      <PortFolio>
+        <Helmet>
+            <title>helene</title>
+            <link rel="icon" href="%PUBLIC_URL%/newlogo.png"/>
+            <meta property="og:image"
+                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/newlogo.png"/>
+            <meta property="og:image:secure_url"
+                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/newlogo.png"/>
+            <meta name="twitter:image"
+                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/helene.png"/>
+            <meta name="twitter:title" content="helene shop."/>
+
+        </Helmet>
+        <GlobalHeader/>
+        <PortFolio>
         <Poster
-          src={placeholder1}
-          id="placeFirstImage"
-          alt="poster"
-          onClick={() => navigate('/shop/1')}
-          onMouseOver={() => changeToPlaceHolder2('placeFirstImage')}
-          onMouseOut={() => changeToPlaceHolder1('placeFirstImage')}
-        />
+                src={placeholder1}
+                id="placeFirstImage"
+                alt="poster"
+                onClick={() => navigate('/shop/1')}
+                onMouseOver={() => changeToPlaceHolder2('placeFirstImage')}
+                onMouseOut={() => changeToPlaceHolder1('placeFirstImage')}
+            />
         <Poster
           src={placeholder1}
           id="placeSecondImage"
