@@ -17,11 +17,11 @@ export const PageContainer = styled.div`
 
 
 export const PortFolio= styled.div`
-    ${mobile({paddingTop: "40%", width: "300%", height: "300%", paddingLeft: "200%"})}
-    ${tablet({paddingTop: "35%",})}
+    ${mobile({marginTop: "-20%", width: "500%", height: "200%", paddingLeft: "330%"})}
+    ${tablet({paddingTop: "25%", width: "300%", height: "300%", paddingLeft: "200%"})}
     ${desktop({paddingTop: "35%",})}
     padding-top: 15%;
-    display: flex;
+    display: fixed;
     justify-content: space-between;
 `;
 
