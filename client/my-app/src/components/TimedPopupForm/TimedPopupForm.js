@@ -51,7 +51,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       {status === "success" && (
         <>
           <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />
-          {navigate('/about')}
+          {navigate('/thanks')}
         </>
       )}
       <Label>Name</Label>
