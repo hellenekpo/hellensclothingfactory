@@ -97,10 +97,10 @@ const StyledContainer = styled.div`
     height: 500px;
     width: 350px;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px 10px;
     display: inline-block;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     ${mobile({ width: "200px" })}

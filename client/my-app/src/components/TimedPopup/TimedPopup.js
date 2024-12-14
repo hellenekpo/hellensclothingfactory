@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
+import signupForUpdates from "../../images/signupforupdates.png";
 
 const TIME_TO_SHOW_POPUP_IN_MS = 5000; // 5 seconds
 const TIME_TO_HIDE_POPUP_IN_MS = 15000; // 15 seconds
@@ -47,6 +48,7 @@ const TimedPopup = () => {
           onKeyDown={handleActivity}
           onClick={handleActivity}
         >
+          <SignUp src={signupForUpdates} alt="submit logo" />
           <TimedPopupForm />
         </PopupContainer>
       )}
@@ -77,7 +79,7 @@ const PopupContainer = styled.div`
     top: 45%;
     left: 50%;
     width: 550px;
-    height: 500px;
+    height: 600px;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 189, 210, 0.95);
     border-radius: 20px;
@@ -86,6 +88,10 @@ const PopupContainer = styled.div`
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     animation: ${props => (props.fadeOut ? fadeOutAnimation : fadeIn)} 1s ease-in-out;
+`;
+
+const SignUp = styled.img`
+    width: 50%;
 `;
 
 export default TimedPopup;
