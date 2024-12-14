@@ -26,9 +26,9 @@ const Shop = () => {
             <title>helene</title>
             <link rel="icon" href="%PUBLIC_URL%/newlogo.png"/>
             <meta property="og:image"
-                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/newlogo.png"/>
+                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/helene.png"/>
             <meta property="og:image:secure_url"
-                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/newlogo.png"/>
+                  content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/helene.png"/>
             <meta name="twitter:image"
                   content="https://raw.githubusercontent.com/hellenekpo/hellensclothingfactory/refs/heads/master/client/my-app/public/helene.png"/>
             <meta name="twitter:title" content="helene shop."/>
