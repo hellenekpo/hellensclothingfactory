@@ -37,10 +37,10 @@ const AboutUsInformation = styled.img`
 `;
 
 const AboutUsInformationDesk = styled.img`
-  max-width: 62%;
+  max-width: 42%;
   max-height: 100%;
   position: absolute;
-  top: 15%;
+  top: 20%;
   ${desktop({ maxWidth: '100%' })}
   ${tablet({ maxWidth: '0%' })}
   ${mobile({ maxWidth: '0%' })}
