@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
 
+const TIME_TO_SHOW_POPUP_IN_MS = 10000; // 10 seconds
+const TIME_TO_HIDE_POPUP_IN_MS = TIME_TO_SHOW_POPUP_IN_MS + 20000; // 20 seconds
+
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
@@ -9,7 +12,7 @@ const TimedPopup = () => {
   useEffect(() => {
     const showTimer = setTimeout(() => {
       setShowPopup(true); // Show the popup after 10 seconds
-    }, 1000);
+    }, TIME_TO_SHOW_POPUP_IN_MS);
 
     const hideTimer = setTimeout(() => {
       setFadeOut(true); // Start fade-out animation
@@ -17,7 +20,7 @@ const TimedPopup = () => {
         setShowPopup(false); // Dismiss the popup after fade-out
         setFadeOut(false); // Reset fade-out state
       }, 1000); // Duration of fade-out animation
-    }, 30000); // 10s delay + 20s display time = 30s total
+    }, TIME_TO_HIDE_POPUP_IN_MS); // 10s delay + 20s display time = 30s total
 
     // Cleanup the timers if the component unmounts
     return () => {
