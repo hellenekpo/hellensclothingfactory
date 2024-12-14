@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PageContainer} from '../../Utils/Utils';
+import { PageContainer} from '../../utils/utils';
 import aboutusinfo from '../../images/aboutusinfo.png';
 import aboutusdesktop from '../../images/aboutusdesktop.png';
-import { desktop, mobile, tablet } from "../../Utils/responsive";
+import { desktop, mobile, tablet } from "../../utils/responsive";
 
 const AboutUs = () => {
   return (

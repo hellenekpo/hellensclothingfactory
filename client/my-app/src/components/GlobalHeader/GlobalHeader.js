@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import helene1 from '../../images/helene.png';
 import helene2 from '../../images/heleneclick.png';
-import { mobile, tablet } from "../../Utils/responsive";
+import { mobile, tablet } from "../../utils/responsive";
 
 const GlobalHeader = () => {
   const navigate = useNavigate();
