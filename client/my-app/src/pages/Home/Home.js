@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Home.css';
 import styled from 'styled-components';
 import { desktop, tablet, mobile } from '../../utils/responsive';
@@ -8,14 +8,26 @@ import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import TimedPopup from '../../components/TimedPopup/TimedPopup';
 import { PageContainer } from "../../utils/utils";
+import { AudioContext } from "../../components/AudioContext/AudioContext";
+import thankyou from "../../sounds/thankyou.mp3";
 
 const Home = () => {
+    const { play, pause, isPlaying, currentTrack } = useContext(AudioContext);
+
+    const handlePlay = (track) => {
+        play(track);
+    };
   return (
     <PageContainer>
       <GlobalHeader />
       <TimedPopup />
       <Drop src={drop3} alt="drop" />
       <DropDesktop src={dropdesktop} alt="dropdesktop" />
+        <button style={{marginTop: "550px", marginLeft: "250px"}} onClick={() => handlePlay({ url: thankyou})}>
+            Play
+        </button>
+        <button onClick={pause}>Pause</button>
+        {isPlaying && <p>Playing: {currentTrack.title}</p>}
       <GlobalFooter />
     </PageContainer>
   );

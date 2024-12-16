@@ -17,13 +17,9 @@ export const PageContainer = styled.div`
 
 
 export const PortFolio= styled.div`
-    ${mobile({paddingTop: "0%", width: "400%", height: "400%", paddingLeft: "265%"})}
-    ${tablet({marginTop: "-20%", width: "350%", height: "350%", paddingLeft: "230%"})}
-    ${desktop({width: "200%", height: "200%", paddingLeft: "100%"})}
-    padding-top: 10%;
-    position: relative;
-    width: 100%;
-    height: auto;
+    ${tablet({paddingTop: "18%", display: "grid", height:"100%", width:"100%"})}
+    ${mobile({paddingTop: "55%", height:"200%", width:"250%", marginLeft:"150%"})}
+    padding-top: 20%;
     display: flex;
     justify-content: space-between;
 `;
