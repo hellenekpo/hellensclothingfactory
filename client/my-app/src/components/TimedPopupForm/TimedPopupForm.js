@@ -5,6 +5,11 @@ import styled from "styled-components";
 import { desktop, mobile, tablet } from "../../utils/responsive";
 import submitlogo from "../../images/submitlogo.png";
 import submitlogohover from '../../images/submitlogohover.png'
+import {FormLabel} from "../../utils/utils";
+import name from '../../images/name.png'
+import email from '../../images/email.png'
+import phone from '../../images/phone.png'
+import birthday from '../../images/birthday.png'
 
 const CustomForm = ({ status, message, onValidated }) => {
   const navigate = useNavigate();
@@ -54,11 +59,14 @@ const CustomForm = ({ status, message, onValidated }) => {
           {navigate('/thanks')}
         </>
       )}
-      <Label>Name</Label>
+      <FormLabel src={name}></FormLabel>
+      <Label></Label>
       <Input ref={nameRef} type="text" placeholder="Jane Doe" />
-      <Label>Email Address</Label>
+      <FormLabel src={email}></FormLabel>
+      <Label></Label>
       <Input ref={emailRef} type="email" placeholder="janedoe@example.com" />
-      <Label>Phone Number</Label>
+      <FormLabel src={phone}></FormLabel>
+      <Label></Label>
       <Input
         ref={phoneNumberRef}
         type="tel"
@@ -66,7 +74,8 @@ const CustomForm = ({ status, message, onValidated }) => {
         onChange={handlePhoneNumberChange}
         placeholder="(832) 000-0000"
       />
-      <Label>Birthday</Label>
+      <FormLabel src={birthday}></FormLabel>
+      <Label></Label>
       <Input ref={birthdayRef} type="text" maxLength={5} placeholder="01/10" />
       <SubmitLogo
         src={submitlogo}

@@ -145,4 +145,24 @@ export const changeToPlaceHolder2 = (placeHolder) => {
 };
 
 
+export const MusicPlayer = styled.img`
+    ${mobile({bottom: 10, right: 10})}
+    ${tablet({bottom: 10, right: 10 })}
+    ${desktop({left: 10, top: 10})}
+    height: 80px;
+    width: 80px;
+    right: 0;
+    position: fixed;
+`;
+
+export const FormLabel = styled.img`
+    ${mobile({left: 0, top: 20})}
+    ${tablet({})}
+    ${desktop({})}
+    height: 30px;
+    width: 110px;
+    position: relative;
+`;
+
+
 

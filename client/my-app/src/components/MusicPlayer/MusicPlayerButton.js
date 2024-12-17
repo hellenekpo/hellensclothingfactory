@@ -1,4 +1,4 @@
-import {changeOnHover, changeOnMouseDown, changeOnMouseOut, changeOnMouseUp, PageContainer} from "../../utils/utils";
+import {changeOnHover, changeOnMouseDown, changeOnMouseOut, changeOnMouseUp, MusicPlayer} from "../../utils/utils";
 import pausebutton from "../../images/pause.png";
 import playbutton from "../../images/play.png";
 import thankyou from "../../sounds/thankyou.mp3";
@@ -17,11 +17,10 @@ export const MusicPlayerButton = () => {
     };
     return (
         <div>
-            <img
+            <MusicPlayer
                 id="playButton"
                 alt="playbutton"
                 src={isPlaying ? pausebutton : playbutton}
-                style={{height: "80px", width: "80px", right: "0px", bottom: "0px", position: "fixed"}}
                 onClick={() => {
                     if (!isPlaying) {
                         handlePlay({ url: thankyou});
@@ -34,9 +33,7 @@ export const MusicPlayerButton = () => {
                 }}
                 onMouseOver={() => changeOnHover("playButton", isPlaying)}
                 onMouseOut={() => changeOnMouseOut("playButton", isPlaying)}
-                onMouseUp={() => changeOnMouseUp("playButton", isPlaying)}
-                onMouseDown={() => changeOnMouseDown("playButton", isPlaying)}
-            ></img>
+            ></MusicPlayer>
         </div>
     );
 };
