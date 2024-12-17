@@ -12,6 +12,8 @@ import play from "../images/play.png";
 import pause from "../images/pause.png";
 import playdark from "../images/playdark.png";
 import pausedark from "../images/pausedark.png";
+import placeholder1 from "../images/placeholder1.png";
+import placeholder2 from "../images/placeholder2.png";
 
 export const PageContainer = styled.div`
     display: flex;
@@ -114,5 +116,33 @@ export const changeOnMouseOut = (image, isPlaying = null) => {
         }
     }
 }
+
+export const Drop = styled.img`
+    max-width: 0%;
+    max-height: 100%;
+    position: fixed;
+    ${desktop({ maxWidth: '0', top: '22%' })}
+    ${mobile({ maxWidth: '85%', top: '10%' })}
+    ${tablet({ maxWidth: '85%', top: '10%' })}
+    top: 40%;
+`;
+
+export const DropDesktop = styled.img`
+  max-width: 80%;
+  max-height: 100%;
+  position: fixed;
+  ${desktop({ maxWidth: '100%' })}
+  ${mobile({ maxWidth: '0%' })}
+  ${tablet({ maxWidth: '0%' })}
+  top: 8%;
+`;
+export const changeToPlaceHolder1 = (placeHolder) => {
+    document.getElementById(placeHolder).src = placeholder1;
+};
+
+export const changeToPlaceHolder2 = (placeHolder) => {
+    document.getElementById(placeHolder).src = placeholder2;
+};
+
 
 

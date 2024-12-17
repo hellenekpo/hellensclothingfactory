@@ -6,13 +6,15 @@ import { PageContainer} from '../../utils/utils';
 import aboutusinfo from '../../images/aboutusinfo.png';
 import aboutusdesktop from '../../images/aboutusdesktop.png';
 import { desktop, mobile, tablet } from "../../utils/responsive";
+import {MusicPlayerButton} from "../../components/MusicPlayer/MusicPlayerButton";
 
 const AboutUs = () => {
   return (
     <PageContainer>
-      <GlobalHeader />
+        <GlobalHeader />
       <Content>
-        <AboutUsInformation src={aboutusinfo} alt="aboutUsInfo" />
+          <MusicPlayerButton  />
+          <AboutUsInformation src={aboutusinfo} alt="aboutUsInfo" />
         <AboutUsInformationDesk src={aboutusdesktop} alt="aboutUsInfoDesk" />
       </Content>
       <GlobalFooter />
