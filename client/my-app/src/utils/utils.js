@@ -8,6 +8,12 @@ import about1 from "../images/about1.png";
 import contact1 from "../images/contact1.png";
 import catalog1 from "../images/catalog1.png";
 import helene1 from "../images/helene.png";
+import play from "../images/play.png";
+import pause from "../images/pause.png";
+import playdark from "../images/playdark.png";
+import pausedark from "../images/pausedark.png";
+import placeholder1 from "../images/placeholder1.png";
+import placeholder2 from "../images/placeholder2.png";
 
 export const PageContainer = styled.div`
     display: flex;
@@ -17,10 +23,9 @@ export const PageContainer = styled.div`
 
 
 export const PortFolio= styled.div`
-    ${mobile({paddingTop: "40%", width: "300%", height: "300%", paddingLeft: "200%"})}
-    ${tablet({paddingTop: "35%",})}
-    ${desktop({paddingTop: "35%",})}
-    padding-top: 15%;
+    ${tablet({paddingTop: "18%", display: "grid", height:"100%", width:"100%"})}
+    ${mobile({paddingTop: "55%", height:"200%", width:"250%", marginLeft:"150%"})}
+    padding-top: 20%;
     display: flex;
     justify-content: space-between;
 `;
@@ -33,7 +38,7 @@ export const Poster = styled.img`
     margin-left: auto;
 `;
 
-export const changeOnHover = (image) => {
+export const changeOnHover = (image, isPlaying = null) => {
     if (image === "about") {
         document.getElementById(image).src = about2;
     }
@@ -46,9 +51,50 @@ export const changeOnHover = (image) => {
     if (image === "helene") {
         document.getElementById(image).src = helene2;
     }
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pausedark;
+        }
+        else if (!isPlaying) {
+            document.getElementById(image).src = playdark;
+        }
+    }
+}
+// if not playing
+// on hover change to bright play color
+// on mouse down change to bright play color
+// on mouse up change to pause
+
+// if playing
+// on hover change to bright pause color
+// on mouse down change to bright pause color
+// on mouse up change to play
+
+export const changeOnMouseUp = (image, isPlaying) => {
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = play;
+        }
+        if (!isPlaying) {
+            document.getElementById(image).src = pause;
+        }
+    }
+
 }
 
-export const changeOnMouseOut = (image) => {
+export const changeOnMouseDown = (image, isPlaying) => {
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pausedark;
+        }
+        if (!isPlaying) {
+            document.getElementById(image).src = playdark;
+        }
+    }
+
+}
+
+export const changeOnMouseOut = (image, isPlaying = null) => {
     if (image === "about") {
         document.getElementById(image).src = about1;
     }
@@ -61,6 +107,42 @@ export const changeOnMouseOut = (image) => {
     if (image === "helene") {
         document.getElementById(image).src = helene1;
     }
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pause;
+        }
+        else if (!isPlaying) {
+            document.getElementById(image).src = play;
+        }
+    }
 }
+
+export const Drop = styled.img`
+    max-width: 0%;
+    max-height: 100%;
+    position: fixed;
+    ${desktop({ maxWidth: '0', top: '22%' })}
+    ${mobile({ maxWidth: '85%', top: '10%' })}
+    ${tablet({ maxWidth: '85%', top: '10%' })}
+    top: 40%;
+`;
+
+export const DropDesktop = styled.img`
+  max-width: 80%;
+  max-height: 100%;
+  position: fixed;
+  ${desktop({ maxWidth: '100%' })}
+  ${mobile({ maxWidth: '0%' })}
+  ${tablet({ maxWidth: '0%' })}
+  top: 8%;
+`;
+export const changeToPlaceHolder1 = (placeHolder) => {
+    document.getElementById(placeHolder).src = placeholder1;
+};
+
+export const changeToPlaceHolder2 = (placeHolder) => {
+    document.getElementById(placeHolder).src = placeholder2;
+};
+
 
 

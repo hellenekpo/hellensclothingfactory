@@ -5,12 +5,15 @@ import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import { PageContainer, changeOnHover, changeOnMouseOut } from '../../utils/utils';
 import summer2024 from '../../images/summer2024.png';
 import { mobile, tablet } from "../../utils/responsive";
+import {MusicPlayerButton} from "../../components/MusicPlayer/MusicPlayerButton";
 
 const Catalog = () => {
   return (
     <PageContainer>
       <GlobalHeader />
-      <Content>
+        <MusicPlayerButton  />
+        <Content>
+
         <Summer24
           src={summer2024}
           onMouseOver={() => changeOnHover('summer24')}
