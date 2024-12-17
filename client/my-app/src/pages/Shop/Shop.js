@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import React, {useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
-import { PortFolio, Poster,  PageContainer } from '../../utils/utils';
+import {
+    PortFolio,
+    Poster,
+    PageContainer,
+    changeOnHover,
+    changeOnMouseOut,
+    changeOnMouseUp,
+    changeOnMouseDown
+} from '../../utils/utils';
 import placeholder1 from '../../images/placeholder1.png';
 import placeholder2 from '../../images/placeholder2.png';
+import playbutton from "../../images/play.png";
+import thankyou from "../../sounds/thankyou.mp3";
+import pausebutton from "../../images/pause.png";
+import {AudioContext} from "../../components/AudioContext/AudioContext";
 
 const Shop = () => {
-  const [purchases, setPurchases] = useState(-1);
+  const { play, pause, isPlaying, currentTrack } = useContext(AudioContext);
+  const handlePlay = (track) => {
+        play(track);
+        console.log(currentTrack);
+    };
+  const handlePause = (track) => {
+        pause(track);
+        console.log(currentTrack);
+    };
   const navigate = useNavigate();
-
   const changeToPlaceHolder1 = (placeHolder) => {
     document.getElementById(placeHolder).src = placeholder1;
   };
@@ -23,6 +40,25 @@ const Shop = () => {
   return (
       <PageContainer>
           <GlobalHeader/>
+          <img
+              id="playButton"
+              alt="playbutton"
+              src={isPlaying ? pausebutton : playbutton}
+              style={{height: "80px", width: "80px", left: "0px", position: "fixed"}}
+              onClick={() => {
+                  if (!isPlaying) {
+                      handlePlay({url: thankyou});
+                      document.getElementById("playbutton").src = pausebutton;
+                  } else if (isPlaying) {
+                      handlePause({url: thankyou});
+                      document.getElementById("playbutton").src = playbutton;
+                  }
+              }}
+              onMouseOver={() => changeOnHover("playButton", isPlaying)}
+              onMouseOut={() => changeOnMouseOut("playButton", isPlaying)}
+              onMouseUp={() => changeOnMouseUp("playButton", isPlaying)}
+              onMouseDown={() => changeOnMouseDown("playButton", isPlaying)}
+          ></img>
           <PortFolio>
               <Poster
                   src={placeholder1}
@@ -49,11 +85,6 @@ const Shop = () => {
                   onMouseOut={() => changeToPlaceHolder1('placeThirdImage')}
               />
           </PortFolio>
-          <iframe
-                  src="https://open.spotify.com/embed/album/60UzB8mOCMpc7xkuJE6Bwc?utm_source=generator" width="100%"
-                  height="352" frameBorder="0" allowFullScreen=""
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"></iframe>
           <GlobalFooter/>
       </PageContainer>
   );

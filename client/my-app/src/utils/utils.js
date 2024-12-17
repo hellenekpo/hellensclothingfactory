@@ -8,6 +8,10 @@ import about1 from "../images/about1.png";
 import contact1 from "../images/contact1.png";
 import catalog1 from "../images/catalog1.png";
 import helene1 from "../images/helene.png";
+import play from "../images/play.png";
+import pause from "../images/pause.png";
+import playdark from "../images/playdark.png";
+import pausedark from "../images/pausedark.png";
 
 export const PageContainer = styled.div`
     display: flex;
@@ -32,7 +36,7 @@ export const Poster = styled.img`
     margin-left: auto;
 `;
 
-export const changeOnHover = (image) => {
+export const changeOnHover = (image, isPlaying = null) => {
     if (image === "about") {
         document.getElementById(image).src = about2;
     }
@@ -45,9 +49,50 @@ export const changeOnHover = (image) => {
     if (image === "helene") {
         document.getElementById(image).src = helene2;
     }
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pausedark;
+        }
+        else if (!isPlaying) {
+            document.getElementById(image).src = playdark;
+        }
+    }
+}
+// if not playing
+// on hover change to bright play color
+// on mouse down change to bright play color
+// on mouse up change to pause
+
+// if playing
+// on hover change to bright pause color
+// on mouse down change to bright pause color
+// on mouse up change to play
+
+export const changeOnMouseUp = (image, isPlaying) => {
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = play;
+        }
+        if (!isPlaying) {
+            document.getElementById(image).src = pause;
+        }
+    }
+
 }
 
-export const changeOnMouseOut = (image) => {
+export const changeOnMouseDown = (image, isPlaying) => {
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pausedark;
+        }
+        if (!isPlaying) {
+            document.getElementById(image).src = playdark;
+        }
+    }
+
+}
+
+export const changeOnMouseOut = (image, isPlaying = null) => {
     if (image === "about") {
         document.getElementById(image).src = about1;
     }
@@ -59,6 +104,14 @@ export const changeOnMouseOut = (image) => {
     }
     if (image === "helene") {
         document.getElementById(image).src = helene1;
+    }
+    if (image === "playButton") {
+        if (isPlaying) {
+            document.getElementById(image).src = pause;
+        }
+        else if (!isPlaying) {
+            document.getElementById(image).src = play;
+        }
     }
 }
 
