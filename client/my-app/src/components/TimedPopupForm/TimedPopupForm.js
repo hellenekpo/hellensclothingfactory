@@ -60,13 +60,10 @@ const CustomForm = ({ status, message, onValidated }) => {
         </>
       )}
       <FormLabel src={name}></FormLabel>
-      <Label></Label>
       <Input ref={nameRef} type="text" placeholder="Jane Doe" />
       <FormLabel src={email}></FormLabel>
-      <Label></Label>
       <Input ref={emailRef} type="email" placeholder="janedoe@example.com" />
       <FormLabel src={phone}></FormLabel>
-      <Label></Label>
       <Input
         ref={phoneNumberRef}
         type="tel"
@@ -75,7 +72,6 @@ const CustomForm = ({ status, message, onValidated }) => {
         placeholder="(832) 000-0000"
       />
       <FormLabel src={birthday}></FormLabel>
-      <Label></Label>
       <Input ref={birthdayRef} type="text" maxLength={5} placeholder="01/10" />
       <SubmitLogo
         src={submitlogo}
@@ -136,6 +132,9 @@ const Label = styled.p`
 `;
 
 const Input = styled.input`
+  ${desktop({ display: "block" })}
+  ${tablet({ display: "block", width: "20%" })}
+  ${mobile({ display: "block"})}
   transform: translate(-3%, 0%);
   border-width: 5px;
   border-color: #fd5392;
@@ -157,7 +156,7 @@ const SubmitLogo = styled.img`
     left: 50%;
     ${desktop({ display: "block" })}
     ${tablet({ display: "block", width: "20%" })}
-    ${mobile({ display: "block", width: "20%" })}
+    ${mobile({ display: "block"})}
 `;
 
 let hover = false;

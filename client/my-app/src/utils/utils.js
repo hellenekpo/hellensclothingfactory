@@ -155,12 +155,23 @@ export const MusicPlayer = styled.img`
     position: fixed;
 `;
 
+export const NowPlaying = styled.img`
+    ${mobile({display: 'none'})}
+    ${tablet({bottom: 10, right: 10 })}
+    ${desktop({left: 100, top: 25})}
+    height: 40px;
+    width: 170px;
+    right: 0;
+    position: fixed;
+`;
+
 export const FormLabel = styled.img`
     ${mobile({left: 0, top: 20})}
     ${tablet({})}
     ${desktop({})}
     height: 30px;
     width: 110px;
+    display: block;
     position: relative;
 `;
 
