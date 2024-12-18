@@ -67,7 +67,19 @@ app.get(path, async function(req, res) {
 
   try {
     const data = await ddbDocClient.send(new ScanCommand(params));
+    console.log("hellen");
     res.json(data.Items);
+  } catch (err) {
+    res.statusCode = 500;
+    res.json({error: 'Could not load items: ' + err.message});
+  }
+});
+
+app.get(path + "/testing", async function(req, res) {
+
+  try {
+    console.log("hellen");
+    res.json("testing");
   } catch (err) {
     res.statusCode = 500;
     res.json({error: 'Could not load items: ' + err.message});

@@ -1,5 +1,5 @@
 {
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.13.1\",\"stackType\":\"api-API Gateway\",\"metadata\":{\"whyContinueWithGen1\":\"Prefer not to answer\"}}",
+  "Description": "API Gateway Resource for AWS Amplify CLI",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "functionheleneLambdaName": {
@@ -378,7 +378,7 @@
         "Name": "helene"
       }
     },
-    "heleneDefault4XXResponse8f146dbf": {
+    "heleneDefault4XXResponsec168fcbb": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -393,7 +393,7 @@
         }
       }
     },
-    "heleneDefault5XXResponse8f146dbf": {
+    "heleneDefault5XXResponsec168fcbb": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -408,7 +408,7 @@
         }
       }
     },
-    "DeploymentAPIGWhelenef18d956e": {
+    "DeploymentAPIGWhelene6ce282c6": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "Description": "The Development stage deployment of your API.",
@@ -426,8 +426,8 @@
         }
       },
       "DependsOn": [
-        "heleneDefault4XXResponse8f146dbf",
-        "heleneDefault5XXResponse8f146dbf"
+        "heleneDefault4XXResponsec168fcbb",
+        "heleneDefault5XXResponsec168fcbb"
       ]
     }
   }

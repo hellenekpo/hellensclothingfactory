@@ -354,7 +354,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/function/heleneLambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
-          "s3Key": "amplify-builds/heleneLambda-582f4435702b76376932-build.zip",
+          "s3Key": "amplify-builds/heleneLambda-6a7a7434535371676136-build.zip",
           "storageheleneClothingItemsName": {
             "Fn::GetAtt": [
               "storageheleneClothingItems",

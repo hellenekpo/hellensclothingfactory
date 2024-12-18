@@ -378,7 +378,7 @@
         "Name": "helene"
       }
     },
-    "heleneDefault4XXResponsede749f05": {
+    "heleneDefault4XXResponsec168fcbb": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -393,7 +393,7 @@
         }
       }
     },
-    "heleneDefault5XXResponsede749f05": {
+    "heleneDefault5XXResponsec168fcbb": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -408,7 +408,7 @@
         }
       }
     },
-    "DeploymentAPIGWhelene261c9438": {
+    "DeploymentAPIGWhelene6ce282c6": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "Description": "The Development stage deployment of your API.",
@@ -426,8 +426,8 @@
         }
       },
       "DependsOn": [
-        "heleneDefault4XXResponsede749f05",
-        "heleneDefault5XXResponsede749f05"
+        "heleneDefault4XXResponsec168fcbb",
+        "heleneDefault5XXResponsec168fcbb"
       ]
     }
   }

@@ -32,34 +32,35 @@
         "RootUrl": "https://dpkilzaau2.execute-api.us-east-1.amazonaws.com/dev",
         "ApiId": "dpkilzaau2"
       },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.348Z",
+      "lastPushTimeStamp": "2024-12-18T02:13:46.014Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/helene-cloudformation-template.json",
         "logicalId": "apihelene"
-      }
+      },
+      "lastPushDirHash": "I3JzXtluzG7BBWZIWgiE7wLeNjk="
     },
     "helenedev": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "heleneLambda",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "heleneLambda"
         }
       ],
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/helenedev-cloudformation-template.json",
-        "logicalId": "apihelenedev"
-      },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.674Z",
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
       "output": {
         "ApiName": "helenedev",
         "RootUrl": "https://ougv19jel3.execute-api.us-east-1.amazonaws.com/dev",
         "ApiId": "ougv19jel3"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.022Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/helenedev-cloudformation-template.json",
+        "logicalId": "apihelenedev"
       },
       "lastPushDirHash": "dVVQju9GktUFH8a+W/af22JUfvU="
     }
@@ -97,11 +98,12 @@
         "IdentityPoolName": "helene_identitypool_184eded3__dev",
         "UserPoolName": "helene_userpool_184eded3"
       },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.352Z",
+      "lastPushTimeStamp": "2024-12-18T02:13:46.025Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/auth/helene-cloudformation-template.json",
         "logicalId": "authhelene"
-      }
+      },
+      "lastPushDirHash": "Zh7ka/2UISpv/0XGGmGiyQKhldg="
     }
   },
   "function": {
@@ -127,7 +129,7 @@
         "Name": "heleneClothingItemsTrigger6bcffcbd-dev",
         "LambdaExecutionRole": "heleneClothingItemsLambdaRole6bcffcbd-dev"
       },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.355Z",
+      "lastPushTimeStamp": "2024-12-18T02:13:46.033Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/function/heleneClothingItemsTrigger6bcffcbd-cloudformation-template.json",
         "logicalId": "functionheleneClothingItemsTrigger6bcffcbd"
@@ -135,7 +137,12 @@
       "s3Bucket": {
         "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
         "s3Key": "amplify-builds/heleneClothingItemsTrigger6bcffcbd-2b6a2f394b7a30797775-build.zip"
-      }
+      },
+      "lastBuildTimeStamp": "2024-12-17T14:53:08.373Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-12-17T14:53:08.392Z",
+      "distZipFilename": "heleneClothingItemsTrigger6bcffcbd-2b6a2f394b7a30797775-build.zip",
+      "lastPushDirHash": "WwR4rcogGVae6N8l8VyS8msdSSw="
     },
     "heleneLambda": {
       "build": true,
@@ -162,15 +169,20 @@
         "Name": "heleneLambda-dev",
         "LambdaExecutionRole": "heleneLambdaRole8bc4e4cb-dev"
       },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.357Z",
+      "lastPushTimeStamp": "2024-12-18T02:13:46.452Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/function/heleneLambda-cloudformation-template.json",
         "logicalId": "functionheleneLambda"
       },
       "s3Bucket": {
         "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
-        "s3Key": "amplify-builds/heleneLambda-582f4435702b76376932-build.zip"
-      }
+        "s3Key": "amplify-builds/heleneLambda-6a7a7434535371676136-build.zip"
+      },
+      "lastBuildTimeStamp": "2024-12-18T02:12:31.118Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-12-18T02:12:42.318Z",
+      "distZipFilename": "heleneLambda-6a7a7434535371676136-build.zip",
+      "lastPushDirHash": "wDJX+IMDDPzxj+b+f1Nb8kHiQbg="
     }
   },
   "storage": {
@@ -187,11 +199,12 @@
         "PartitionKeyType": "N",
         "Name": "heleneClothingItems-dev"
       },
-      "lastPushTimeStamp": "2024-12-10T05:04:30.359Z",
+      "lastPushTimeStamp": "2024-12-18T02:13:46.047Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/storage/heleneClothingItems-cloudformation-template.json",
         "logicalId": "storageheleneClothingItems"
-      }
+      },
+      "lastPushDirHash": "+N+ycfT00WeaU/mLOPClkHRqvbE="
     }
   }
 }
