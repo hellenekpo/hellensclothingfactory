@@ -51,14 +51,14 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <StyledContainer>
-      {status === "sending" && <StatusMessage>Sending your info...</StatusMessage>}
-      {status === "error" && <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />}
-      {status === "success" && (
-        <>
-          <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />
-          {navigate('/thanks')}
-        </>
-      )}
+      {/*{status === "sending" && <StatusMessage>Sending your info...</StatusMessage>}*/}
+      {/*{status === "error" && <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />}*/}
+      {/*{status === "success" && (*/}
+      {/*  <>*/}
+      {/*    <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />*/}
+      {/*    {navigate('/thanks')}*/}
+      {/*  </>*/}
+      {/*)}*/}
       <FormLabel src={name}></FormLabel>
       <Input ref={nameRef} type="text" placeholder="Jane Doe" />
       <FormLabel src={email}></FormLabel>
@@ -134,7 +134,7 @@ const Label = styled.p`
 const Input = styled.input`
     ${desktop({display: "block", marginBottom: "20px"})}
     ${tablet({display: "block", width: "20%"})}
-    ${mobile({display: "block"})}
+    ${mobile({display: "block", marginBottom: "20px", width: "120%", marginLeft: "-25px"})}
     transform: translate(-3%, 0%);
     border-width: 5px;
     border-color: #fd5392;
@@ -154,13 +154,12 @@ const Input = styled.input`
 const SubmitLogo = styled.img`
     width: 40%;
     transform: translate(-50%, 250%);
-    display: inline-block;
     position: absolute;
     top: 50%;
     left: 50%;
     ${desktop({ display: "block" })}
     ${tablet({ display: "block", width: "20%" })}
-    ${mobile({ display: "block"})}
+    ${mobile({ position: "fixed", top: "280px", width: "60%"})}
 `;
 
 let hover = false;

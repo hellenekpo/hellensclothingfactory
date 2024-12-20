@@ -14,6 +14,8 @@ import playdark from "../images/playdark.png";
 import pausedark from "../images/pausedark.png";
 import placeholder1 from "../images/placeholder1.png";
 import placeholder2 from "../images/placeholder2.png";
+import closedown from "../images/closedown.png";
+import closeup from "../images/closeup.png";
 
 export const PageContainer = styled.div`
     display: flex;
@@ -58,6 +60,9 @@ export const changeOnHover = (image, isPlaying = null) => {
         else if (!isPlaying) {
             document.getElementById(image).src = playdark;
         }
+    }
+    if (image === "closebutton") {
+        document.getElementById(image).src = closedown;
     }
 }
 // if not playing
@@ -115,6 +120,9 @@ export const changeOnMouseOut = (image, isPlaying = null) => {
             document.getElementById(image).src = play;
         }
     }
+    if (image === "closebutton") {
+        document.getElementById(image).src = closeup;
+    }
 }
 
 export const Drop = styled.img`
@@ -128,13 +136,12 @@ export const Drop = styled.img`
 `;
 
 export const DropDesktop = styled.img`
-  max-width: 30%;
-  max-height: 1000%;
+  max-width: 60%;
   position: fixed;
-  ${desktop({ maxWidth: '40%' })}
+  ${desktop({ maxWidth: '80%', top: '10%' })}
   ${mobile({ maxWidth: '0%' })}
   ${tablet({ maxWidth: '0%' })}
-  top: 15%;
+  top: 0%;
 `;
 export const changeToPlaceHolder1 = (placeHolder) => {
     document.getElementById(placeHolder).src = placeholder1;
@@ -166,7 +173,7 @@ export const NowPlaying = styled.img`
 `;
 
 export const FormLabel = styled.img`
-    ${mobile({left: 0, top: 20})}
+    ${mobile({left: 42, top: -5})}
     ${tablet({})}
     ${desktop({left: 115, bottom: 7})}
     height: 30px;
