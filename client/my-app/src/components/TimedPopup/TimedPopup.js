@@ -8,7 +8,7 @@ import {changeOnHover, changeOnMouseOut} from "../../utils/utils";
 import {mobile, tablet} from "../../utils/responsive";
 
 const TIME_TO_SHOW_POPUP_IN_MS = 3000; // 3 seconds
-const TIME_TO_HIDE_POPUP_IN_MS = 20000000; // 20 seconds
+const TIME_TO_HIDE_POPUP_IN_MS = 20000; // 20 seconds
 
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
