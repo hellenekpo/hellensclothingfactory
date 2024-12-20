@@ -55,7 +55,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       {/*{status === "error" && <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />}*/}
       {/*{status === "success" && (*/}
       {/*  <>*/}
-      {/*    <StatusMessage dangerouslySetInnerHTML={{ __html: message }} />*/}
+      {/*    <xStatusMessage dangerouslySetInnerHTML={{ __html: message }} />*/}
       {/*    {navigate('/thanks')}*/}
       {/*  </>*/}
       {/*)}*/}
@@ -133,7 +133,7 @@ const Label = styled.p`
 
 const Input = styled.input`
     ${desktop({display: "block", marginBottom: "20px"})}
-    ${tablet({display: "block", width: "20%"})}
+    ${tablet({display: "block", marginBottom: "20px", width: "100%"})}
     ${mobile({display: "block", marginBottom: "20px", width: "120%", marginLeft: "-25px"})}
     transform: translate(-3%, 0%);
     border-width: 5px;
@@ -158,7 +158,7 @@ const SubmitLogo = styled.img`
     top: 50%;
     left: 50%;
     ${desktop({ display: "block" })}
-    ${tablet({ display: "block", width: "20%" })}
+    ${tablet({ display: "block", width: "40%" })}
     ${mobile({ position: "fixed", top: "280px", width: "60%"})}
 `;
 

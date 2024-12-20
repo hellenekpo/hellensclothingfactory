@@ -174,7 +174,7 @@ export const NowPlaying = styled.img`
 
 export const FormLabel = styled.img`
     ${mobile({left: 42, top: -5})}
-    ${tablet({})}
+    ${tablet({left: 115, top: -5})}
     ${desktop({left: 115, bottom: 7})}
     height: 30px;
     width: 110px;
