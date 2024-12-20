@@ -128,13 +128,13 @@ export const Drop = styled.img`
 `;
 
 export const DropDesktop = styled.img`
-  max-width: 80%;
-  max-height: 100%;
+  max-width: 30%;
+  max-height: 1000%;
   position: fixed;
-  ${desktop({ maxWidth: '100%' })}
+  ${desktop({ maxWidth: '40%' })}
   ${mobile({ maxWidth: '0%' })}
   ${tablet({ maxWidth: '0%' })}
-  top: 8%;
+  top: 15%;
 `;
 export const changeToPlaceHolder1 = (placeHolder) => {
     document.getElementById(placeHolder).src = placeholder1;
@@ -168,7 +168,7 @@ export const NowPlaying = styled.img`
 export const FormLabel = styled.img`
     ${mobile({left: 0, top: 20})}
     ${tablet({})}
-    ${desktop({})}
+    ${desktop({left: 115, bottom: 7})}
     height: 30px;
     width: 110px;
     display: block;

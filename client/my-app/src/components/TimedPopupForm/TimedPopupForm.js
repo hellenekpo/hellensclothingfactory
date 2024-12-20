@@ -107,7 +107,7 @@ const StyledContainer = styled.div`
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -39%);
     ${mobile({ width: "200px" })}
 `;
 
@@ -132,24 +132,28 @@ const Label = styled.p`
 `;
 
 const Input = styled.input`
-  ${desktop({ display: "block" })}
-  ${tablet({ display: "block", width: "20%" })}
-  ${mobile({ display: "block"})}
-  transform: translate(-3%, 0%);
-  border-width: 5px;
-  border-color: #fd5392;
-  font-weight: bold;
-  color: #fd5392;
-  padding: 5px;
-  height: 20px;
-  width: 100%;
-  font-size: 15px;
-  font-family: "Lucida Console", "Courier New", monospace;
+    ${desktop({display: "block", marginBottom: "20px"})}
+    ${tablet({display: "block", width: "20%"})}
+    ${mobile({display: "block"})}
+    transform: translate(-3%, 0%);
+    border-width: 5px;
+    border-color: #fd5392;
+    font-weight: bold;
+    color: #fd5392;
+    padding: 5px;
+    height: 20px;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+    ::placeholder {
+        color: #eea9c2;
+    }
 `;
 
 const SubmitLogo = styled.img`
     width: 40%;
-    transform: translate(-50%, 375%);
+    transform: translate(-50%, 250%);
     display: inline-block;
     position: absolute;
     top: 50%;

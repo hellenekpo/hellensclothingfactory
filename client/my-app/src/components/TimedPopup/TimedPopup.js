@@ -3,8 +3,8 @@ import TimedPopupForm from "../TimedPopupForm/TimedPopupForm";
 import styled, { keyframes } from 'styled-components';
 import signupForUpdates from "../../images/signupfor.png";
 
-const TIME_TO_SHOW_POPUP_IN_MS = 5000; // 5 seconds
-const TIME_TO_HIDE_POPUP_IN_MS = 15000; // 15 seconds
+const TIME_TO_SHOW_POPUP_IN_MS = 3000; // 3 seconds
+const TIME_TO_HIDE_POPUP_IN_MS = 20000; // 20 seconds
 
 const TimedPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -75,24 +75,24 @@ const fadeOutAnimation = keyframes`
 `;
 
 const PopupContainer = styled.div`
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    width: 550px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 189, 210, 0.95);
-    border-radius: 20px;
-    border: 1px solid #ffbdd2;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    animation: ${props => (props.fadeOut ? fadeOutAnimation : fadeIn)} 1s ease-in-out;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 550px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 203, 220);
+  border-radius: 20px;
+  border: 1px solid #ffbdd2;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: ${props => (props.fadeOut ? fadeOutAnimation : fadeIn)} 1s ease-in-out;
 `;
 
 const SignUp = styled.img`
     width: 50%;
-    padding: -20px;
+    margin-top: 15px;
 `;
 
 export default TimedPopup;
