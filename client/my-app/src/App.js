@@ -16,6 +16,7 @@ function App() {
           <Route path='/aboutUs' element={<AboutUs/>} />
           <Route path='/aboutUsInfo' element={<AboutUsInfo/>} />
 	  </Routes>
+
       <Cursor />
     </div>
 	</BrowserRouter>
