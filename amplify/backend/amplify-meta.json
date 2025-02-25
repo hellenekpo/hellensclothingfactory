@@ -1,0 +1,210 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-helene-dev-5fa36-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590693825473:role/amplify-helene-dev-5fa36-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590693825473:role/amplify-helene-dev-5fa36-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+      "UnauthRoleName": "amplify-helene-dev-5fa36-unauthRole",
+      "StackName": "amplify-helene-dev-5fa36",
+      "StackId": "arn:aws:cloudformation:us-east-1:590693825473:stack/amplify-helene-dev-5fa36/c8936230-b691-11ef-a168-0affc7a49dab",
+      "AmplifyAppId": "d26hjl2mesfntz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "api": {
+    "helene": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "heleneLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
+      "output": {
+        "ApiName": "helene",
+        "RootUrl": "https://dpkilzaau2.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "dpkilzaau2"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.014Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/helene-cloudformation-template.json",
+        "logicalId": "apihelene"
+      },
+      "lastPushDirHash": "I3JzXtluzG7BBWZIWgiE7wLeNjk="
+    },
+    "helenedev": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "heleneLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
+      "output": {
+        "ApiName": "helenedev",
+        "RootUrl": "https://ougv19jel3.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "ougv19jel3"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.022Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/api/helenedev-cloudformation-template.json",
+        "logicalId": "apihelenedev"
+      },
+      "lastPushDirHash": "dVVQju9GktUFH8a+W/af22JUfvU="
+    }
+  },
+  "auth": {
+    "helene": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed",
+      "output": {
+        "UserPoolId": "us-east-1_MvoV7c9Up",
+        "AppClientIDWeb": "50lsfbqhe172p97t48g3ngvipg",
+        "AppClientID": "4g099kdiq1ime5cr98ircosog0",
+        "IdentityPoolId": "us-east-1:d1080aeb-53e5-4422-b97b-40017374c9d0",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:590693825473:userpool/us-east-1_MvoV7c9Up",
+        "IdentityPoolName": "helene_identitypool_184eded3__dev",
+        "UserPoolName": "helene_userpool_184eded3"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.025Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/auth/helene-cloudformation-template.json",
+        "logicalId": "authhelene"
+      },
+      "lastPushDirHash": "Zh7ka/2UISpv/0XGGmGiyQKhldg="
+    }
+  },
+  "function": {
+    "heleneClothingItemsTrigger6bcffcbd": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "heleneClothingItems"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::590693825473:role/heleneClothingItemsLambdaRole6bcffcbd-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:590693825473:function:heleneClothingItemsTrigger6bcffcbd-dev",
+        "Name": "heleneClothingItemsTrigger6bcffcbd-dev",
+        "LambdaExecutionRole": "heleneClothingItemsLambdaRole6bcffcbd-dev"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.033Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/function/heleneClothingItemsTrigger6bcffcbd-cloudformation-template.json",
+        "logicalId": "functionheleneClothingItemsTrigger6bcffcbd"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+        "s3Key": "amplify-builds/heleneClothingItemsTrigger6bcffcbd-2b6a2f394b7a30797775-build.zip"
+      },
+      "lastBuildTimeStamp": "2024-12-17T14:53:08.373Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-12-17T14:53:08.392Z",
+      "distZipFilename": "heleneClothingItemsTrigger6bcffcbd-2b6a2f394b7a30797775-build.zip",
+      "lastPushDirHash": "WwR4rcogGVae6N8l8VyS8msdSSw="
+    },
+    "heleneLambda": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "heleneClothingItems"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::590693825473:role/heleneLambdaRole8bc4e4cb-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:590693825473:function:heleneLambda-dev",
+        "Name": "heleneLambda-dev",
+        "LambdaExecutionRole": "heleneLambdaRole8bc4e4cb-dev"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.452Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/function/heleneLambda-cloudformation-template.json",
+        "logicalId": "functionheleneLambda"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-helene-dev-5fa36-deployment",
+        "s3Key": "amplify-builds/heleneLambda-6a7a7434535371676136-build.zip"
+      },
+      "lastBuildTimeStamp": "2024-12-18T02:12:31.118Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-12-18T02:12:42.318Z",
+      "distZipFilename": "heleneLambda-6a7a7434535371676136-build.zip",
+      "lastPushDirHash": "wDJX+IMDDPzxj+b+f1Nb8kHiQbg="
+    }
+  },
+  "storage": {
+    "heleneClothingItems": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "output": {
+        "PartitionKeyName": "id",
+        "SortKeyName": "name",
+        "SortKeyType": "S",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:590693825473:table/heleneClothingItems-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:590693825473:table/heleneClothingItems-dev/stream/2024-12-10T01:11:30.276",
+        "PartitionKeyType": "N",
+        "Name": "heleneClothingItems-dev"
+      },
+      "lastPushTimeStamp": "2024-12-18T02:13:46.047Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-helene-dev-5fa36-deployment/amplify-cfn-templates/storage/heleneClothingItems-cloudformation-template.json",
+        "logicalId": "storageheleneClothingItems"
+      },
+      "lastPushDirHash": "+N+ycfT00WeaU/mLOPClkHRqvbE="
+    }
+  }
+}

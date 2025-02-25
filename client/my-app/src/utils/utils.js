@@ -14,6 +14,8 @@ import playdark from "../images/playdark.png";
 import pausedark from "../images/pausedark.png";
 import placeholder1 from "../images/placeholder1.png";
 import placeholder2 from "../images/placeholder2.png";
+import closedown from "../images/closedown.png";
+import closeup from "../images/closeup.png";
 
 export const PageContainer = styled.div`
     display: flex;
@@ -58,6 +60,9 @@ export const changeOnHover = (image, isPlaying = null) => {
         else if (!isPlaying) {
             document.getElementById(image).src = playdark;
         }
+    }
+    if (image === "closebutton") {
+        document.getElementById(image).src = closedown;
     }
 }
 // if not playing
@@ -115,6 +120,9 @@ export const changeOnMouseOut = (image, isPlaying = null) => {
             document.getElementById(image).src = play;
         }
     }
+    if (image === "closebutton") {
+        document.getElementById(image).src = closeup;
+    }
 }
 
 export const Drop = styled.img`
@@ -128,13 +136,12 @@ export const Drop = styled.img`
 `;
 
 export const DropDesktop = styled.img`
-  max-width: 80%;
-  max-height: 100%;
+  max-width: 60%;
   position: fixed;
-  ${desktop({ maxWidth: '100%' })}
+  ${desktop({ maxWidth: '80%', top: '10%' })}
   ${mobile({ maxWidth: '0%' })}
   ${tablet({ maxWidth: '0%' })}
-  top: 8%;
+  top: 0%;
 `;
 export const changeToPlaceHolder1 = (placeHolder) => {
     document.getElementById(placeHolder).src = placeholder1;
@@ -143,6 +150,37 @@ export const changeToPlaceHolder1 = (placeHolder) => {
 export const changeToPlaceHolder2 = (placeHolder) => {
     document.getElementById(placeHolder).src = placeholder2;
 };
+
+
+export const MusicPlayer = styled.img`
+    ${mobile({bottom: 10, right: 10})}
+    ${tablet({bottom: 10, right: 10 })}
+    ${desktop({left: 10, top: 10})}
+    height: 80px;
+    width: 80px;
+    right: 0;
+    position: fixed;
+`;
+
+export const NowPlaying = styled.img`
+    ${mobile({display: 'none'})}
+    ${tablet({bottom: 10, right: 10 })}
+    ${desktop({left: 100, top: 25})}
+    height: 40px;
+    width: 170px;
+    right: 0;
+    position: fixed;
+`;
+
+export const FormLabel = styled.img`
+    ${mobile({left: 42, top: -5})}
+    ${tablet({left: 115, top: -5})}
+    ${desktop({left: 115, bottom: 7})}
+    height: 30px;
+    width: 110px;
+    display: block;
+    position: relative;
+`;
 
 
 

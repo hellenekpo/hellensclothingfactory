@@ -7,6 +7,9 @@ import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import TimedPopup from '../../components/TimedPopup/TimedPopup';
 import {Drop, DropDesktop, PageContainer} from "../../utils/utils";
 import {MusicPlayerButton} from "../../components/MusicPlayer/MusicPlayerButton";
+
+
+
 const Home = () => {
   return (
     <PageContainer>
