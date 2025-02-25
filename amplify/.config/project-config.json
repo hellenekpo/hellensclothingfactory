@@ -1,8 +1,6 @@
 {
-  "providers": [
-    "awscloudformation"
-  ],
-  "projectName": "hellensclothingfacto",
+  "whyContinueWithGen1": "Prefer not to answer",
+  "projectName": "helene",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -13,5 +11,8 @@
       "BuildCommand": "npm run-script build",
       "StartCommand": "npm run-script start"
     }
-  }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
 }

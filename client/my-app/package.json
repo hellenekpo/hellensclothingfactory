@@ -2,21 +2,25 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000/",
+  "proxy": "https://dpkilzaau2.execute-api.us-east-1.amazonaws.com/dev",
   "dependencies": {
+    "@aws-amplify/api": "^6.1.7",
     "@rsuite/icons": "^1.0.2",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.7.0",
-    "aws-amplify": "^5.3.3",
+    "aws-amplify": "^5.3.26",
     "aws-sdk": "^2.1410.0",
     "axios": "^1.4.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "framer-motion": "^10.12.18",
     "jsonp": "^0.2.1",
     "prop-types": "^15.8.1",
-    "radium": "^0.26.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "rsuite": "^5.36.0",
@@ -43,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
